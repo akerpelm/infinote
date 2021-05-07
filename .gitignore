@@ -1,2 +1,5 @@
 node_modules/
-./dist/main.js
+bundle.js
+bundle.js.map
+# Ignore master key for decrypting credentials and more.
+/config/master.key
