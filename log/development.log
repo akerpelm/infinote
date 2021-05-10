@@ -1,0 +1,98 @@
+Started GET "/" for ::1 at 2021-05-10 11:54:49 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/akerpelm/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/akerpelm/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 12ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (162.4ms)[0m  [1m[35mCREATE DATABASE "infinote_development" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (56.1ms)[0m  [1m[35mCREATE DATABASE "infinote_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (15.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "infinote_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (13.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "infinote_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (176.3ms)[0m  [1m[35mCREATE DATABASE "infinote_development" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (37.1ms)[0m  [1m[35mCREATE DATABASE "infinote_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-05-10 12:00:09 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/akerpelm/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/akerpelm/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 11ms (Views: 5.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-10 12:00:13 -0400
+  
+ActiveRecord::StatementInvalid (PG::UnableToSend: no connection to the server
+: SET client_min_messages TO 'warning'):
+  
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `exec'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql/database_statements.rb:75:in `block (2 levels) in execute'
+activesupport (5.2.6) lib/active_support/dependencies/interlock.rb:48:in `block in permit_concurrent_loads'
+activesupport (5.2.6) lib/active_support/concurrency/share_lock.rb:187:in `yield_shares'
+activesupport (5.2.6) lib/active_support/dependencies/interlock.rb:47:in `permit_concurrent_loads'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql/database_statements.rb:74:in `block in execute'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract_adapter.rb:581:in `block (2 levels) in log'
+/Users/akerpelm/.rbenv/versions/2.5.8/lib/ruby/2.5.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract_adapter.rb:580:in `block in log'
+activesupport (5.2.6) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract_adapter.rb:571:in `log'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql/database_statements.rb:73:in `execute'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql/schema_statements.rb:242:in `client_min_messages='
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:708:in `configure_connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:266:in `block in reconnect!'
+/Users/akerpelm/.rbenv/versions/2.5.8/lib/ruby/2.5.0/monitor.rb:235:in `mon_synchronize'
+activerecord (5.2.6) lib/active_record/connection_adapters/postgresql_adapter.rb:263:in `reconnect!'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract_adapter.rb:437:in `verify!'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:879:in `block in checkout_and_verify'
+activesupport (5.2.6) lib/active_support/callbacks.rb:132:in `run_callbacks'
+activesupport (5.2.6) lib/active_support/callbacks.rb:816:in `_run_checkout_callbacks'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:878:in `checkout_and_verify'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:538:in `checkout'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:382:in `connection'
+activerecord (5.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:1033:in `retrieve_connection'
+activerecord (5.2.6) lib/active_record/connection_handling.rb:118:in `retrieve_connection'
+activerecord (5.2.6) lib/active_record/connection_handling.rb:90:in `connection'
+activerecord (5.2.6) lib/active_record/migration.rb:554:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.6) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.6) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.6) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.6) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.6) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.6) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.6) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.6) lib/rails/engine.rb:524:in `call'
+puma (3.12.6) lib/puma/configuration.rb:227:in `call'
+puma (3.12.6) lib/puma/server.rb:706:in `handle_request'
+puma (3.12.6) lib/puma/server.rb:476:in `process_client'
+puma (3.12.6) lib/puma/server.rb:334:in `block in run'
+puma (3.12.6) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (16.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "infinote_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (19.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "infinote_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (97.4ms)[0m  [1m[35mCREATE DATABASE "infinote_development" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
+  [1m[35m (63.4ms)[0m  [1m[35mCREATE DATABASE "infinote_test" ENCODING = 'utf8'[0m
+  ↳ bin/rails:9
