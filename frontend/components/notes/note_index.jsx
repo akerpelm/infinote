@@ -4,10 +4,6 @@ import { Redirect } from 'react-router';
 export class NoteIndex extends Component {
     constructor(props) {
         super(props)
-    
-        this.state = {
-             
-        }
         this.handleClick = this.handleClick.bind(this);
     }
     handleClick(e) {
@@ -18,6 +14,8 @@ export class NoteIndex extends Component {
     render() {
         return (
             <div>
+                <p>Notes</p>
+
                 <button type="submit" onClick={this.handleClick}>Logout</button>
                 
             </div>

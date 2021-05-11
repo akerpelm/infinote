@@ -16,7 +16,6 @@ class SessionForm extends Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         const user = Object.assign({}, this.state)
         this.props.processForm(user).then(() => this.props.History);

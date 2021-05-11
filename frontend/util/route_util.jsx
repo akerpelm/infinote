@@ -24,6 +24,16 @@ const Protected = ({ loggedIn, path, component: Component, exact }) => (
         )}
     />
 )
+const Splash = ({ loggedIn, path, component: Component, exact }) => (
+    <Route
+        path={path}
+        exact={exact}
+        render={props => (
+            loggedIn ? <Redirect to="/notes" /> : <Component {...props} />
+        )}
+    />
+)
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected))
+export const SplashRoute = withRouter(connect(mapStateToProps, null)(Splash))
