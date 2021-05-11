@@ -22,10 +22,10 @@ class DemoLogin extends Component {
     
     render() {
         return (
-            <>
-            Try free with a <Link to='/notes' onClick={this.handleSubmit}>demo user</Link>
+            <div className='demo-login'>
+            <Link className="demo-login-link" to='/notes' onClick={this.handleSubmit}>Demo User</Link>
             {/* <button type='submit' onClick={this.handleSubmit}>Demo User</button> */}
-            </>
+            </div>
         )
     }
 }

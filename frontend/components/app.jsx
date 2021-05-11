@@ -10,7 +10,6 @@ import NoteIndexContainer from './notes/note_index_container'
 const App = () => {
     return (
         <div>
-            <h3>infiNote</h3>
             <Switch>
                 <AuthRoute path="/register" component={RegistrationFormContainer}/>
                 <AuthRoute path="/login" component={LoginFormContainer}/>

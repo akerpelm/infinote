@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ @import './reset.scss';
+ @import'./components/session/user_actions.scss';
+ @import './components/session/splash_info.scss';
+ @import './components/session/demo_login.scss';
