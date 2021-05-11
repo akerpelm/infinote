@@ -36,30 +36,38 @@ class SessionForm extends Component {
         )
     }
     render() {
-        // let redirectFlag = this.props.formType === 'Register' ? `Already have an account? ${<Link to='/signin'>Sign In</Link>}` :
-        //     Don't have an account? 
-            let redirectLogin = <Link to='/login'>Sign in</Link>
-            let redirectSignup = <Link to='/register'>Create account</Link>
+        let redirectLogin = (
+            <>Already have an account?
+                <br />
+                <Link to='/login'>Sign in</Link>
+            </>
+            );
+        let redirectSignup = (
+            <>Don't have an account?
+                <br />
+                <Link to='/register'>Create account</Link>
+            </>
+            );
 
         return (
-            <div>
-                <header>
-                    <Link to='/'>Home</Link>
-                </header>
-                <h3>{this.props.formType}</h3>
-                <form onSubmit={this.handleSubmit}>
-                    {this.renderErrors()}
-                    <input type="email" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email" />
+            <>
+                <div className='session-form'>
+                    <header>
+                        {<img src='images/infinote_logo_1.png' alt="infinote_logo_1" className='infinote-logo' />}
+                    </header>
+                    <form onSubmit={this.handleSubmit}>
+                        {this.renderErrors()}
+                        <input className="email-input" type="email" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email address" />
+                        <br />
+                        <input className="password-input" type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password" />
+                        <br />
+                        <button className="submit-button" type="submit" value={this.props.formType}>{this.props.formType}</button>
+                        <br />
+                    </form>
                     <br />
-                    <input type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password" />
-                    <br />
-                    <input type="submit" value={this.props.formType} />
-                    <br />
-                </form>
-                <br />
-                {this.props.formType === "Register" ? redirectLogin : redirectSignup}
-                
-            </div>
+                    {this.props.formType === "Register" ? redirectLogin : redirectSignup}
+                </div>
+            </>
         )
     }
 }

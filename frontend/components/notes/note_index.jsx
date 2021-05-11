@@ -10,6 +10,10 @@ export class NoteIndex extends Component {
         e.preventDefault();
         this.props.logout()
     }
+
+    componentWillUnmount() {
+        this.props.logout();
+    }
     
     render() {
         return (

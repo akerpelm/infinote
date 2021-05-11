@@ -3,7 +3,7 @@ import UserActions from './user_actions'
 import SplashInfo from './splash_info'
 // import { Link } from 'react-router-dom'
 
-export class Splash extends Component {
+export class SplashContainer extends Component {
     render() {
         return (
             <div>
@@ -14,4 +14,4 @@ export class Splash extends Component {
     }
 }
 
-export default Splash
+export default SplashContainer
