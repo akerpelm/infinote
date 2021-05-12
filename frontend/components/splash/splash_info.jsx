@@ -6,7 +6,7 @@ const SplashInfo = () => {
     return (
         <>
             <header>
-                {<img src='images/infinote_logo_1.png' alt="infinote_logo_1" className='infinote-logo_1' />}
+                {/* {<img src='images/infinote_logo_1.png' alt="infinote_logo_1" className='infinote-logo_1' />} */}
             </header>
             <div className='splash-info'>
                 <div className='titles'>
