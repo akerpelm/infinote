@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
 $oxygen: 'Oxygen';
+// @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@100;300;500;700&display=swap');
+// $oswald: 'Oswald', sans serif;
 
-
-.session-form {
+.session-form-div {
     font-family: $oxygen;
     font-weight: 300;
-    font-size: 14px;
-    display: flex;
     flex-direction: column;
+    font-size: 18px;
+    display: flex;
     align-items: center;
     margin: 100px auto 28px auto;
     padding: 62px 99px 48px;
@@ -15,17 +16,84 @@ $oxygen: 'Oxygen';
     box-shadow: 3px 3px 5px 6px #fff;
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    
-    input:focus{
-        outline: 2px solid rgb(195, 93, 71);     /* oranges! yey */
-    };
+    position: relative;
+    .session-demo-login {
+        margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 12px 16px;
+        border-radius: 7px;
+        font: $oxygen
+    }
+    .session-demo-login-link {
+        margin-top: 7px;
+        margin-bottom: 14px;
+        width: auto;
+        justify-content: center;
+        color: white;
+        background: rgb(195, 93, 71);
+        border-radius: 7px;
+        width: 100%;
+        padding: 13px 16px;
+        padding-right: 56px;
+        padding-left: 56px;
+        border: 1px solid white;
+        font-family: $oxygen
+    }
+    .session-demo-login-link:hover {
+        background-color:rgb(130, 190, 194);
+
+    }
+
     .email-input {
         margin-bottom: 5px;
+        margin-top: 5px;
+        padding: 12px 16px;
+        border-radius: 7px;
+        font: $oxygen
     };
+    .password-input {
+        margin-bottom: 5px;
+        padding: 12px 16px;
+        border-radius: 7px;
+        
+    };
+    button {
+        margin-top: 7px;
+        margin-bottom: 14px;
+        text-align: center;
+        width: auto;
+        justify-content: center;
+        font-family: $oxygen
+    }
     .submit-button {
         margin-top: 7px;
         margin-bottom: 14px;
         width: auto;
+        justify-content: center;
+        color: white;
+        background: rgb(195, 93, 71);
+        border-radius: 7px;
+        width: 100%;
+        padding: 13px 16px;
+        padding-right: 1.3333em;
+        padding-left: 1.3333em;
+        border: 1px solid white;
+        font-family: $oxygen;
     }
-    
+    .submit-button:hover {
+        background-color:rgb(130, 190, 194);
+    };
+};
+
+.session-form-error-ul, .redirect-login{
+    font-size: 14px;
+    text-align: center;
+    font-size: 14px;
+}
+.session-form-error-ul {
+    color: red;
+    width: 181px
+}
+.spacer {
+    margin-bottom: 20px;
 }

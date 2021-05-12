@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NoteIndex from './note_index'
-import { logout } from '../../actions/session_actions'
+import { logout, removeErrors } from '../../actions/session_actions'
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +11,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())  
+  logout: () => dispatch(logout()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NoteIndex)
