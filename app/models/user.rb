@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :bigint           not null, primary key
+#  email           :string           not null
+#  username        :string
+#  password_digest :string           not null
+#  session_token   :string           not null
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
 class User < ApplicationRecord
     # ger
     attr_reader :password
@@ -6,6 +18,10 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :password, length: {minimum: 6, allow_nil: true}
 
+    has_many :notebooks,
+    foreign_key: :author_id,
+    class_name: :Notebook
+    
     after_initialize :ensure_session_token
 
     def self.find_by_credentials(email, password)
