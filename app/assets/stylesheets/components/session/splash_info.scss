@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
 
 $oswald: 'Oswald', sans serif;
-.infinote-logo {
+.infinote-logo_1 {
     width: 150px;
     height: auto;
     display: inline-block;
@@ -34,8 +34,9 @@ $oswald: 'Oswald', sans serif;
         font-size: 30px;
         padding-bottom: 30px;
     }
-   
-    // p {
-    //     // font-family: $roboto;
-    // }
+
 }
+    .infinote-logo_1 {
+        margin-left: 150px;
+        margin-top: 20px;
+    }

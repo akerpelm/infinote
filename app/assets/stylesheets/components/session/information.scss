@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
+$oxygen: 'Oxygen';
+
+.information-page {
+    display: flex;
+    align-items: center;
+    // margin-top: 30px;
+    font-family: $oxygen;
+    .infographic {
+        width: 794px;
+        height: auto;
+        // margin-top: 20px;
+        margin-left: 120px;
+    }
+    .information-list {
+        // display: flex;
+        // flex-direction: row;
+        // padding-top: ;
+        font-size: 16px;
+        // font-weight: ;
+    }
+    // li {
+    //     font-weight: 300;
+    //     color: black;
+    //     position: relative;
+    //     left: -10px;
+    //     // padding-bottom: 20px;
+    //     padding-top: 30px;
+
+    //     }
+}
+
+//refactor into separate divs
