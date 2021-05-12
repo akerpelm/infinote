@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 
 export class NoteIndex extends Component {
     constructor(props) {
+        console.log(props.currentUser)
         super(props)
         this.handleClick = this.handleClick.bind(this);
     }
@@ -10,12 +11,17 @@ export class NoteIndex extends Component {
         e.preventDefault();
         this.props.logout()
     }
-    
-    render() {
-        return (
-            <div>
-                <p>Notes</p>
 
+    // componentDidMount() {
+        // }
+        
+        render() {
+            // debugger
+            return (
+                <div>
+                <p>Welcome {this.props.currentUser.email}</p>
+                <p>Notes</p>
+                {/* componentDidMount */}
                 <button type="submit" onClick={this.handleClick}>Logout</button>
                 
             </div>

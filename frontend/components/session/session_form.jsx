@@ -13,9 +13,9 @@ class SessionForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    // componentWillUnmount() {
-    //     this.props.removeErrors()
-    // }
+    componentWillUnmount() {
+        this.props.removeErrors()
+    }
 
     handleSubmit(e) {
         e.preventDefault();
