@@ -5,10 +5,11 @@ const NotebooksReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_ALL_NOTEBOOKS:
-            debugger
+            // debugger
             nextState = action.notebooks;
             return nextState;
         case RECEIVE_NOTEBOOK:
+            // debugger
             nextState[action.notebook.id] = action.notebook;
             return nextState;
         case REMOVE_NOTEBOOK: 

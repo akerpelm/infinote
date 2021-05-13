@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import NoteBookIndexItem from './notebook_index_item'
 
 
 
@@ -16,8 +17,10 @@ class NotebookIndex extends React.Component {
     render() {
         return (
             <div>
-                hi there you made it
-                
+                {this.props.notebooks.map( notebook => (
+                     <NoteBookIndexItem notebook={notebook} key={notebook.id}/>
+                ))}          
+                test123
             </div>
         )
     }
