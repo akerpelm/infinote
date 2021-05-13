@@ -4,18 +4,20 @@ export class NotebookShow extends Component {
  
     constructor(props) {
         super(props)
-    
-        this.state = props.notebook
+        // debugger
     }
     
     componentDidMount() {
-        this.props.fetchNotebook(this.props.notebook.id)
-    }
-    render() {
         // debugger
+        return (this.props.fetchNotebook(this.props.match.params.notebookId)
+)
+    }
+render() {
+        let notebookTitle = '';
         return (
             <div>
-                <h3>{this.props.notebook.title}</h3>
+                {/* {this.props.notebook.title ? notebookTitle = this.props.notebook.title : ''} */}
+                {this.props.notebook ? this.props.notebook.title : null}
                 <p>note 1</p>
                 <p>note 2</p>
                 <p>note 3</p>

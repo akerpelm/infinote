@@ -1,5 +1,7 @@
 class Api::NotebooksController < ApplicationController
 
+    before_action :underscore_params!, only: [:create, :update]
+
     def index
         @notebooks = current_user.notebooks
         render :index

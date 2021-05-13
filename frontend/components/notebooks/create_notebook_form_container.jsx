@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
     return {
         notebook: {
             title: '',
-            author_id: state.session.id,
+            authorId: state.session.id,
             // works with author_id, find way to switch between camel/snake
             // fix this its hideous
         },
