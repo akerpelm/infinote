@@ -5,13 +5,14 @@ const NotebooksReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch(action.type) {
         case RECEIVE_ALL_NOTEBOOKS:
+            debugger
             nextState = action.notebooks;
             return nextState;
         case RECEIVE_NOTEBOOK:
             nextState[action.notebook.id] = action.notebook;
             return nextState;
-        case REMOVE_NOTEBOOK:
-            delete nextState[action.notebookId]
+        case REMOVE_NOTEBOOK: 
+            delete nextState[action.notebookId];
             return nextState;
         default: 
             return state;

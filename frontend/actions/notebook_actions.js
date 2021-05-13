@@ -30,9 +30,9 @@ export const removeErrors = () => ({
     type: REMOVE_ERRORS
 });
 
-export const fetchNotebooks = () => dispatch => NotebookApiUtil.getNotebooks().then(notebooks => dispatch(receiveAllNotebooks(notebooks)), err => (dispatch(receiveErrors(err.responseJSON))));
+export const fetchNotebooks = () => dispatch => NotebookApiUtil.fetchNotebooks().then(notebooks => dispatch(receiveAllNotebooks(notebooks)), err => (dispatch(receiveErrors(err.responseJSON))));
 
-export const fetchNotebook = (notebookId) => dispatch => NotebookApiUtil.getNotebook(notebookId).then(notebook => dispatch(receiveNotebook(notebook)), err => (dispatch(receiveErrors(err.responseJSON))));
+export const fetchNotebook = (notebookId) => dispatch => NotebookApiUtil.fetchNotebook(notebookId).then(notebook => dispatch(receiveNotebook(notebook)), err => (dispatch(receiveErrors(err.responseJSON))));
 
 export const createNotebook = (notebook) => dispatch => NotebookApiUtil.createNotebook(notebook).then(notebook => dispatch(receiveNotebook(notebook)), err => (dispatch(receiveErrors(err.responseJSON))));
 

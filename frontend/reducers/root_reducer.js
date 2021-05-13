@@ -4,8 +4,8 @@ import SessionReducer from './session_reducer'
 import EntitiesReducer from './entities_reducer'
 
 const RootReducer = combineReducers({
-    errors: ErrorsReducer,
+    entities: EntitiesReducer,
     session: SessionReducer,
-    entities: EntitiesReducer
+    errors: ErrorsReducer
 })
 export default RootReducer

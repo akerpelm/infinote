@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import DemoLogin from '../session/demo_login'
 
-const UserActions = () => {
+const SplashUserActions = () => {
     return (
         <div className='user-actions'>
             <Link to='/register' className="register-button">Sign up for free</Link>
@@ -14,4 +14,4 @@ const UserActions = () => {
     )
 }
 
-export default UserActions
+export default SplashUserActions

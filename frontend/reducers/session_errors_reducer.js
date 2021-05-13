@@ -8,7 +8,7 @@ const SessionErrorsReducer = (state = [], action) => {
             nextState = [];
             return nextState;
         case RECEIVE_ERRORS:
-            nextState = action.errors;
+            nextState = action.errors ||= [];
             return nextState;
         case REMOVE_ERRORS: 
             nextState = [];

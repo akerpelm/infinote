@@ -2,7 +2,6 @@ import React from 'react';
 // import logo from '
 
 const SplashInfo = () => {
-    // debugger
     return (
         <>
             <header>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import UserActions from './user_actions'
+import SplashUserActions from './user_actions'
 import SplashInfo from './splash_info'
 import SplashHeader from './splash_header'
 // import { Link } from 'react-router-dom'
 import Information from './information'
 
-export class SplashContainer extends Component {
+export class Splash extends Component {
     render() {
         return (
             <div>
@@ -14,7 +14,7 @@ export class SplashContainer extends Component {
                     <SplashHeader />
                 </header>
                     <SplashInfo className='splash-info' />
-                    <UserActions className='user-actions' />
+                    <SplashUserActions className='user-actions' />
                 <br />
                 <Information />
             </div>
@@ -22,4 +22,4 @@ export class SplashContainer extends Component {
     }
 }
 
-export default SplashContainer
+export default Splash

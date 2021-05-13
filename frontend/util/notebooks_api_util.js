@@ -1,10 +1,10 @@
-export const getNotebooks = () => (
+export const fetchNotebooks = () => (
     $.ajax({
         method: "GET",
         url: "api/notebooks"
     })
 )
-export const getNotebook = (notebookId) => (
+export const fetchNotebook = (notebookId) => (
     $.ajax({
         method: "GET",
         url: `api/notebooks/${notebookId}`,

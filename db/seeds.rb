@@ -9,4 +9,7 @@
 # User.detroy_all
 
 demo = User.create(email: "demo_user@infinote.com", password: "infinote", username: "DemoUser")
-user1 = User.create(email: "ak@infinote.com", password: "password")
+user1 = User.create(email: "test@test.com", password: "password")
+
+note1 = Notebook.create(title: "My First Notebook", author_id: 1)
+note2 = Notebook.create(title: "Second ever note", author_id: 1)

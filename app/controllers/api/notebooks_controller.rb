@@ -1,8 +1,7 @@
 class Api::NotebooksController < ApplicationController
 
     def index
-        debugger
-        @notebooks = Notebook.all
+        @notebooks = current_user.notebooks
         render :index
     end
 
@@ -21,6 +20,7 @@ class Api::NotebooksController < ApplicationController
             render :show
         else
             render json: @notebook.errors.full_messages, status: 404
+        end
     end
 
     def update
@@ -29,6 +29,7 @@ class Api::NotebooksController < ApplicationController
             render :show
         else
             render json: @notebook.errors.full_messages, status: 404
+        end
     end
 
     def destroy
