@@ -12,7 +12,7 @@ export class NotebookShow extends Component {
         this.props.fetchNotebook(this.props.notebook.id)
     }
     render() {
-        debugger
+        // debugger
         return (
             <div>
                 <h3>{this.props.notebook.title}</h3>
