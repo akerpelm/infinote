@@ -1,19 +1,31 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import NoteBookIndexItem from './notebook_index_item'
+import classnames from 'classnames'
 
 
 
 class NotebookIndex extends React.Component {
     constructor(props) {
-        super(props)    
+        super(props)   
+        
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchNotebooks()
     }
 
-  
+    toggleModal = () => {
+        document.querySelector('.modal')
+            .classList.toggle('modal-hidden')
+    }
+
+    handleClick(e) {
+        e.preventDefault
+        this.toggleModal()
+    }
+    
     
     render() {
         return (
@@ -29,7 +41,23 @@ class NotebookIndex extends React.Component {
                     <p className='notebook-count'>
                     {this.props.notebooks.length === 1 ? `${this.props.notebooks.length} notebook` : `${this.props.notebooks.length} notebooks` }
                     </p>
-                    <Link to={`/notebooks/create`}><button className="new-notebook-button">New Notebook</button></Link>      
+                    <Link to={`/notebooks/create`}><button className="new-notebook-button">New Notebook</button></Link> 
+
+                    <div className="modal modal-hidden">
+                        <div className="modal-contents">
+                            <div className="modal-close">
+                                <span onClick={this.toggleModal}>X</span>
+                            </div>
+                            <h3>Create new notebook</h3>
+                            <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared</p>
+                            <form>
+                                <label>Name
+                                    <input type="text" placeholder="New notebook" />
+                                </label>
+                            </form>
+                        </div>
+                    </div>     
+                    <button id="show-modal" onClick={this.toggleModal}>Test</button>
                 </header>
            
                 <table className='notebook-table'>

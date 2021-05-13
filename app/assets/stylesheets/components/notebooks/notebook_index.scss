@@ -165,3 +165,35 @@ $oxygen: 'Oxygen';
 .dropdown-content {
     display: block
 }
+// .modal-hidden {
+//     background-color: black;
+// };
+.modal {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(42, 51, 60, 0.4);
+    
+    
+    
+    .modal-contents {
+        background-color: pink;
+        padding: 2rem 4rem;
+    }
+    .modal-close {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: -2rem;
+        margin-top: -1rem;
+        cursor: pointer;
+        
+    }
+    
+}
+.modal-hidden {
+        display: none;
+    }
