@@ -1,31 +1,25 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-const NoteBookIndexItem = (props) => {
-    return (
-        <li>
-            <Link to={`/notebooks/${props.notebook.id}`} >{props.notebook.title}</Link>
-        </li>
-    )
+
+
+
+
+export class NotebookIndexItem extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    
+    render() {
+        return (
+            <tr className='sort-row'>
+                <td><Link className='notebook-sort-link' to={`/notebooks/${this.props.notebook.id}`}>{this.props.notebook.title}</Link></td>
+                <td>{this.props.user.username || this.props.user.email}</td>
+                <td>{this.props.notebook.updatedAt}</td>
+                <td className="sort-action-row dropdown">. . .</td>
+            </tr>
+        )
+    }
 }
 
-export default NoteBookIndexItem
-
-
-// class NotebookIndexItem extends React.Component {
-//     constructor(props) {
-//         super(props)
-    
-//         this.state = {
-             
-//         }
-//     }
-//     render() {
-//         return (
-//             <li>
-//                 <Link to={`/notebooks/${this.props.notebook.id}`} >{this.props.notebook.title}</Link>
-//             </li>
-//         )
-//     }
-// }
-
-// export default NotebookIndexItem
+export default NotebookIndexItem

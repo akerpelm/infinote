@@ -1,6 +1,6 @@
 class Api::NotebooksController < ApplicationController
 
-    before_action :underscore_params!, only: [:create, :update]
+    # before_action :underscore_params!, only: [:create, :update]
 
     def index
         @notebooks = current_user.notebooks
@@ -22,7 +22,7 @@ class Api::NotebooksController < ApplicationController
         if @notebook.save
             render :show
         else
-            render json: @notebook.errors.full_messages, status: 404
+            render json: ['Oops, something went wrong!'], status: 404
         end
     end
 

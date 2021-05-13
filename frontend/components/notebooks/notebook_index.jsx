@@ -6,7 +6,8 @@ import NoteBookIndexItem from './notebook_index_item'
 
 class NotebookIndex extends React.Component {
     constructor(props) {
-        super(props)    }
+        super(props)    
+    }
 
     componentDidMount() {
         this.props.fetchNotebooks()
@@ -16,18 +17,36 @@ class NotebookIndex extends React.Component {
     
     render() {
         return (
-            <div>
-                <header>
-
-                <h3>Notebooks</h3>
-                <br />
-                {this.props.notebooks.length === 1 ? `${this.props.notebooks.length} notebook` : `${this.props.notebooks.length} notebooks` }
-                <Link to={`/notebooks/create`}><button>New Notebook</button></Link>      
+            <div className='notebook'>
+                        <i className="fas fa-search"></i>
+                <div className="notebook-header">
+                    <h3 className="notebooks-title">Notebooks</h3>
+                    <div className='notebooks-search-bar-div'>
+                        <input className="notebooks-search-bar" type="input" placeholder="Find Notebooks..." />
+                    </div>
+                </div>
+                <header className='notebook-count-new'>
+                    <p className='notebook-count'>
+                    {this.props.notebooks.length === 1 ? `${this.props.notebooks.length} notebook` : `${this.props.notebooks.length} notebooks` }
+                    </p>
+                    <Link to={`/notebooks/create`}><button className="new-notebook-button">New Notebook</button></Link>      
                 </header>
-                <br />
-                {this.props.notebooks.map( notebook => (
-                     <NoteBookIndexItem notebook={notebook} key={notebook.id}/>
-                ))}
+           
+                <table className='notebook-table'>
+                    <thead>
+                        <tr className='notebook-sort'>
+                            <th className='sort-feature sort-title'>TITLE</th>
+                            <th className='sort-feature sort-cb'>CREATED BY</th>
+                            <th className='sort-feature sort-update'>UPDATED</th>
+                            <th className='sort-feature sort-action'>ACTIONS</th>
+                        </tr>
+                    </thead>
+                    <tbody className='sort-body '>
+                        {this.props.notebooks.map(notebook => (
+                            <NoteBookIndexItem notebook={notebook} user={this.props.user} key={notebook.id} />
+                        ))}
+                    </tbody>
+                </table>
             </div>
         )
     }

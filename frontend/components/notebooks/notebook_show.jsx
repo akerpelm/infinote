@@ -4,16 +4,13 @@ export class NotebookShow extends Component {
  
     constructor(props) {
         super(props)
-        // debugger
     }
     
     componentDidMount() {
-        // debugger
         return (this.props.fetchNotebook(this.props.match.params.notebookId)
 )
     }
 render() {
-        let notebookTitle = '';
         return (
             <div>
                 {/* {this.props.notebook.title ? notebookTitle = this.props.notebook.title : ''} */}

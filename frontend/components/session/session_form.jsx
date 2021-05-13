@@ -30,9 +30,9 @@ class SessionForm extends Component {
     }
     renderErrors() {
         return(
-            <ul className='session-form-error-ul'>
+            <ul className='error-ul'>
                 {this.props.errors.map((error, i) => (
-                    <li className='session-form-error-li' key={`error-${i}`}>{error}</li>
+                    <li className='error-li' key={`error-${i}`}>{error}</li>
                 ))}
             </ul>
         )

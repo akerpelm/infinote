@@ -5,8 +5,8 @@ import NotebookIndex from './notebook_index'
 
 
 const mapStateToProps = (state) => ({
-    // debugger
-        notebooks: Object.values(state.entities.notebooks)
+        notebooks: Object.values(state.entities.notebooks),
+        user: state.entities.users[state.session.id]
 })
 
 
