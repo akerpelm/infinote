@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { convertToSnakeCase } from '../../util/snake_case_util'
 import { BiBookAdd } from 'react-icons/bi';
 
-class NotebookCreateModal extends Component {
+class CreateNotebookModal extends Component {
     constructor(props) {
         super(props)
         this.state = props.notebook
@@ -81,6 +81,6 @@ class NotebookCreateModal extends Component {
     }
 }
 
-export default NotebookCreateModal
+export default CreateNotebookModal
 
 

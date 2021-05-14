@@ -1,9 +1,9 @@
 import React from 'react'
 import { updateNotebook, removeErrors, fetchNotebook } from "../../actions/notebook_actions";
 import { connect } from 'react-redux';
-import NotebookEditModal from './edit_notebook_modal'
+import EditNotebookModal from './edit_notebook_modal'
 
-class EditNotebookModal extends React.Component {
+class NotebookEditModal extends React.Component {
     constructor(props) {
         super(props) 
     }
@@ -11,7 +11,7 @@ class EditNotebookModal extends React.Component {
     render() {
         if (!this.props.notebook) return null;
         return (
-            <NotebookEditModal
+            <EditNotebookModal
             action={this.props.action}
             formType={this.props.formType}
             notebook={this.props.notebook}

@@ -9,7 +9,7 @@ import { BiBookAdd } from 'react-icons/bi';
 // removeErrors = { this.props.removeErrors }
 // errors = { this.props.errors }
 
-class NotebookEditModal extends Component {
+class EditNotebookModal extends Component {
     constructor(props) {
         // debugger
         super(props)
@@ -94,6 +94,6 @@ class NotebookEditModal extends Component {
     }
 }
 
-export default NotebookEditModal
+export default EditNotebookModal
 
 
