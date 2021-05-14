@@ -50,11 +50,14 @@ $oxygen: 'Oxygen';
             background: #ccc;
             transform: rotateX(-90deg);
             box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+
         }
         .action-dropdown-ul.active {
             transform: rotateX(0deg);
-
+            
         }
+       
         .action-dropdown-ul li { 
             list-style: none;
             font-family: $oxygen;
@@ -76,3 +79,8 @@ $oxygen: 'Oxygen';
     };
 
 };
+
+ .action-dropdown-link {
+        text-decoration: none;
+        color: #000
+}

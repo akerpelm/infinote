@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { BiBook } from 'react-icons/bi'
 import { FaEllipsisH } from 'react-icons/fa'
+import EditNotebookModal from './edit_notebook_modal_container'
+import { Link } from 'react-router-dom'
 
 
 export class NotebookShow extends Component {
@@ -22,14 +24,23 @@ export class NotebookShow extends Component {
     componentDidMount() {
         return (this.props.fetchNotebook(this.props.match.params.notebookId))
     }
+
+    editModal() {
+       
+        
+    }
     render() {
+        let title =  this.props.notebook ? this.props.notebook.title : null 
+        let notebookId = this.props.notebook ? this.props.notebook.id : null
+        
+
         return (
             <div className="notebook-show-wrapper">
                 <div className="notebook-show-notes">
                     <header className="notebook-show-header">
                         <div className="show-header-title">
                             <span><BiBook /></span>
-                            {this.props.notebook ? this.props.notebook.title : null}
+                            {title}
                         </div>
                         <div className="notebook-show-subheader">x notes
                             <span className="action-dropdown-button"
@@ -37,7 +48,9 @@ export class NotebookShow extends Component {
                                 <FaEllipsisH className="ellipsis-icon" />
                                 <ul className="action-dropdown-ul">
                                     <li>Add new note</li>
-                                    <li>Rename notebook</li>
+                                    <li className="action-dropdown-link">
+                                    <Link className="action-dropdown-link" to={`/notebooks/${notebookId}/edit`}>Rename notebook</Link>
+                                    </li>
                                     <li>Delete notebook</li>
                                 </ul>
                             </span>
@@ -45,7 +58,7 @@ export class NotebookShow extends Component {
                     </header>
                     <div className="notebook-show-collection-wrapper">
                         <ul className="notebook-show-collection">
-                            <li onClick={this.handleClick}>
+                            <li >
                               <h2 className="notebook-show-note-title">Title</h2>
                               <p>Text here</p>
                               <br />
@@ -53,18 +66,8 @@ export class NotebookShow extends Component {
                               <span> Tag </span>
                             </li>
                             <li>note 2</li>
-                            <li>note 3</li>
-                            <li>note 4</li>
-                            <li>note 2</li>
-                            <li>note 3</li>
-                            <li>note 4</li>
-                            <li>note 2</li>
-                            <li>note 3</li>
-                            <li>note 4</li>
-
                         </ul>
-                    </div>
-                 
+                    </div> 
                 </div>
                 {/* {this.props.notebook.title ? notebookTitle = this.props.notebook.title : ''} */}
             </div>

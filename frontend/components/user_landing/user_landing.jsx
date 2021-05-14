@@ -5,10 +5,12 @@ import NotebookIndexContainer from '../notebooks/notebook_index_container'
 import NotesIndexContainer from '../notes/note_index_container'
 import NotebookShowContainer from '../notebooks/notebook_show_container'
 import CreateNotebookFormContainer from '../notebooks/create_notebook_form_container'
+import EditNotebookModal from '../notebooks/edit_notebook_modal_container'
 
 const UserLanding = () => (
     <div className="user_landing">
         <Switch>
+            <Route exact path="/notebooks/:notebookId/edit" component={EditNotebookModal}/>
             <Route exact path="/notebooks/:notebookId" component={NotebookShowContainer}/>
             <Route exact path="/notebooks" component={NotebookIndexContainer}/>
         </Switch>

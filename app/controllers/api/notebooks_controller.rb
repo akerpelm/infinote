@@ -27,7 +27,7 @@ class Api::NotebooksController < ApplicationController
     end
 
     def update
-        @notebook = Notebook.find(parmams[:id])
+        @notebook = Notebook.find(params[:id])
         if @notebook.update_attributes(notebook_params)
             render :show
         else
