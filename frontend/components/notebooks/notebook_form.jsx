@@ -19,7 +19,7 @@ import { convertToSnakeCase } from '../../util/snake_case_util'
         return (
             <ul className='error-ul'>
                 {this.props.errors.map((error, i) => (
-                    <li className='error-li' key={`error-${i}`}>{error}</li>
+                    <li className='error-li' key={`error-${i}`}>{error}</li>    
                 ))}
             </ul>
         )

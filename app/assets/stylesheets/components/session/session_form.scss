@@ -3,26 +3,45 @@ $oxygen: 'Oxygen';
 // @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@100;300;500;700&display=swap');
 // $oswald: 'Oswald', sans serif;
 
-.session-form-div {
-    font-family: $oxygen;
-    font-weight: 300;
-    flex-direction: column;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    margin: 100px auto 28px auto;
-    padding: 62px 99px 48px;
-    width: 314px;
-    box-shadow: 3px 3px 5px 6px #fff;
-    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    position: relative;
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .session-form-div {
+        font-family: $oxygen;
+        background: #ffffff;
+        max-width: 612px;
+        padding: 62px 150px 48px;
+        box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+        border-radius: 2px;
+        text-align: left;
+
     .session-demo-login {
-        margin-bottom: 5px;
-        margin-top: 5px;
-        padding: 12px 16px;
-        border-radius: 7px;
-        font: $oxygen
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .session-form {
+        margin-bottom: 6px;
+        position: relative;
+    }
+    .infinote-logo {     
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+
+    }
+
+    .slogan{ 
+        // font-style: italic;
+        text-align: center;
+        // padding: 0 150px;
+        margin: 0 100px 20px 100px;
+        width: auto;
+        // margin-bottom: 30px;
+
     }
     .session-demo-login-link {
         margin-top: 7px;
@@ -33,7 +52,7 @@ $oxygen: 'Oxygen';
         background: rgb(195, 93, 71);
         border-radius: 7px;
         width: 100%;
-        padding: 13px 16px;
+        padding: 13px 0px;
         padding-right: 56px;
         padding-left: 56px;
         border: 1px solid white;
@@ -49,12 +68,14 @@ $oxygen: 'Oxygen';
         margin-top: 5px;
         padding: 12px 16px;
         border-radius: 7px;
-        font: $oxygen
+        font: $oxygen;
+        width: 88%;
     };
     .password-input {
         margin-bottom: 5px;
         padding: 12px 16px;
         border-radius: 7px;
+        width: 88%;
         
     };
     button {
@@ -74,7 +95,7 @@ $oxygen: 'Oxygen';
         background: rgb(195, 93, 71);
         border-radius: 7px;
         width: 100%;
-        padding: 13px 16px;
+        padding: 13px 20px;
         padding-right: 1.3333em;
         padding-left: 1.3333em;
         border: 1px solid white;
@@ -83,17 +104,27 @@ $oxygen: 'Oxygen';
     .submit-button:hover {
         background-color:rgb(130, 190, 194);
     };
-};
+    
+    .error-ul, .redirect-login{
+        text-align: center;
+        font-size: 14px;
+        width: 300px
+    }
+    .error-ul {
+        color: red;
+        // width: 181px;
+        // justif
+    
+    }
+    .session-or {
+        text-align: center;
+        margin-bottom: 30px;
+        border-top: 1px solid lightgray;
+        color: rgb(204, 204, 204);
+        // text-decoration: line-through;
+        
 
-.error-ul, .redirect-login{
-    font-size: 14px;
-    text-align: center;
-    font-size: 14px;
+    }
+    }
 }
-.error-ul {
-    color: red;
-    width: 181px
-}
-.spacer {
-    margin-bottom: 20px;
-}
+

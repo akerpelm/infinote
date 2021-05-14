@@ -9,12 +9,12 @@ import CreateNotebookFormContainer from '../notebooks/create_notebook_form_conta
 const UserLanding = () => (
     <div className="user_landing">
         <Switch>
-            <Route exact path="/notebooks/create" component={CreateNotebookFormContainer}/>
             <Route exact path="/notebooks/:notebookId" component={NotebookShowContainer}/>
             <Route exact path="/notebooks" component={NotebookIndexContainer}/>
         </Switch>
 
         <Route exact path="/notes" component={NotesIndexContainer} />
+        <Route exact path="/" />
         {/* <Route exact path="/notebooks/:notebookId" component={NotebookShowContainer} */}
         {/* <Route exact path="/notebooks" component={NotebookIndexContainer} />   */}
     </div>

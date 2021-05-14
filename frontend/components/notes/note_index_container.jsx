@@ -13,6 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
+  removeErrors: () => dispatch(removeErrors())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NoteIndex)

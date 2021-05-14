@@ -13,16 +13,14 @@ class SessionForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentWillUnmount() {
-        this.props.removeErrors()
-    }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
+        // debugger
         this.props.processForm(user).then(() =>  this.props.history.push("/notes"))
     }
-
+    
     handleChange(field) {
         return e => this.setState({
             [field] : e.target.value
@@ -33,45 +31,57 @@ class SessionForm extends Component {
             <ul className='error-ul'>
                 {this.props.errors.map((error, i) => (
                     <li className='error-li' key={`error-${i}`}>{error}</li>
-                ))}
+                    ))}
             </ul>
         )
+    }
+    componentWillUnmount() {
+        this.props.removeErrors()
     }
     render() {
         let redirectLogin = (
             <>
-                <p className='redirect-login'>Already have an account?</p>
+                <p className='redirect-login'>Already have an account?
+                <br />
                 <Link  className='redirect-login' to='/login'>Sign in</Link>
+                </p>
             </>
             );
         let redirectSignup = (
             <>
-                <p className='redirect-login'>Don't have an account?</p>
+                <p className='redirect-login'>Don't have an account?
+                <br />
                 <Link  className='redirect-login' to='/register'>Create account</Link>
+                </p>
             </>
             );
 
         return (
             <>
+            <div className="wrapper">
                 <div className='session-form-div'>
-                    <header className='session-form-header'>
                         {<img src='images/infinote_logo_2.png' alt="infinote_logo_2" className='infinote-logo' />}
+                    <header className='session-form-header'>
+                        <p className="slogan">Infinitely possible.</p>
                     </header>
                         <SessionFormDemo />
-                        <br className='spacer' />
-
                     <form className= 'session-form' onSubmit={this.handleSubmit}>
-                        {this.renderErrors()}
+                        
+                        <p className='session-or'>or</p>
+                        <div className="error-div">
+                            <ul className='error-ul'>{this.renderErrors()}</ul>
+                        </div>
                         <input className="email-input" type="email" value={this.state.email} onChange={this.handleChange('email')} placeholder="Email" />
                         <br />
                         <input className="password-input" type="password" value={this.state.password} onChange={this.handleChange('password')} placeholder="Password" />
                         <br />
                         {/* <button className="submit-button" type="submit" value={this.props.formType}>{this.props.formType}</button> */}
                         <input type="submit" value={this.props.formType} className="submit-button" />
+                        {this.props.formType === "Register" ? redirectLogin : redirectSignup}
                     </form>
                     <br />
-                    {this.props.formType === "Register" ? redirectLogin : redirectSignup}
                 </div>
+            </div>
             </>
         )
     }

@@ -22,7 +22,7 @@ class Api::NotebooksController < ApplicationController
         if @notebook.save
             render :show
         else
-            render json: ['Oops, something went wrong!'], status: 404
+            render json: @notebook.errors.full_messages, status: 404
         end
     end
 
