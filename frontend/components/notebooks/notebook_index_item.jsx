@@ -32,7 +32,6 @@ export class NotebookIndexItem extends React.Component {
                 <td className="sort-action-row">
                     <span className="action-dropdown-button"
                         onClick={this.toggleActive}>
-
                         <FaEllipsisH className="ellipsis-icon"/>
                         <ul className="action-dropdown-ul">
                             <li>Add new note</li>

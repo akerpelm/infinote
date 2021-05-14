@@ -5,7 +5,8 @@ import NotebookShow from './notebook_show'
 
 const mapStateToProps = (state, ownProps) => ({
   // debugger
-    notebook: state.entities.notebooks[ownProps.match.params.notebookId]
+    notebook: state.entities.notebooks[ownProps.match.params.notebookId],
+    //gather notes here
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { convertToSnakeCase } from '../../util/snake_case_util'
 import { BiBookAdd } from 'react-icons/bi';
-import classnames from 'classnames'
-//styled in notebooke_index
 
 class CreateFormModal extends Component {
     constructor(props) {
@@ -11,14 +9,14 @@ class CreateFormModal extends Component {
         // debugger
         this.state = props.notebook
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    };
     handleChange(field) {
         //  debugger
         return e => this.setState({
             [field]: e.target.value
         })
-    }
-    
+    };
+
     renderErrors() {
         return (
             <ul className='error-ul'>
@@ -27,7 +25,7 @@ class CreateFormModal extends Component {
                 ))}
             </ul>
         )
-    }
+    };
 
     handleSubmit(e) {
         //  debugger
@@ -37,18 +35,16 @@ class CreateFormModal extends Component {
             title: ''
         });
          //this.props.history.push("/notebooks"))
-    }
+    };
     componentWillUnmount() {
         this.props.removeErrors()
-    }
-
-
+    };
     toggleModal = () => {
         document.querySelector('.modal')
             .classList.toggle('modal-hidden');
         this.props.removeErrors();
-    }
-    
+    };
+
     render() {
         return (   
             <>
