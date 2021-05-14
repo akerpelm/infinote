@@ -8,6 +8,7 @@ class Api::NotebooksController < ApplicationController
     end
 
     def show
+        # debugger
         @notebook = Notebook.find(params[:id])
         if @notebook
             render :show

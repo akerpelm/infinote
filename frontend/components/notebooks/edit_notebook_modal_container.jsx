@@ -1,21 +1,17 @@
 import React from 'react'
 import { updateNotebook, removeErrors, fetchNotebook } from "../../actions/notebook_actions";
 import { connect } from 'react-redux';
-import NotebookModalForm from './notebook_modal_form'
+import NotebookEditModal from './edit_notebook_modal'
 
 class EditNotebookModal extends React.Component {
     constructor(props) {
         super(props) 
     }
 
-    componentDidMount() {
-        // debugger
-        this.props.fetchNotebook(this.props.match.params.notebookId)
-    }
     render() {
         if (!this.props.notebook) return null;
         return (
-            <NotebookModalForm
+            <NotebookEditModal
             action={this.props.action}
             formType={this.props.formType}
             notebook={this.props.notebook}
@@ -41,7 +37,7 @@ const mapDispatchToProps = (dispatch) => ({
     fetchNotebook: notebook => dispatch(fetchNotebook())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditNotebookModal)
+export default connect(mapStateToProps, mapDispatchToProps)(NotebookEditModal)
 
 
 

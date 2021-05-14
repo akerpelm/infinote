@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
 import { convertToSnakeCase } from '../../util/snake_case_util'
 import { BiBookAdd } from 'react-icons/bi';
 
@@ -10,7 +9,7 @@ import { BiBookAdd } from 'react-icons/bi';
 // removeErrors = { this.props.removeErrors }
 // errors = { this.props.errors }
 
-class NotebookCreateModal extends Component {
+class NotebookEditModal extends Component {
     constructor(props) {
         // debugger
         super(props)
@@ -34,10 +33,10 @@ class NotebookCreateModal extends Component {
     };
     
 
-    componentDidMount() {
-        // debugger
-        return (this.props.fetchNotebook(this.props.notebook.id))
-    }
+    // componentDidMount() {
+    //     // debugger
+    //     return (this.props.fetchNotebook(this.props.notebook.id))
+    // }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -67,7 +66,6 @@ class NotebookCreateModal extends Component {
                                 <span className= "modal-close-span" onClick={this.toggleModal}>X</span>
                             </div>
                             </h1>
-                            <p className="modal-create-info">Notebooks are useful for grouping notes around a common topic. They can be private or shared</p>
                         </header>
                         <form className='modal-create-form' onSubmit={this.handleSubmit}>
                             <label className='modal-name-label'>Name
@@ -87,7 +85,7 @@ class NotebookCreateModal extends Component {
                 </div>
                 <div >
                     <button onClick={this.toggleModal} className='new-notebook-button'>
-                        <i ><BiBookAdd className='notebook-icon'/></i>New Notebook
+                        <i ><BiBookAdd className='notebook-icon'/></i>{this.props.formType} Notebook
                     </button>
                 </div>
                 
@@ -96,6 +94,6 @@ class NotebookCreateModal extends Component {
     }
 }
 
-export default NotebookCreateModal
+export default NotebookEditModal
 
 

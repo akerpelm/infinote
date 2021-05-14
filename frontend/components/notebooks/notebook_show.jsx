@@ -50,6 +50,11 @@ export class NotebookShow extends Component {
                                     <li>Add new note</li>
                                     <li className="action-dropdown-link">
                                     <Link className="action-dropdown-link" to={`/notebooks/${notebookId}/edit`}>Rename notebook</Link>
+                                    {/* <button onClick={this.toggleModal} className='new-notebook-button'>
+                                        Rename Notebook */}
+                                    {/* <EditNotebookModal /> */}
+
+                                    {/* </button> */}
                                     </li>
                                     <li>Delete notebook</li>
                                 </ul>
@@ -69,7 +74,6 @@ export class NotebookShow extends Component {
                         </ul>
                     </div> 
                 </div>
-                {/* {this.props.notebook.title ? notebookTitle = this.props.notebook.title : ''} */}
             </div>
         )
     }
