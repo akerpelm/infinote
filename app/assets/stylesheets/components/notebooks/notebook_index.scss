@@ -2,8 +2,8 @@
 $oxygen: 'Oxygen';
 .notebook {
     font-family: $oxygen;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     .notebook-header {
         font-weight: bolder;
         display: flex;
@@ -42,16 +42,14 @@ $oxygen: 'Oxygen';
         margin: 10px 0;
         min-height: 24px;
         height: 24px;
-        margin-left: 20px;
-        // margin-bottom: 20px;
         .notebook-count {
             margin-right: auto;
             vertical-align: middle;
             padding-top: 5px;
         };
         .new-notebook-button {
-            font-size: 14px;
-            font-weight: 500;
+            font-size: 15px;
+            font-weight: bolder;
             line-height: 24px;
             color:rgb(195, 93, 71);
             padding: 0;
@@ -148,6 +146,9 @@ $oxygen: 'Oxygen';
     .sort-row:hover {
         background-color: #f2f2f2;
     }
+    .notebook-author {
+        overflow: hidden;
+    }
     .notebook-sort-link {
         text-decoration: none;
         color: black
@@ -157,107 +158,66 @@ $oxygen: 'Oxygen';
         color: black
     }
 }
-//MODAL
-.modal {
-    outline-style: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(42, 51, 60, 0.4);
-    // padding: 20px 25px 18px;
-    
-    .modal-contents {
-        min-width: 450px;
-        max-width: 650px;
-        min-height: 200px;
-        background-color: white;
-        border-radius: 4px;
-        padding: 2rem 4rem;
-    };
-    .modal-close {
-        display: flex;
-        justify-content: flex-end;
-        margin-right: -2rem;
-        margin-top: -1rem;
-        cursor: pointer;
-        
-    };
-    .modal-create-header {
-        padding: 20px 25px 18px;
-    }
-    
-    .modal-create-title {
-        font-size: 18px;
-        font-weight: bold;
 
-    };
-    .modal-close-span {
-        color: #737373;
-    }
-    .modal-close-span:hover {
-        color: black;
-    }
-    .modal-create-info {
-        // line-height: 20px;
-        padding-top: 15px;
-        font-size: 14px;
-    };
-    .modal-create-form {
-        padding: 0px 25px 0px 25px
-    }
-    .modal-name-label {
-        font-size: 12px;
-        display: block;
-        margin-bottom: 100px;
-    }
-    .modal-title-input {
-        margin-top: 10px;
-        font-size: 16px;
-        width: 95%;
-        padding: 10px 10px;
-    }
-    .modal-buttons {
-        border-top: 2px solid #d9d9d9;
-        padding: 20px 25px;
-        display: flex;
-        justify-content: flex-end;
-    };
-    .modal-cancel {
-        font-family: $oxygen;
-        cursor: pointer;
-        margin: 0 10px 0 0;
-        color: #737373;
-        padding: 10px 15px;
-        background: white;
-        border-width: 1px;
-        border-radius: 4px;
-        
-    };
-    .modal-cancel:hover {
-        background: white;
-        color: black;
-    };
 
-    .modal-submit {
-        font-family: $oxygen;
-        background: rgb(195, 93, 71);
-        vertical-align: middle;
-        display: inline-flex;
-        border-radius: 4px;
-        padding: 10px 20px;
-        border: none;
-        color: white
-    };
-    .modal-submit:hover {
-        background-color:rgb(130, 190, 194);
-    }
+
+.test-dropdown{
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
 }
-.modal-hidden {
-        display: none;
-    }
 
+.action-dropdown-button {
+    // position: relative;
+    // width: 200px;
+    // height: 60px;
+    // font-size: 24px;
+    // background: #2196f3;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+    color: #000;
+}
+
+.action-dropdown-ul {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    right: 1.75%;
+    top: 24.5%;
+    background: #ccc;
+    transform: perspective(1000px) rotateX(-90deg);
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.action-dropdown-ul.active {
+    transform: perspective(1000px) rotateX(0deg);
+
+}
+// .action-dropdown-ul li {
+    
+// }
+.action-dropdown-ul li { 
+    list-style: none;
+    font-family: $oxygen;
+    font-size: 14px;
+    font-weight: bolder;
+    width: 100%;
+    display:block;
+    padding: 8px 30px;
+    text-align: center;
+    text-decoration: none;
+    background: #f8f8f8;
+    color: #000;
+    cursor: pointer;
+    // border-bottom: 1px solid rgba(0,0,0,.2);
+    text-align: left;
+}
+
+.action-dropdown-ul li:hover { 
+    background-color: #f1f1f1;
+
+}

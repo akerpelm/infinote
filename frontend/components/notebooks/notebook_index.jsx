@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import NoteBookIndexItem from './notebook_index_item'
-import classnames from 'classnames'
+import NotebookIndexItem from './notebook_index_item'
+import { classnames } from 'classnames'
 import NotebookForm from './notebook_form'
 import CreateFormModal from './create_form_modal'
 
@@ -12,6 +12,8 @@ class NotebookIndex extends React.Component {
         // debugger
         super(props)   
     }
+    
+   
 
     componentDidMount() {
         this.props.fetchNotebooks()
@@ -50,7 +52,7 @@ class NotebookIndex extends React.Component {
                     </thead>
                     <tbody className='sort-body '>
                         {this.props.notebooks.map(notebook => (
-                            <NoteBookIndexItem notebook={notebook} user={this.props.user} key={notebook.id} />
+                            <NotebookIndexItem notebook={notebook} user={this.props.user} key={notebook.id} />
                         ))}
                     </tbody>
                 </table>
@@ -58,6 +60,7 @@ class NotebookIndex extends React.Component {
         )
     }
 }
+
 
 export default NotebookIndex
 

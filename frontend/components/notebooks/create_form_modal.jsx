@@ -31,6 +31,9 @@ class CreateFormModal extends Component {
         //  debugger
         e.preventDefault
         this.props.action(convertToSnakeCase(this.state)).then(() => this.toggleModal())
+        this.setState({
+            title: ''
+        })
          //this.props.history.push("/notebooks"))
     }
 
@@ -49,11 +52,12 @@ class CreateFormModal extends Component {
             <>
             <div className="modal modal-hidden">
                 <div className="modal-contents">
-                    <div className="modal-close">
-                        <span className= "modal-close-span" onClick={this.toggleModal}>X</span>
-                    </div>
                     <header className="modal-create-header">
-                    <h1 className="modal-create-title">Create new notebook</h1>
+                    <h1 className="modal-create-title">Create new notebook
+                        <div className="modal-close">
+                            <span className= "modal-close-span" onClick={this.toggleModal}>X</span>
+                        </div>
+                    </h1>
                     <p className="modal-create-info">Notebooks are useful for grouping notes around a common topic. They can be private or shared</p>
                     </header>
                 <form className='modal-create-form' onSubmit={this.handleSubmit}>
