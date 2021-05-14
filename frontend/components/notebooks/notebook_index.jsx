@@ -2,62 +2,41 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import NoteBookIndexItem from './notebook_index_item'
 import classnames from 'classnames'
+import NotebookForm from './notebook_form'
+import CreateFormModal from './create_form_modal'
 
 
 
 class NotebookIndex extends React.Component {
     constructor(props) {
+        // debugger
         super(props)   
-        
-        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchNotebooks()
     }
-
-    toggleModal = () => {
-        document.querySelector('.modal')
-            .classList.toggle('modal-hidden')
-    }
-
-    handleClick(e) {
-        e.preventDefault
-        this.toggleModal()
-    }
-    
     
     render() {
         return (
             <div className='notebook'>
-                        <i className="fas fa-search"></i>
+
                 <div className="notebook-header">
                     <h3 className="notebooks-title">Notebooks</h3>
                     <div className='notebooks-search-bar-div'>
                         <input className="notebooks-search-bar" type="input" placeholder="Find Notebooks..." />
                     </div>
                 </div>
-                <header className='notebook-count-new'>
-                    <p className='notebook-count'>
-                    {this.props.notebooks.length === 1 ? `${this.props.notebooks.length} notebook` : `${this.props.notebooks.length} notebooks` }
-                    </p>
-                    <Link to={`/notebooks/create`}><button className="new-notebook-button">New Notebook</button></Link> 
 
-                    <div className="modal modal-hidden">
-                        <div className="modal-contents">
-                            <div className="modal-close">
-                                <span onClick={this.toggleModal}>X</span>
-                            </div>
-                            <h3>Create new notebook</h3>
-                            <p>Notebooks are useful for grouping notes around a common topic. They can be private or shared</p>
-                            <form>
-                                <label>Name
-                                    <input type="text" placeholder="New notebook" />
-                                </label>
-                            </form>
-                        </div>
-                    </div>     
-                    <button id="show-modal" onClick={this.toggleModal}>Test</button>
+                <header className='notebook-count-new'>
+                    <p className='notebook-count'>{this.props.notebooks.length === 1 ? `${this.props.notebooks.length} notebook` : `${this.props.notebooks.length} notebooks` }
+                    </p> 
+                    <CreateFormModal 
+                    action={this.props.action}
+                    removeErrors={this.props.removeErrors}
+                    notebook={this.props.notebook}
+                    formType={this.props.formType}
+                    errors={this.props.errors}/>
                 </header>
            
                 <table className='notebook-table'>
