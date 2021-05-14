@@ -34,7 +34,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => ({
     action: notebook => dispatch(updateNotebook(notebook)),
     removeErrors: () => dispatch(removeErrors()),
-    fetchNotebook: notebook => dispatch(fetchNotebook())
+    fetchNotebook: notebook => dispatch(fetchNotebook(notebook))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NotebookEditModal)

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import NotebookIndexItem from './notebook_index_item'
-import NotebookForm from './notebook_form'
-import NotebookCreateModal from './notebook_create_modal'
+import NotebookCreateModal from './create_notebook_modal'
 import { BsSearch } from 'react-icons/bs'
 
 
