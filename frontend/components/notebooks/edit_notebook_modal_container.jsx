@@ -1,23 +1,49 @@
+import React from 'react'
+import { updateNotebook, removeErrors, fetchNotebook } from "../../actions/notebook_actions";
+import { connect } from 'react-redux';
+
+
+class EditNotebookModal extends React.Component {
+    constructor(props) {
+        super(props) 
+    }
+
+    componentDidMount() {
+        debugger
+        this.props.fetchNotebook(this.props.match.params.postId)
+    }
+    render() {
+        if (!notebook) return null;
+        return (
+            <NotebookModalForm
+            action={this.props.action}
+            formType={this.props.formType}
+            post={post}
+            removeErrors={this.props.removeErrors}
+            />
+        )
+    }
+}
+
+export default EditNotebookModal
+
+
 const mapStateToProps = (state) => {
-    // debugger
+    debugger
     return {
-        notebook: {
-            title: '',
-            authorId: state.session.id,
-            // works with author_id, find way to switch between camel/snake
-            // fix this its hideous
-        },
-        formType: "create",
+        notebook: state.enities.notebooks[ownProps.match.params.notebookId],
+        formType: "Update",
         errors: state.errors.session,
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    action: notebook => dispatch(createNotebook(notebook)),
-    removeErrors: () => dispatch(removeErrors())
+    action: notebook => dispatch(updateNotebook(notebook)),
+    removeErrors: () => dispatch(removeErrors()),
+    fetchNotebook: notebook => dispatch(fetchNotebook)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditFormModal)
+export default connect(mapStateToProps, mapDispatchToProps)(EditNotebookModal)
 
 
 

@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom'
 import { convertToSnakeCase } from '../../util/snake_case_util'
 import { BiBookAdd } from 'react-icons/bi';
 
-class CreateFormModal extends Component {
+class NotebookCreateModal extends Component {
     constructor(props) {
         super(props)
-        // debugger
         this.state = props.notebook
         this.handleSubmit = this.handleSubmit.bind(this);
     };
     handleChange(field) {
-        //  debugger
         return e => this.setState({
             [field]: e.target.value
         })
@@ -28,13 +26,11 @@ class CreateFormModal extends Component {
     };
 
     handleSubmit(e) {
-        //  debugger
         e.preventDefault();
         this.props.action(convertToSnakeCase(this.state)).then(() => this.toggleModal())
         this.setState({
             title: ''
         });
-         //this.props.history.push("/notebooks"))
     };
     componentWillUnmount() {
         this.props.removeErrors()
@@ -85,6 +81,6 @@ class CreateFormModal extends Component {
     }
 }
 
-export default CreateFormModal
+export default NotebookCreateModal
 
 

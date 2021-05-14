@@ -23,9 +23,8 @@ export class NotebookIndexItem extends React.Component {
     
             <tr className='sort-row'>
                 <td>
-                    <Link className='notebook-sort-link' to={`/notebooks/${this.props.notebook.id}`}>                <AiFillCaretRight />
-                        <BiBook className='notebook-sort-link-notebook' />
-                        {this.props.notebook.title}
+                    <Link className='notebook-sort-link' to={`/notebooks/${this.props.notebook.id}`}>
+                        <AiFillCaretRight /> <BiBook className='notebook-sort-link-notebook' />{this.props.notebook.title}
                     </Link></td>
                 <td className="notebook-author">{this.props.user.username || this.props.user.email}</td>
                 <td>{this.props.notebook.updatedAt}</td>
