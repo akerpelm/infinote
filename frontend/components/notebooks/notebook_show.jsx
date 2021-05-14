@@ -12,13 +12,20 @@ export class NotebookShow extends Component {
     }
 render() {
         return (
-            <div>
+            <div className="notebook-show-wrapper">
+                <div className="notebook-show-notes">
+                    <header className="notebook-show-header">
+                    <p>{this.props.notebook ? this.props.notebook.title : null}</p>
+                    <br />
+                    x notes
+                    </header>
+                    <p>note 1</p>
+                    <p>note 2</p>
+                    <p>note 3</p>
+                    <p>note 4</p>
+                 
+                </div>
                 {/* {this.props.notebook.title ? notebookTitle = this.props.notebook.title : ''} */}
-                {this.props.notebook ? this.props.notebook.title : null}
-                <p>note 1</p>
-                <p>note 2</p>
-                <p>note 3</p>
-                <p>note 4</p>
             </div>
         )
     }

@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
+$oxygen: 'Oxygen';
+.notebook-show-wrapper{
+    font-family: $oxygen;
+    display: flex;
+    flex: 1;
+    justify-content: left;
+    overflow: auto;
+    position: relative;
+    width: 381px;
+    height: 100%;
+    max-width: 880px;
+    min-width: 280px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    border-right: 1px solid pink;
+    flex-direction: column;
+    
+    background-color: green;
+    .notebook-show-notes {
+        flex-direction: column;
+        height: 100%;
+        display: flex;
+        position: relative;
+        flex-wrap: nowrap;
+        background: #f8f8f8;
+        background-color: pink;
+    }
+    .notebook-show-header {
+        padding: 20px 16px 0 24px;
+        border-bottom: 1px solid #e6e6e6;
+        vertical-align: baseline;
+        display: block
+    }
+
+}

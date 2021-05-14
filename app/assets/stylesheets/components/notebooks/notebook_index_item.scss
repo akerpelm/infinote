@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
+$oxygen: 'Oxygen';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//... actions
+.sort-row {
+    height: 40px;
+    line-height: 20px;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    vertical-align: middle;
+    position:relative;
+    text-decoration: none;
+    .sort-action-row {
+        padding: .5rem;
+        text-align: end;
+        .ellipsis-icon {
+            color: #737373;
+            font-weight: light;
+            font-size: 14px
+        };
+        
+        .action-dropdown-button {
+            border: none;
+            box-shadow: none;
+            outline: none;
+            cursor: pointer;
+            color: #000;
+        }
+        .action-dropdown-ul {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            right: 1.75%;
+            top: 24.5%;
+            background: #ccc;
+            transform: rotateX(-90deg);
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .action-dropdown-ul.active {
+            transform: rotateX(0deg);
+
+        }
+        .action-dropdown-ul li { 
+            list-style: none;
+            font-family: $oxygen;
+            font-size: 14px;
+            font-weight: bolder;
+            width: 100%;
+            display:block;
+            padding: 8px 30px;
+            text-align: center;
+            text-decoration: none;
+            background: #f8f8f8;
+            color: #000;
+            cursor: pointer;
+            text-align: left;
+        }
+        .action-dropdown-ul li:hover { 
+            background-color: #f1f1f1;
+        }
+    };
+
+};

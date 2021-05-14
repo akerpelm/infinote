@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import NotebookIndexItem from './notebook_index_item'
-import { classnames } from 'classnames'
 import NotebookForm from './notebook_form'
 import CreateFormModal from './create_form_modal'
-
+import { BsSearch } from 'react-icons/bs'
 
 
 class NotebookIndex extends React.Component {
@@ -26,7 +25,9 @@ class NotebookIndex extends React.Component {
                 <div className="notebook-header">
                     <h3 className="notebooks-title">Notebooks</h3>
                     <div className='notebooks-search-bar-div'>
-                        <input className="notebooks-search-bar" type="input" placeholder="Find Notebooks..." />
+                        <input className="notebooks-search-bar" type="input" placeholder="Find Notebooks..."  />
+                        <BsSearch className="notebooks-search-bar-icon" />
+                        
                     </div>
                 </div>
 
