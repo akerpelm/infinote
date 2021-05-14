@@ -13,16 +13,14 @@ class SessionForm extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    componentWillUnmount() {
-        this.props.removeErrors()
-    }
-
+    
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state)
+        // debugger
         this.props.processForm(user).then(() =>  this.props.history.push("/notes"))
     }
-
+    
     handleChange(field) {
         return e => this.setState({
             [field] : e.target.value
@@ -33,9 +31,12 @@ class SessionForm extends Component {
             <ul className='error-ul'>
                 {this.props.errors.map((error, i) => (
                     <li className='error-li' key={`error-${i}`}>{error}</li>
-                ))}
+                    ))}
             </ul>
         )
+    }
+    componentWillUnmount() {
+        this.props.removeErrors()
     }
     render() {
         let redirectLogin = (
@@ -63,8 +64,9 @@ class SessionForm extends Component {
                     <header className='session-form-header'>
                         <p className="slogan">Infinitely possible.</p>
                     </header>
-                    <form className= 'session-form' onSubmit={this.handleSubmit}>
                         <SessionFormDemo />
+                    <form className= 'session-form' onSubmit={this.handleSubmit}>
+                        
                         <p className='session-or'>or</p>
                         <div className="error-div">
                             <ul className='error-ul'>{this.renderErrors()}</ul>

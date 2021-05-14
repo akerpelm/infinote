@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { convertToSnakeCase } from '../../util/snake_case_util'
 import classnames from 'classnames'
-
+//styled in notebooke_index
 
 class CreateFormModal extends Component {
     constructor(props) {
