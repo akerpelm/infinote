@@ -5,7 +5,6 @@ import Splash from './splash/splash';
 import LoginFormContainer from './session/login_form_container';
 import RegistrationFormContainer from './session/registration_form_container';
 import UserLanding from './user_landing/user_landing'
-import NotebookIndexContainer from './notebooks/notebook_index_container';
 
 const App = () => {
     return (

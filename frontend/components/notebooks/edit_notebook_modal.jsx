@@ -1,25 +1,29 @@
-import React, { Component } from 'react'
-import { convertToSnakeCase } from '../../util/snake_case_util'
+import React from 'react'
+import { updateNotebook, removeErrors, fetchNotebook } from "../../../actions/notebook_actions";
 import { BiBookAdd } from 'react-icons/bi';
+import { convertToSnakeCase } from '../../../util/snake_case_util'
+import { connect } from 'react-redux';
 
 
-// action={this.props.action}
-// formType = { this.props.formType }
-// post = { post }
-// removeErrors = { this.props.removeErrors }
-// errors = { this.props.errors }
 
-class EditNotebookModal extends Component {
+class NotebookEditModal extends React.Component {
     constructor(props) {
-        // debugger
         super(props)
-        this.state = props.notebook
-        this.handleSubmit = this.handleSubmit.bind(this);
-    };
-    handleChange(field) {
-        return e => this.setState({
-            [field]: e.target.value
+        this.state = this.props.notebook
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    componentDidMount() {
+        debugger
+        this.props.fetcNotebook(this.props.notebook.id)
+        this.setState({
+            title: this.props.notebook.title,
+            id: this.props.notebook.id
         })
+    }
+    handleChange(field) {
+
+        return e => this.setState({ [field]: e.target.value })
     };
 
     renderErrors() {
@@ -31,69 +35,79 @@ class EditNotebookModal extends Component {
             </ul>
         )
     };
-    
-
-    // componentDidMount() {
-    //     // debugger
-    //     return (this.props.fetchNotebook(this.props.notebook.id))
-    // }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(convertToSnakeCase(this.state)).then(() => this.toggleModal())
-        this.setState({
-            title: ''
-        });
     };
-    // componentWillUnmount() {
-    //     this.props.removeErrors()
-    // };
+
     toggleModal = () => {
         document.querySelector('.modal')
             .classList.toggle('modal-hidden');
         this.props.removeErrors();
     };
 
+
     render() {
-        
-        return (   
+        if (!this.props.notebook) return null;
+        const { title } = this.state;
+        return (
             <>
                 <div className="modal modal-hidden">
                     <div className="modal-contents">
                         <header className="modal-create-header">
-                            <h1 className="modal-create-title">{this.props.formType} notebook
+                            <h2 className="modal-create-title">Rename notebook
                             <div className="modal-close">
-                                <span className= "modal-close-span" onClick={this.toggleModal}>X</span>
-                            </div>
-                            </h1>
+                                    <span className="modal-close-span" onClick={this.toggleModal}>X</span>
+                                </div>
+                            </h2>
                         </header>
                         <form className='modal-create-form' onSubmit={this.handleSubmit}>
                             <label className='modal-name-label'>Name
                             <br />
-                            {this.renderErrors()}
-                                <input 
-                                value={this.state.title} 
-                                onChange={this.handleChange('title')} placeholder="Notebook name"
-                                className="modal-title-input"/>
-                                </label>
-                                <div className="modal-buttons">
-                                <input className="modal-cancel" type='submit' onClick={this.toggleModal} value='Cancel'/>
-                                <input className="modal-submit" type="submit" value="Continue"/>
+                                {this.renderErrors()}
+                                <input
+                                    // value={this.state.title}
+                                    value={title}
+                                    onChange={this.handleChange('title')} placeholder="Notebook name"
+                                    className="modal-title-input" />
+                            </label>
+                            <div className="modal-buttons">
+                                <input className="modal-cancel" type='submit' onClick={this.toggleModal} value='Cancel' />
+                                <input className="modal-submit" type="submit" value="Continue" />
                             </div>
                         </form>
                     </div>
                 </div>
                 <div >
-                    <button onClick={this.toggleModal} className='new-notebook-button'>
-                        <i ><BiBookAdd className='notebook-icon'/></i>{this.props.formType} Notebook
+                    <button onClick={this.toggleModal} className='new-notebook-button'>Rename
+                        <i ><BiBookAdd className='notebook-icon' /></i>{this.props.formType} Notebook
                     </button>
                 </div>
-                
+
             </>
         )
     }
 }
 
-export default EditNotebookModal
+const mapStateToProps = (state, ownProps) => {
+    let notebook = ownProps.match ? state.entities.notebooks[ownProps.match.params.notebookId] : null
+    debugger
+
+    return {
+        notebook,
+        errors: state.errors.session,
+        formType: "Rename",
+        authorId: state.session.id,
+    }
+}
+const mapDispatchToProps = (dispatch) => ({
+    action: notebook => dispatch(updateNotebook(notebook)),
+    removeErrors: () => dispatch(removeErrors()),
+    fetchNotebook: notebook => dispatch(fetchNotebook(notebook))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(NotebookEditModal)
+
 
 

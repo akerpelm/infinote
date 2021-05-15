@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { BiBook } from 'react-icons/bi'
 import { FaEllipsisH } from 'react-icons/fa'
-import EditNotebookModal from './edit_notebook_modal_container'
-import { Link } from 'react-router-dom'
+import EditNotebookModal from './edit_notebook_modal'
+import EditModal from './modals/edit_modal'
+// import { Link } from 'react-router-dom'
 
 
 export class NotebookShow extends Component {
@@ -10,6 +11,8 @@ export class NotebookShow extends Component {
     constructor(props) {
         super(props)
         this.handleClick = this.handleClick.bind(this)
+        this.state = props.notebook
+
     }
 
     handleClick(e) {
@@ -22,14 +25,11 @@ export class NotebookShow extends Component {
     }
 
     componentDidMount() {
-        return (this.props.fetchNotebook(this.props.match.params.notebookId))
+        this.props.fetchNotebook(this.props.match.params.notebookId)
     }
 
-    editModal() {
-       
-        
-    }
     render() {
+        // debugger
         let title =  this.props.notebook ? this.props.notebook.title : null 
         let notebookId = this.props.notebook ? this.props.notebook.id : null
         
@@ -48,14 +48,22 @@ export class NotebookShow extends Component {
                                 <FaEllipsisH className="ellipsis-icon" />
                                 <ul className="action-dropdown-ul">
                                     <li>Add new note</li>
-                                    <li className="action-dropdown-link">
-                                    <Link className="action-dropdown-link" to={`/notebooks/${notebookId}/edit`}>Rename notebook</Link>
-                                    {/* <button onClick={this.toggleModal} className='new-notebook-button'>
-                                        Rename Notebook */}
-                                    {/* <EditNotebookModal /> */}
-
-                                    {/* </button> */}
-                                    </li>
+                                    <li>Rename note</li>
+                                    {/* <EditModal /> */}
+                                    {/* <li className="action-dropdown-link"> */}
+                                        {/* <EditNotebookModal
+                                            action={this.props.action}
+                                            formType={this.props.formType}
+                                            notebook={this.props.notebook}
+                                            removeErrors={this.props.removeErrors}
+                                            errors={this.props.errors}
+                                            fetchNotebook={this.props.fetchNotebook}
+                                            notebookId={this.props.match.params.notebookId}
+                                            title={title}
+                                            state={this.state}
+                                            setState={this.setState}
+                                            />  */}
+                                    {/* </li> */}
                                     <li>Delete notebook</li>
                                 </ul>
                             </span>
