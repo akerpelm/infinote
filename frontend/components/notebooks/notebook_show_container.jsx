@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { fetchNotebook, updateNotebook, removeErrors } from '../../actions/notebook_actions'
+import { deleteNotebook } from '../../util/notebooks_api_util'
 import NotebookShow from './notebook_show'
 
 
@@ -15,6 +16,7 @@ const mapDispatchToProps = dispatch => ({
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
   action: notebook => dispatch(updateNotebook(notebook)),
   removeErrors: () => dispatch(removeErrors()),
+  deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NotebookShow)

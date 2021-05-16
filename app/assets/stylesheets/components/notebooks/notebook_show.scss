@@ -2,9 +2,11 @@
 $oxygen: 'Oxygen';
 .notebook-show-wrapper{
     font-family: $oxygen;
-    display: flex;
-    flex: 1;
-    justify-content: left;
+    // display: flex;
+    // flex: 1;
+    // justify-content: left;
+    display: grid;
+    grid-template-rows: 100px, minmax(0,50px) 1fr;
     overflow: auto;
     position: relative;
     width: 381px;

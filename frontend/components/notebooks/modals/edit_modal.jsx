@@ -1,22 +1,44 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { convertToSnakeCase } from '../../../util/snake_case_util'
 
-const AlertModal = ({closeModal, title, message}) => {
-    return (
-        <div className="modal-contents">
-            <div className="modal-header">
-                <h5 className="modal=title">{title}</h5>
-                <button className="close" aria-label="Close" onClick={closeModal}>
-                    <span aria-hidden="true">&times;</span>
-                </button>
+class EditModal extends Component {
+    constructor(props) {
+        super(props)
+        this.state = props.notebook
+        this.handleSubmit = this.handleSubmit.bind(this)
+    }
+
+    handleChange(field) {
+        return e => this.setState({
+            [field] : e.target.value
+        })
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+        let notebook = this.state
+        this.props.updateNotebook(convertToSnakeCase(notebook))
+    }
+
+    // componentDidMount() {
+    //     // debugger
+    //     this.state = this.props.notebook
+    // }
+    
+    render() {
+        let title = this.state.title ? this.state.title : ''
+        return (
+            <div>
+                <h3>{this.props.formType}</h3>
+                <form onSubmit={this.handleSubmit}>
+                    <label>Name
+                        <input type="text" value={title} onChange={this.handleChange('title')}/>
+                        <button>Submit</button>
+                    </label>
+
+                </form>
             </div>
-            <div className='modal-body'>
-                <p>{message}</p>
-            </div>
-            <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" onClick={closeModal}>close</button>
-            </div>
-        </div>
-    )
+        )
+    }
 }
 
-export default AlertModal
+export default EditModal

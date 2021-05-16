@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 import { BiBook } from 'react-icons/bi'
 import { FaEllipsisH } from 'react-icons/fa'
 import EditNotebookModal from './edit_notebook_modal'
+import DeleteModal from './modals/delete_modal'
+import { DeleteModalContainer } from './modals/delete_modal_container'
 import EditModal from './modals/edit_modal'
+import EditModalContainer from './modals/edit_modal_container'
+
 // import { Link } from 'react-router-dom'
 
 
@@ -14,6 +18,7 @@ export class NotebookShow extends Component {
         this.state = props.notebook
 
     }
+
 
     handleClick(e) {
         e.preventDefault();
@@ -30,8 +35,17 @@ export class NotebookShow extends Component {
 
     render() {
         // debugger
+        let editModal = <EditModalContainer
+            notebook={this.props.notebook}
+            removeErrors={this.props.removeErrors}
+            errors={this.props.errors}
+            notebookId={this.props.match.params.notebookId} />
+        let deleteModal = <DeleteModal 
+            history={this.props.history} 
+            deleteNotebook={this.props.deleteNotebook} 
+            notebookId={this.props.match.params.notebookId}/>
+
         let title =  this.props.notebook ? this.props.notebook.title : null 
-        let notebookId = this.props.notebook ? this.props.notebook.id : null
         
 
         return (
@@ -43,28 +57,15 @@ export class NotebookShow extends Component {
                             {title}
                         </div>
                         <div className="notebook-show-subheader">x notes
+                        {editModal}
                             <span className="action-dropdown-button"
                                 onClick={this.toggleActive}>
                                 <FaEllipsisH className="ellipsis-icon" />
+
                                 <ul className="action-dropdown-ul">
                                     <li>Add new note</li>
-                                    <li>Rename note</li>
-                                    {/* <EditModal /> */}
-                                    {/* <li className="action-dropdown-link"> */}
-                                        {/* <EditNotebookModal
-                                            action={this.props.action}
-                                            formType={this.props.formType}
-                                            notebook={this.props.notebook}
-                                            removeErrors={this.props.removeErrors}
-                                            errors={this.props.errors}
-                                            fetchNotebook={this.props.fetchNotebook}
-                                            notebookId={this.props.match.params.notebookId}
-                                            title={title}
-                                            state={this.state}
-                                            setState={this.setState}
-                                            />  */}
-                                    {/* </li> */}
-                                    <li>Delete notebook</li>
+                                    <li className="action-dropdown-link">{deleteModal}</li>
+                                    <li className="action-dropdown-link"></li>
                                 </ul>
                             </span>
                         </div>

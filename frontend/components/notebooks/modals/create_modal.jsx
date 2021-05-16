@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { BiBookAdd } from 'react-icons/bi';
 import { createNotebook, removeErrors } from '../../../actions/notebook_actions'
-import { modalFalse } from '../../../actions/modal_actions'
 import { convertToSnakeCase } from '../../../util/snake_case_util'
 // import { convertToSnakeCase } from '../../../util/snake_case_util'
 
