@@ -3,16 +3,6 @@ import NotesIndex from '../notes/notes_index'
 import ExpandedSideNavContainer from '../side_nav/expanded_side_nav_container'
 import NoteShow from '../notes/note_show'
 
-// import SideNavDev from '../side_nav/side_nav_expand'
-// import ExpandedSideNavContainer from '../side_nav/side_nav_container'
-// import DeleteModal from './modals/delete_modal'
-// import { DeleteModalContainer } from './modals/delete_modal_container'
-// import EditModal from './modals/edit_modal'
-// import EditModalContainer from './modals/edit_modal_container'
-
-// import { Link } from 'react-router-dom'
-
-
 export class NotebookShow extends Component {
     constructor(props) {
         super(props)
