@@ -44,14 +44,14 @@ class NotebookIndex extends React.Component {
                 </header>
            
                 <table className='notebook-table'>
-                    <thead>
+                    <thead className="notebook-table-head">
                         <tr className='notebook-sort'>
                             <th className='sort-feature sort-title'>TITLE</th>
                             <th className='sort-feature sort-cb'>CREATED BY</th>
                             <th className='sort-feature sort-update'>UPDATED</th>
                             <th className='sort-feature sort-action'>ACTIONS</th>
                         </tr>
-                    </thead>
+                    </thead >
                     <tbody className='sort-body '>
                         {this.props.notebooks.map(notebook => (
                             <NotebookIndexItem notebook={notebook} user={this.props.user} key={notebook.id} />

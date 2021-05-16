@@ -1,13 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
 $oxygen: 'Oxygen';
 .notebook-show-wrapper{
-    font-family: $oxygen;
-    // display: flex;
-    // flex: 1;
-    // justify-content: left;
     display: grid;
-    grid-template-rows: 100px, minmax(0,50px) 1fr;
-    overflow: auto;
+    font-family: $oxygen;
+    overflow:scroll;
     position: relative;
     width: 381px;
     // height: 100%;
@@ -98,8 +94,6 @@ $oxygen: 'Oxygen';
         font-size: 14px;
         align-items: flex-start;
         justify-content: space-between;
-        // align-self: center;
-        // height: 26px;
     }
     .notebook-show-collection-wrapper {
         display: flex;
@@ -109,16 +103,16 @@ $oxygen: 'Oxygen';
         overflow: hidden;
         color: red;
         font-size: 16px;
-        padding: 0 50px;
+        // padding: 0 50px;
         // position: absolute;
         .notebook-show-collection {
-            overflow: auto;
+            overflow: scroll;
             position: relative;
             width: 370px;
-            height: 833px;
+            // height: 833px;
         }
         .notebook-show-collection > li {
-            padding: 30px 20px 30px 20px;
+            padding: 20px 20px 30px 20px;
             color: green;
             list-style: none;
             height: 120px;

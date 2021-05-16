@@ -74,11 +74,25 @@ export class NotebookShow extends Component {
                         <ul className="notebook-show-collection">
                             <li >
                               <h2 className="notebook-show-note-title">Title</h2>
-                              <p>Text here</p>
+                              <p>Text here alsdkfja sldkfjas dlfkajsdf klajsdflka sdjflaskdjlfs</p>
+                              <p>Text here alsdkfja sldkfjas dlfkajsdf klajsdflka sdjflaskdjlfs</p>
+                              <p>Text here alsdkfja sldkfjas dlfkajsdf klajsdflka sdjflaskdjlfs</p>
                               <br />
                               <span>Creation Date</span>
                               <span> Tag </span>
                             </li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
+                            <li>note 2</li>
                             <li>note 2</li>
                         </ul>
                     </div> 

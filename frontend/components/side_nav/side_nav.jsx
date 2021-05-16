@@ -3,6 +3,7 @@ import { BsSearch } from 'react-icons/bs'
 import { AiFillHome, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { CgNotes } from 'react-icons/cg'
 import {BiBookAlt} from 'react-icons/bi'
+import { Link } from 'react-router-dom'
 class SideNav extends Component {
     constructor(props) {
         super(props)
@@ -24,12 +25,11 @@ class SideNav extends Component {
                         <button className="sidebar-new">+</button>
                     </li>
                     <ul className="buttons-2">
-                        <li className='sidebar-home'><AiFillHome/></li>
-                        <li className='sidebar-notes'><CgNotes/></li>
-                        <li className="sidebar-notebooks"><BiBookAlt/></li>
-                            <li className="sidebar-git"><AiFillGithub/></li>
-                            <li><AiFillLinkedin/></li>
-                    
+                        <Link to="/notes"><li className='sidebar-home'><AiFillHome/></li></Link>
+                        <Link to="/notes"><li className='sidebar-notes'><CgNotes/></li></Link>
+                        <Link to="/notebooks"><li className='sidebar-notebooks'><BiBookAlt/></li></Link>
+                        <li><a href="https://www.github.com/akerpelm" target="_blank"><AiFillGithub/></a></li>
+                        <li><a href="https://www.linkedin.com/in/alexander-kerpelman-22587584/" target="_blank"><AiFillLinkedin/></a></li>
                     </ul>
                 </ul>
                </nav>
