@@ -1,19 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import NotebookIndexItem from './notebook_index_item'
-import CreateNotebookModal from './create_notebook_modal'
+// import CreateNotebookModal from './create_notebook_modal'
 import { BsSearch } from 'react-icons/bs'
 import CreateModal from './modals/create_modal'
 
 
 class NotebookIndex extends React.Component {
     constructor(props) {
-        // debugger
         super(props)   
     }
     
-   
-
     componentDidMount() {
         this.props.fetchNotebooks()
     }
@@ -34,12 +31,6 @@ class NotebookIndex extends React.Component {
                 <header className='notebook-count-new'>
                     <p className='notebook-count'>{this.props.notebooks.length === 1 ? `${this.props.notebooks.length} notebook` : `${this.props.notebooks.length} notebooks` }
                     </p> 
-                    {/* <CreateNotebookModal 
-                    action={this.props.action}
-                    removeErrors={this.props.removeErrors}
-                    notebook={this.props.notebook}
-                    formType={this.props.formType}
-                    errors={this.props.errors}/> */}
                     <CreateModal />
                 </header>
            
