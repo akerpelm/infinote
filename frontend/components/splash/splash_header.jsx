@@ -1,27 +1,24 @@
 import React from 'react'
-
-
+import { Link } from 'react-router-dom'
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 const SplashHeader = () => {
-    // return (
-    //     // <>
-    //     {/* {<img src='images/infinote_logo_1.png' alt="infinote_logo_1" className='infinote-logo_1' />} */}
-    //     {/* <div className='header_div'>
-    //         <div>
-    //             Why Evernote
-    //         </div>
-    //         <div>
-    //             Features
-    //         </div>
-    //         <div>
-    //             Plans
-    //         </div>
-
-    //         <button type="submit">Log In</button>
-
-    //     </div>
-    //     </> */}
-    // )
-    return null
+    return (
+      <div className="splash-header">
+        <div className="splash-img">
+          <img
+            className="splash-img"
+            src="images/infinote_logo_1.png"
+            alt="infinote_logo_1"
+          />
+        </div>
+        <div className="splash-header-buttons">
+          <ul>
+            <li><AiFillGithub/></li>
+            <li><AiFillLinkedin/></li>
+          </ul>
+        </div>
+      </div>
+    );
 }
 
 export default SplashHeader

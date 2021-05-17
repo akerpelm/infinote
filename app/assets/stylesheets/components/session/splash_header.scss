@@ -1,7 +1,31 @@
 
-.header_div {
+// .header_div {
+//     display: flex;
+//     align-items: flex-end;
+//     justify-content: center;
+//     padding-top:20px
+// }
+
+.splash-header {
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    padding-top:20px
+    justify-content: space-between;
+    .splash-img {
+            display: flex;
+            width: 150px;
+            margin-top: 5px;
+            margin-left: 20px;
+            // height: 100px;
+    }
+    .splash-header-buttons {
+        // margin-left: 35%;
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-evenly;
+        align-items: flex-end;
+        padding-top: 5px;
+        padding-right: 20px;
+        font-size: 30px;
+
+    }
+
 }

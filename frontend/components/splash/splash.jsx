@@ -9,7 +9,6 @@ export class Splash extends Component {
     render() {
         return (
             <div>
-                {<img src='images/infinote_logo_1.png' alt="infinote_logo_1" className='infinote-logo_1' />}
                 <header>
                     <SplashHeader />
                 </header>

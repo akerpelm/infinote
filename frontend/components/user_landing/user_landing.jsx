@@ -16,7 +16,7 @@ const UserLanding = () => (
         {/* <Route exact path="/notebooks" component={ReducedSideNavContainer}/> */}
         <Route exact path="/notebooks" component={NotebookIndexContainer}/>
 
-        <Route exact path="/notes" component={NotesIndexContainer} />
+        <Route exact path="/notes" component={NotebookShowContainer} />
         {/* <Route exact path="/" /> */}
      
     </div>
