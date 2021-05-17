@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
-  action: notebook => dispatch(updateNotebook(notebook)),
+  updateNotebook: notebook => dispatch(updateNotebook(notebook)),
   removeErrors: () => dispatch(removeErrors()),
   deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId)),
   logout: () => dispatch(logout()),

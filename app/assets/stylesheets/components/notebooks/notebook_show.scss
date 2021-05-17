@@ -1,142 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
 $oxygen: 'Oxygen';
-// .notebook-show-wrapper{
-//     display: grid;
-//     grid-template-columns: 381px 381px;
-//     font-family: $oxygen;
-//     overflow:scroll;
-//     position: relative;
-//     width: 381px;
-//     height: 100vh;
-//     max-width: 880px;
-//     min-width: 280px;
-//     flex-shrink: 0;
-//     border-right: 1px solid #e6e6e6;
-//     flex-direction: column;
-
-//     .notebook-show-notes {
-//         // display: flex;
-//         flex: 1;
-//         min-height: 280px;
-//         flex-direction: column;
-//         justify-content: left;
-//         height: 100%;
-//         position: relative;
-//         flex-wrap: nowrap;
-//         background: #f8f8f8;
-//         background-color: #f8f8f8;
-//     }
-//     .notebook-show-header {
-//         padding: 20px 16px 20px 24px;
-//         border-bottom: 1px solid #e6e6e6;
-//         vertical-align: baseline;
-//         // display: block
-//         .ellipsis-icon {
-//             color: #737373;
-//             font-weight: light;
-//             font-size: 14px
-//         };
-//     .action-dropdown-button {
-//         border: none;
-//         box-shadow: none;
-//         outline: none;
-//         cursor: pointer;
-//         color: #000;
-//     }
-//     .action-dropdown-ul {
-//         position: absolute;
-//         margin: 0;
-//         padding: 0;
-//         left: 188px;
-//         top: 80px;
-//         background: #ccc;
-//         transform: rotateX(-90deg);
-//         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-//         z-index: 1;
-//     }
-//     .action-dropdown-ul.active {
-//         transform: rotateX(0deg);
-
-//     }
-//     .action-dropdown-ul li { 
-//         list-style: none;
-//         font-family: $oxygen;
-//         font-size: 14px;
-//         font-weight: bolder;
-//         width: 100%;
-//         display:block;
-//         padding: 8px 30px;
-//         text-align: center;
-//         text-decoration: none;
-//         background: #f8f8f8;
-//         color: #000;
-//         cursor: pointer;
-//         text-align: left;
-//         z-index: 1;
-//     }
-//     .action-dropdown-ul li:hover { 
-//         background-color: #f1f1f1;
-//     }
-//     .show-header-title {
-//         display: flex;
-//         outline-style: none;
-//         width: 100%;
-//         font-size: 20px;
-//         padding-bottom: 14px;
-//         letter-spacing: 0.1rem;
-//         span {
-//             padding-right: 10px;
-//             vertical-align: text-top;
-//         }
-//     }
-   
-//     }
-
-//     .notebook-show-subheader {
-//         display: flex;
-//         font-size: 14px;
-//         align-items: flex-start;
-//         justify-content: space-between;
-//     }
-//     .notebook-show-collection-wrapper {
-//         display: flex;
-//         flex-direction: column;
-//         align-items: center;
-//         justify-content: center;
-//         overflow: hidden;
-//         color: red;
-//         font-size: 16px;
-//         // padding: 0 50px;
-//         // position: absolute;
-//         .notebook-show-collection {
-//             overflow: scroll;
-//             position: relative;
-//             width: 370px;
-//             // height: 833px;
-//         }
-//         .notebook-show-collection > li {
-//             padding: 20px 20px 30px 20px;
-//             color: green;
-//             list-style: none;
-//             height: 120px;
-//             position: sticky;
-//             // display: flex;
-//             overflow:hidden;
-//             text-overflow: ellipsis;    
-//             border-bottom: 1px solid #e6e6e6;
-//             font-size: 14px;
-//             color: #737373;
-//         }
-//         .notebook-show-collection > li:hover {
-//             background-color: #fff;
-//         }
-
-//         .notebook-show-note-title {
-//             padding-bottom: 5px;
-//             color: black
-//         }
-
-//     } 
 
 .notebook-show{
     display:flex;
@@ -164,15 +27,17 @@ $oxygen: 'Oxygen';
             justify-content: center;
             padding: 15px;
             .sidenavbar-profile-icon {
-                background: #f8cbad;
-                width: 30px;
-                height: 30px;
+                width: 38px;
+                height: 38px;
+                margin-right: 10px;
+                padding-left: 2px;
+                background: rgb(130, 190, 194);
+                border: 3px solid #1a1a1a;
+                color: darkgrey;
+                text-align: center;
+                text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+                font: 31px Arial, sans-serif;
                 border-radius: 50%;
-                color: #000;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 10px
             }
             .sienavbar-profile-title {
                 display: flex;

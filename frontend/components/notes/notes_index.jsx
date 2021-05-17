@@ -16,6 +16,7 @@ class NotesIndex extends React.Component {
   }
 
   render() {
+    let title = this.state ? this.state.title : undefined
     return (
       <div className="note-list">
         <div className="note-list-header">
@@ -23,7 +24,11 @@ class NotesIndex extends React.Component {
             <h1>{this.props.title}</h1>
           </div>
           <div className="note-list-header-sub">
-            <div className="note-count">{this.props.notes.length === 1 ? `${this.props.notes.length}  note` : `${this.props.notes.length} notes`}</div>
+            <div className="note-count">{this.props.notes.length === 1 ? `${this.props.notes.length}  note` : `${this.props.notes.length} notes`}
+            </div>
+            <div className='temp'>
+              {/* <input type="text" value={title} placeholder={title}/> */}
+            </div>
           </div>
         </div>
         
@@ -36,7 +41,8 @@ class NotesIndex extends React.Component {
                     <div className="note-card-title">{note.title}</div>
                     <div className="note-card-desc">{note.content}</div>
                   </div>
-                  <div className="note-card-date">date updated</div>
+                  <div className="note-card-date">Updated...
+                  </div>
                 </div>
               </div>
             </div>

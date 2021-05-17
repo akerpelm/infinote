@@ -1,9 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
 $oxygen: 'Oxygen';
-.notebook_index {
+
+
+.notebook-index-wrapper{
+    display:flex;
+    // align-items: center;
+    height:100vh;
     font-family: $oxygen;
-    width: 98.5%;
-    display: grid;
+}
+
+.notebook-index {
+    font-family: $oxygen;
+    width: 94.5%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
 
     .notebook-header {
         //
@@ -27,7 +38,7 @@ $oxygen: 'Oxygen';
             display: flex;
             .notebooks-search-bar-icon{
                 position: absolute;
-                right: 40px;
+                right: 20px;
 
                 display: inline-block;
                 font-size: 14px;
@@ -83,7 +94,7 @@ $oxygen: 'Oxygen';
 
 .notebook-table {
     border-top: 2px solid #5b6b70;
-    overflow: auto;
+    overflow: scroll;
     height: 100vh;
     font-size: 14px;
     font-family: $oxygen;
@@ -154,3 +165,4 @@ $oxygen: 'Oxygen';
     }
 }
 }
+

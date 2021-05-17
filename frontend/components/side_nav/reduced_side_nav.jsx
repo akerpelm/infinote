@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { AiFillTag, AiFillHome, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 import { CgNotes } from 'react-icons/cg'
 import {BiBookAlt} from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 
-class ReducedSideNav extends Component {
+class ReducedSideNav extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -15,16 +15,16 @@ class ReducedSideNav extends Component {
         return (
  
                <nav className="sidebar">
-                <ul className="sidebar-buttons">
-                    <li className='sidebar-user'>
-                        <span className="user-initial">
+                <div className="sidebar-buttons">
+                    <div className='sidebar-user'>
+                        <div className="user-initial">
                             {userInitial}
-                        </span>
-                    </li>
-                    <li className="buttons-1">
+                        </div>
+                    </div>
+                    <div className="buttons-1">
                         <button className="sidebar-search"><BsSearch/></button>
                         <button className="sidebar-new">+</button>
-                    </li>
+                    </div>
                     <ul className="buttons-2">
                         <Link to="/notes"><li className='sidebar-home'><AiFillHome/></li></Link>
                         <Link to="/notes"><li className='sidebar-notes'><CgNotes/></li></Link>
@@ -33,7 +33,7 @@ class ReducedSideNav extends Component {
                         <li><a href="https://www.github.com/akerpelm" target="_blank"><AiFillGithub/></a></li>
                         <li><a href="https://www.linkedin.com/in/alexander-kerpelman-22587584/" target="_blank"><AiFillLinkedin/></a></li>
                     </ul>
-                </ul>
+                </div>
                </nav>
 
         )

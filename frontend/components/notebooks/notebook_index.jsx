@@ -2,7 +2,7 @@ import React from "react";
 import NotebookIndexItem from "./notebook_index_item";
 import { BsSearch } from "react-icons/bs";
 import CreateModal from "./modals/create_modal";
-import ReducedSideNavBarContainer from "../side_nav/reduced_side_nav_container";
+import ReducedSideNavContainer from "../side_nav/reduced_side_nav_container";
 
 class NotebookIndex extends React.Component {
   constructor(props) {
@@ -15,8 +15,8 @@ class NotebookIndex extends React.Component {
 
   render() {
     return (
-      <div className="notebook_index_wrapper">
-        <div>
+      <div className="notebook-index-wrapper">
+        <div className="reduced-side-nav">
           <ReducedSideNavContainer />
         </div>
         <div className="notebook-index">
