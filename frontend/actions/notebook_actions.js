@@ -11,10 +11,13 @@ const receiveAllNotebooks = notebooks => ({
     notebooks
 });
 
-const receiveNotebook = notebook => ({
-    type: RECEIVE_NOTEBOOK,
-    notebook
-});
+const receiveNotebook = notebook => {
+    // debugger
+    return {
+        type: RECEIVE_NOTEBOOK,
+        notebook
+    }
+};
 
 const removeNotebook = notebookId => ({
     type: REMOVE_NOTEBOOK,

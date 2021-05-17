@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import { convertToSnakeCase } from '../../../util/snake_case_util'
+import { withRouter } from "react-router";
+
 
 class EditModal extends Component {
     constructor(props) {
         super(props)
+        // debugger;
         this.state = props.notebook
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-
+    
     handleChange(field) {
         return e => this.setState({
             [field] : e.target.value
@@ -15,23 +18,27 @@ class EditModal extends Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        let notebook = this.state
-        this.props.updateNotebook(convertToSnakeCase(notebook))
+        this.props.updateNotebook(this.state)
     }
-
+    
     // componentDidMount() {
-    //     // debugger
-    //     this.state = this.props.notebook
+    //     debugger
+    //     this.props.fetchNotebook(this.props.match.params.notebookId);
+    // }
+        // this.setState({notebook: this.props.notebook})
     // }
     
     render() {
-        let title = this.state.title ? this.state.title : ''
+        // debugger
+        // let title = this.state.title ? this.state.title : 'undefined';
+        // let title = this.state.title ? this.state.title : undefined;
+        // debugger
         return (
             <div>
                 <h3>{this.props.formType}</h3>
                 <form onSubmit={this.handleSubmit}>
                     <label>Name
-                        <input type="text" value={title} onChange={this.handleChange('title')}/>
+                        <input type="text" value={this.state.title} onChange={this.handleChange('title')}/>
                         <button>Submit</button>
                     </label>
 
@@ -41,4 +48,4 @@ class EditModal extends Component {
     }
 }
 
-export default EditModal
+export default withRouter(EditModal)

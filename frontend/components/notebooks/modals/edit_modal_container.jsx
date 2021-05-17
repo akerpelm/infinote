@@ -18,6 +18,7 @@ export class EditModalContainer extends Component {
             <div>
                 <EditModal
                     updateNotebook={this.props.updateNotebook}
+                    fetchNotebook={this.props.fetchNotebook}
                     formType={this.props.formType}
                     notebook={this.props.notebook} />
             
@@ -27,10 +28,10 @@ export class EditModalContainer extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
-    notebook: ownProps.notebook,
-    formType: "Rename notebook",
+        notebook: state.entities.notebooks[ownProps.match.params.notebookId]
+    // notebook: state.entities.notebooks[ownProps.notebook.id],
+    // formType: "Rename notebook",
     }
 }
 
