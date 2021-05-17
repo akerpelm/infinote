@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import { convertToSnakeCase } from '../../../util/snake_case_util'
+import React, { Component } from "react";
+import { convertToSnakeCase } from "../../../util/snake_case_util";
 import { withRouter } from "react-router";
-
 
 class EditModal extends Component {
   constructor(props) {
     super(props);
-    // debugger;
+
     this.state = props.notebook;
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.evaluateErrors = this.evaluateErrors.bind(this);
   }
 
   handleChange(field) {
@@ -19,31 +19,33 @@ class EditModal extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateNotebook(this.state);
+    this.props.updateNotebook(this.state)
+          .then(() => this.toggleModal());
+
   }
 
   toggleModal = () => {
     document.querySelector(".modal").classList.toggle("modal-hidden");
-    // this.props.removeErrors();
   };
 
-  render() {
-    // debugger
-    // let title = this.state.title ? this.state.title : 'undefined';
-    // let title = this.state.title ? this.state.title : undefined;
-    // debugger
+  renderErrors() {
     return (
-      // <div>
-      //     <h3>{this.props.formType}</h3>
-      //     <form onSubmit={this.handleSubmit}>
-      //         <label>Name
-      //             <input type="text" value={this.state.title} onChange={this.handleChange('title')}/>
-      //             <button>Submit</button>
-      //         </label>
+      <ul className="error-ul">
+        {this.props.errors.map((error, i) => (
+          <li className="error-li" key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
-      //     </form>
-      // </div>
+  evaluateErrors() {
+    this.props.errors === [] ? this.renderErrors() : null;
+  }
 
+  render() {
+    return (
       <div>
         <div className="modal modal-hidden">
           <div className="modal-contents">
@@ -56,16 +58,12 @@ class EditModal extends Component {
                   </span>
                 </div>
               </h1>
-              {/* <p className="modal-create-info">
-                Notebooks are useful for grouping notes around a common topic.
-                They can be private or shared.
-              </p> */}
             </header>
             <form className="modal-create-form" onSubmit={this.handleSubmit}>
               <label className="modal-name-label">
                 Name
                 <br />
-                {/* {this.renderErrors()} */}
+                {this.renderErrors()}
                 <input
                   value={this.state.title}
                   onChange={this.handleChange("title")}
@@ -100,5 +98,4 @@ class EditModal extends Component {
   }
 }
 
-
-export default withRouter(EditModal)
+export default withRouter(EditModal);

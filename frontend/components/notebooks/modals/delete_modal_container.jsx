@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteNotebook, fetchNotebook } from '../../../util/notebooks_api_util'
+import { deleteNotebook, fetchNotebook, fetchNotebooks } from '../../../actions/notebook_actions';
+
 import DeleteModal from './delete_modal'
 
 export class DeleteModalContainer extends Component {
@@ -19,7 +20,8 @@ export class DeleteModalContainer extends Component {
                 <DeleteModal
                     deleteNotebook={this.props.deleteNotebook}
                     formType={this.props.formType}
-                    notebook={this.props.notebook} />
+                    notebook={this.props.notebook}
+                    fetchNotebooks={this.props.fetchNotebooks} />
 
             </div>
         )
@@ -27,17 +29,17 @@ export class DeleteModalContainer extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         notebook: state.entities.notebooks[ownProps.match.params.notebookId],
-        // formType: "Rename notebook",
     }
 }
 
 
 const mapDispatchToProps = dispatch => ({
     fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
+    fetchNotebooks: () => dispatch(fetchNotebooks()),
     deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId))
+    
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(DeleteModalContainer)

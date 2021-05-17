@@ -16,7 +16,8 @@ $oxygen: 'Oxygen';
         padding: .5rem;
         text-align: end;
         .ellipsis-icon {
-            color: #737373;
+            // color: #737373;
+            color: green;
             font-weight: light;
             font-size: 14px
         };
@@ -30,6 +31,7 @@ $oxygen: 'Oxygen';
         }
         .action-dropdown-ul {
             position: absolute;
+            display: hidden;
             margin: 0;
             padding: 0;
             right: 1.75%;

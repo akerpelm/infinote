@@ -8,7 +8,6 @@ class Api::NotebooksController < ApplicationController
     end
 
     def show
-        # debugger
         @notebook = Notebook.find(params[:id])
         if @notebook
             render :show
@@ -19,7 +18,6 @@ class Api::NotebooksController < ApplicationController
 
     def create
         @notebook = Notebook.new(notebook_params)
-        # debugger
         if @notebook.save
             render :show
         else
@@ -39,7 +37,7 @@ class Api::NotebooksController < ApplicationController
     def destroy
         @notebook = Notebook.find(params[:id])
         if @notebook && @notebook.destroy
-            render :index
+            render :show
         else
             render json: ["This notebook does not exist"], status: 404
         end

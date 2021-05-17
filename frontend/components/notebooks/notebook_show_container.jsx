@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchNotebook, updateNotebook, removeErrors} from '../../actions/notebook_actions'
+import { fetchNotebook, updateNotebook, removeNotebookErrors} from '../../actions/notebook_actions'
 import { deleteNotebook } from '../../util/notebooks_api_util'
 import NotebookShow from './notebook_show'
 import { logout } from '../../actions/session_actions'
@@ -27,10 +27,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
   updateNotebook: notebook => dispatch(updateNotebook(notebook)),
-  removeErrors: () => dispatch(removeErrors()),
+  removeNotebookErrors: () => dispatch(removeNotebookErrors()),
   deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId)),
   logout: () => dispatch(logout()),
-  removeErrors: () => dispatch(removeErrors())
+  removeNotebookErrors: () => dispatch(removeNotebookErrors())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(NotebookShow)

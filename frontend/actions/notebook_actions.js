@@ -12,7 +12,6 @@ const receiveAllNotebooks = notebooks => ({
 });
 
 const receiveNotebook = notebook => {
-    // debugger
     return {
         type: RECEIVE_NOTEBOOK,
         notebook
@@ -29,7 +28,7 @@ const receiveErrors = (errors) => ({
     errors
 });
 
-export const removeErrors = () => ({
+export const removeNotebookErrors = () => ({
     type: REMOVE_ERRORS
 });
 

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import {createNotebook, fetchNotebooks, removeErrors} from '../../actions/notebook_actions'
+import {createNotebook, fetchNotebooks, removeNotebookErrors} from '../../actions/notebook_actions'
 import { logout } from '../../actions/session_actions'
 import NotebookIndex from './notebook_index'
 
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => ({
     logout: () => dispatch(logout()),
     fetchNotebooks: () => dispatch(fetchNotebooks()),
     action: notebook => dispatch(createNotebook(notebook)),
-    removeErrors: () => dispatch(removeErrors())
+    removeNotebookErrors: () => dispatch(removeNotebookErrors())
 
 })
 

@@ -12,12 +12,15 @@ import ReducedSideNavContainer from '../side_nav/reduced_side_nav_container';
 
 const UserLanding = () => (
     <div>
+        {/* <Switch> */}
+        <Route exact path="/notebooks/:notebookId/notes/:noteId" component={NotebookShowContainer}/>
         <Route exact path="/notebooks/:notebookId/" component={NotebookShowContainer}/>
+        <Route exact path="/notebooks" component={NotebookIndexContainer}/>
+        {/* <Route ext path ="/user/:userId" component={UserUpdateContainer}/> */}
+        {/* </Switch> */}
         <Route exact path="/notebooks/:notebookId/" component={EditModalContainer}/>
         <Route exact path="/notebooks/:notebookId/" component={DeleteModalContainer}/>
-        <Route exact path="/notebooks/:notebookId/notes/:noteId" component={NotebookShowContainer}/>
         {/* <Route exact path="/notebooks" component={ReducedSideNavContainer}/> */}
-        <Route exact path="/notebooks" component={NotebookIndexContainer}/>
         {/* render all notes, then pass them to notebook show hwere notebook is just every note with title notes */}
 
         <Route exact path="/notes" component={NotebookShowContainer} />

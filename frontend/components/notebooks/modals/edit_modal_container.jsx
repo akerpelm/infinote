@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchNotebook, updateNotebook } from '../../../util/notebooks_api_util'
+import { fetchNotebook, removeNotebookErrors, updateNotebook } from '../../../actions/notebook_actions'
 import EditModal from './edit_modal'
 
 export class EditModalContainer extends Component {
@@ -20,25 +20,28 @@ export class EditModalContainer extends Component {
                     updateNotebook={this.props.updateNotebook}
                     fetchNotebook={this.props.fetchNotebook}
                     formType={this.props.formType}
-                    notebook={this.props.notebook} />
+                    notebook={this.props.notebook}
+                    errors={this.props.errors} />
             
             </div>
         )
     }
 }
 
-const mapStateToProps = (state, ownProps) => {
-    return {
-        notebook: state.entities.notebooks[ownProps.match.params.notebookId]
-    // notebook: state.entities.notebooks[ownProps.notebook.id],
-    // formType: "Rename notebook",
-    }
-}
+const mapStateToProps = (state, ownProps) => ({
+        notebook: state.entities.notebooks[ownProps.match.params.notebookId],
+        errors: state.errors.notebook,
+
+      // notebook: state.entities.notebooks[ownProps.notebook.id],
+      // formType: "Rename notebook",
+
+})
 
 
 const mapDispatchToProps = dispatch => ({
     fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
-    updateNotebook: (notebook) => dispatch(updateNotebook(notebook))
+    updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
+    removeNotebookErrors: () => dispatch(removeNotebookErrors())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditModalContainer)

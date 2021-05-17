@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BiBookAdd } from "react-icons/bi";
-import {
-  createNotebook,
-  removeErrors,
-} from "../../../actions/notebook_actions";
+import { createNotebook, removeNotebookErrors } from "../../../actions/notebook_actions";
 import { convertToSnakeCase } from "../../../util/snake_case_util";
 // import { convertToSnakeCase } from '../../../util/snake_case_util'
 
@@ -43,11 +40,11 @@ class CreateModal extends Component {
     });
   }
   componentWillUnmount() {
-    this.props.removeErrors();
+    this.props.removeNotebookErrors();
   }
   toggleModal = () => {
     document.querySelector(".modal").classList.toggle("modal-hidden");
-    this.props.removeErrors();
+    this.props.removeNotebookErrors();
   };
 
   render() {
@@ -121,7 +118,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   action: (notebook) => dispatch(createNotebook(notebook)),
-  removeErrors: () => dispatch(removeErrors()),
+  removeNotebookErrors: () => dispatch(removeNotebookErrors()),
   modalFalse: () => dispatch(modalFalse()),
 });
 
