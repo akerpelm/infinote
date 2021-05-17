@@ -1,5 +1,4 @@
-import { RECEIVE_ALL_NOTEBOOKS, REMOVE_NOTEBOOK} from '../actions/notebook_actions';
-import { RECEIVE_NOTEBOOK } from '../actions/notebook_actions'
+import { RECEIVE_ALL_NOTEBOOKS, RECEIVE_NOTEBOOK,  REMOVE_NOTEBOOK} from '../actions/notebook_actions';
 
 const NotebooksReducer = (state = {}, action) => {
     Object.freeze(state);

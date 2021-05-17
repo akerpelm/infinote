@@ -18,6 +18,9 @@ class Notebook < ApplicationRecord
     class_name: :User 
 
     # has many notes...
+    has_many :notes,
+    foreign_key: :notebook_id,
+    class_name: :Note
 
 
 end
