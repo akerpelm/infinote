@@ -9,7 +9,7 @@ export class NotebookShow extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = props.notebook;
+    this.state = props.notebook;
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
@@ -32,7 +32,15 @@ export class NotebookShow extends Component {
     return (
       <div className="notebook-show">
         <ExpandedSideNavContainer currentUser={this.props.currentUser} />
-          
+          {/* <label>
+            Name
+            <input
+              type="text"
+              value={this.state.title}
+              onChange={this.handleChange("title")}
+            />
+            <button onClick={this.handleSubmit}>Submit</button>
+          </label> */}
         {/* renders right nav */}
         <NotesIndex title={title} notes={this.props.notes} />
         {/* <EditModalContainer notebook={this.props.notebook}/> */}

@@ -10,13 +10,14 @@ class DeleteModal extends Component {
    
     handleSubmit(e) {
         e.preventDefault();
-        this.props.deleteNotebook(this.props.notebookId).then(() => this.props.history.push("/notebooks"))
+        debugger
+        this.props.deleteNotebook(this.props.notebook.id)
     }
 
-    // componentDidMount() {
-    //     // debugger
-    //     this.state = this.props.notebook
-    // }
+    componentWillUnmount() {
+        // debugger
+        then(() => this.props.history.push("/notebooks"));
+    }
 
     render() {
         return (

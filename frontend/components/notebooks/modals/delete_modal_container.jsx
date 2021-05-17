@@ -29,8 +29,8 @@ export class DeleteModalContainer extends Component {
 const mapStateToProps = (state, ownProps) => {
     // debugger
     return {
-        notebook: ownProps.notebook,
-        formType: "Rename notebook",
+        notebook: state.entities.notebooks[ownProps.match.params.notebookId],
+        // formType: "Rename notebook",
     }
 }
 
