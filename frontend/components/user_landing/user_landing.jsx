@@ -7,6 +7,7 @@ import DeleteModalContainer from '../notebooks/modals/delete_modal_container';
 
 const UserLanding = () => (
   <div>
+    {/*  */}
     <Route exact path="/notes" component={NotebookShowContainer} />
     <Route
       exact

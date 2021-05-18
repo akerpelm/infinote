@@ -8,7 +8,7 @@ class EditModal extends Component {
 
     this.state = props.notebook;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.evaluateErrors = this.evaluateErrors.bind(this);
+    // this.evaluateErrors = this.evaluateErrors.bind(this);
   }
 
   handleChange(field) {
@@ -28,21 +28,21 @@ class EditModal extends Component {
     document.querySelector(".modal").classList.toggle("modal-hidden");
   };
 
-  renderErrors() {
-    return (
-      <ul className="error-ul">
-        {this.props.errors.map((error, i) => (
-          <li className="error-li" key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return (
+  //     <ul className="error-ul">
+  //       {this.props.errors.map((error, i) => (
+  //         <li className="error-li" key={`error-${i}`}>
+  //           {error}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
-  evaluateErrors() {
-    this.props.errors === [] ? this.renderErrors() : null;
-  }
+  // evaluateErrors() {
+  //   this.props.errors === [] ? this.renderErrors() : null;
+  // }
 
   render() {
     return (
@@ -63,7 +63,7 @@ class EditModal extends Component {
               <label className="modal-name-label">
                 Name
                 <br />
-                {this.renderErrors()}
+                {/* {this.renderErrors()} */}
                 <input
                   value={this.state.title}
                   onChange={this.handleChange("title")}

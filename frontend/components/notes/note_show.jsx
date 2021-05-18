@@ -5,43 +5,38 @@ import convertToSnakeCase from "../../util/snake_case_util";
 export class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-    // console.log('hi')
+    this.state = props.currentNote;
 
-    this.state = {
-      title: "",
-      content: "",
-      authorId: this.props.currentUser.id,
-      notebookId: props.match.params.notebookId,
-    };
     this.handleUpdate = this.handleUpdate.bind(this);
-
     this.handleChange = this.handleChange.bind(this);
   }
   handleUpdate(e) {
-      e.preventDefault()
-      this.props.updateNote(convertToSnakeCase(this.state));
+    debugger
+    e.preventDefault();
+    this.props
+      .updateNote(convertToSnakeCase(this.state))
+      .then(() =>
+        this.props.history.push(`/notebooks/${this.props.notebook.id}`)
+      );
   }
 
   handleChange(field) {
+    // debugger
     return (e) =>
       this.setState({
         [field]: e.target.value,
-      })
+      });
   }
 
-  componentDidMount() {
-    this.props.fetchNote(this.props.match.params.noteId);
-  }
 
   render() {
     const { currentNote } = this.props;
     let currentNoteTitle = currentNote ? currentNote.title : "Title";
-    // let currentNoteId = currentNote ? currentNote.id : undefined;
     let currentNoteContent = currentNote ? currentNote.content : "Start typing";
-    // debugger
 
     return (
-      <div className="note">
+      <div className="note" onBlur={this.handleUpdate}>
+        {/* <form onChange={this.handleUpdate}> */}
         <div className="note-header">
           <div className="note-header-date">{this.props.title}</div>
           <div className="note-header-action-btn"></div>
@@ -49,34 +44,22 @@ export class NoteShow extends React.Component {
         <div className="note-body">
           <div className="note-body-head">
             <input
-              placeholder={currentNoteTitle}
+              value={this.state.title}
               onChange={this.handleChange("title")}
             />
           </div>
           <div className="note-body-content">
             <textarea
-              placeholder={currentNoteContent}
+              value={this.state.content}
               onChange={this.handleChange("content")}
-              onChange={this.handleUpdate}
+              // onChange={this.handleUpdate}
+              // on submit needed? stop from doing anything , e.preventDefault()
             />
           </div>
         </div>
+        {/* </form>  */}
       </div>
     );
   }
 }
 export default withRouter(NoteShow);
-
-// }
-
-// export default NoteShowContainer
-
-// import React, { Component } from 'react'
-
-//     render() {
-//         return (
-//             <div>
-
-//             </div>
-//         )
-//     }

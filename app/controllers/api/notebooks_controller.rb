@@ -9,6 +9,7 @@ class Api::NotebooksController < ApplicationController
 
     def show
         @notebook = Notebook.find(params[:id])
+        # @notes = @notebook.notes
         if @notebook
             render :show
         else
