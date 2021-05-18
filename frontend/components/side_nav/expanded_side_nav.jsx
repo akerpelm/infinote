@@ -1,33 +1,61 @@
-import React from 'react'
-import { FaAngleDown, FaPlus } from 'react-icons/fa'
-import { BsSearch } from 'react-icons/bs'
-import { AiFillHome, AiFillTag, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
-import { CgNotes } from 'react-icons/cg'
-import { BiBookAlt } from 'react-icons/bi'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { FaAngleDown, FaPlus } from "react-icons/fa";
+import { BsSearch } from "react-icons/bs";
+import {
+  AiFillHome,
+  AiFillTag,
+  AiFillGithub,
+  AiFillLinkedin,
+} from "react-icons/ai";
+import { CgNotes } from "react-icons/cg";
+import { BiBookAlt } from "react-icons/bi";
+import convertToSnakeCase from '../../util/snake_case_util'
+import { Link, withRouter } from "react-router-dom";
+// import convertToSnakeCase from "../../util/snake_case_util";
 
 class ExpandedSideNav extends React.Component {
-    constructor(props) {
-        super(props)
-        this.handleClick = this.handleClick.bind(this);
-    
-    }
-handleClick(e) {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleCreateNote = this.handleCreateNote.bind(this);
+  }
+
+  // this method was created with the assistance of Tim Fraczak, a colleague of mine.
+  componentDidMount() {
+    this.props.fetchNotebooks();
+    this.props.fetchNotes();
+  }
+  handleClick(e) {
     e.preventDefault();
-    this.props.logout()
-}
+    this.props.logout();
+  }
+  handleCreateNote(e) {
+    e.preventDefault();
+    let newNote = {
+      title: "Title",
+      content: "Start writing",
+      authorId: this.props.currentUser.id,
+      notebookId: this.props.match.params.notebookId,
+    };
+    this.props
+      .createNote(convertToSnakeCase(newNote))
+      .then((response) =>
+        this.props.history.push(
+          `/notebooks/${this.props.match.params.notebookId}/notes/${response.note.id}`
+        )
+      );
+  }
 
-    
+  // toggleActive = () => {
+  //     document.querySelector('.action-dropdown-ul')
+  //         .classList.toggle('active')
+  // }
 
-// toggleActive = () => {
-//     document.querySelector('.action-dropdown-ul')
-//         .classList.toggle('active')
-// }
+  render() {
+    // debugger
+    let title = this.props.currentUser.username || this.props.currentUser.email;
+    let firstLetter = title[0].toUpperCase();
 
-    render() {
-    let title = this.props.currentUser.username || this.props.currentUser.email
-    let firstLetter = title[0].toUpperCase()
-   
     return (
       <div className="sidenavbar">
         <div className="sidenavbar-top">
@@ -59,7 +87,9 @@ handleClick(e) {
               <i className="sidenavbar-plus-icon">
                 <FaPlus />
               </i>
-              <div className="new-note">New Note</div>
+              <div className="new-note" onClick={this.handleCreateNote}>
+                New Note
+              </div>
             </div>
           </div>
           <div className="sidenavbar-top-menu-item">
@@ -124,9 +154,8 @@ handleClick(e) {
           </div>
         </div>
       </div>
-    );        
-    }
+    );
+  }
 }
 
-
-export default ExpandedSideNav
+export default withRouter(ExpandedSideNav);

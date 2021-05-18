@@ -1,4 +1,4 @@
-export const convertToSnakeCase = obj => {
+const convertToSnakeCase = obj => {
     const camelToSnakeCase = str =>
         str.replace(/[A-Z]/g, letter =>
             `_${letter.toLowerCase()}`);
@@ -10,5 +10,8 @@ export const convertToSnakeCase = obj => {
             for(let i = 0; i < keys.length; i++) {
                 newObj[convertedKeys[i]] = values[i]}
                 return newObj;
-    }
+}
+
+export default convertToSnakeCase
+
     // this method was created with the assistance of Tim Fraczak, a colleague of mine. 

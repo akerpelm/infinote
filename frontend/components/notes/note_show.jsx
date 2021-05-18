@@ -5,8 +5,7 @@ export class NoteShow extends React.Component {
   constructor(props) {
     super(props);
     // console.log('hi')
-    // debugger
-    this.state = this.props.currentNote
+    this.state
     // this.handleChange = this.handleChange.bind(this);
 }
 
@@ -17,7 +16,8 @@ export class NoteShow extends React.Component {
     //      })
     // }
     componentDidMount() {
-        this.props.fetchNotes(this.props.match.params.noteId);
+        // debugger
+        this.props.fetchNote(this.props.match.params.noteId);
     }
     
     // componentWillUnmount() {
@@ -31,6 +31,7 @@ export class NoteShow extends React.Component {
         let currentNoteContent = currentNote ? currentNote.content : "Start typing";
         // debugger
         console.log(this.state)
+
 
     return (
       <div className="note">

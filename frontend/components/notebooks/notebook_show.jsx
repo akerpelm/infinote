@@ -10,27 +10,16 @@ export class NotebookShow extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = props.notebook;
-    // this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
     this.props.fetchNotes()
   }
-  // handleChange(field) {
-  //   return (e) =>
-  //     this.setState({
-  //       [field]: e.target.value,
-  //     });
-  // }
-
-  // handleSubmit(e) {
-  //   e.preventDefault();
-  //   this.props.updateNotebook(this.state);
-  // }
+  
   render() {
     let title = this.props.notebook ? this.props.notebook.title : "Notes";
     if (!title) return null;
+    let notes = this.props.notes ? this.props.notes : undefined
     return (
       <div className="notebook-show">
         <ExpandedSideNavContainer currentUser={this.props.currentUser} />
@@ -41,7 +30,8 @@ export class NotebookShow extends Component {
         {/* renders all notes */}
         <NoteShow
           title={title}
-          fetchNotes={this.props.fetchNotes}
+          notes={notes}
+          fetchNote={this.props.fetchNote}
           currentNote={this.props.currentNote}
         />
         {/* renders individual note */}

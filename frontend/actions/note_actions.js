@@ -33,7 +33,8 @@ export const removeNoteErrors = () => ({
 export const fetchNotes = () => dispatch => NotesApiUtil.fetchNotes().then( notes => dispatch(receiveAllNotes(notes)))
 // , err => (dispatch(receiveErrors(err.responseJSON))));
 
-export const fetchNote = (noteId) => dispatch => NotesApiUtil.fetchNote(noteId).then( note => dispatch(receiveNote(note)), err => (dispatch(receiveErrors(err.responseJSON))));
+export const fetchNote = (noteId) => dispatch => NotesApiUtil.fetchNote(noteId).then( note => dispatch(receiveNote(note)))
+// , err => (dispatch(receiveErrors(err.responseJSON))));
 
 export const createNote = (note) => dispatch => NotesApiUtil.createNote(note).then( note => dispatch(receiveNote(note)), err => (dispatch(receiveErrors(err))));
 

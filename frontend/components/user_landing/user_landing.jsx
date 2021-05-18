@@ -10,7 +10,7 @@ const UserLanding = () => (
   <div>
     {/* <Switch> */}
     {/* <Route exact path="/test" component={TestContainer} /> */}
-    <Route exact path="/notes" component={TestContainer} />
+    <Route exact path="/notes" component={NotebookShowContainer} />
     <Route
       exact
       path="/notebooks/:notebookId/notes/:noteId"

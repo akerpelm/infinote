@@ -6,7 +6,6 @@ import NoteShow from "../notes/note_show";
 class TestIndex extends Component {
   constructor(props) {
     super(props);
-    debugger;
   }
 
   componentDidMount() {
@@ -16,6 +15,7 @@ class TestIndex extends Component {
   render() {
           let title = this.props.notebook ? this.props.notebook.title : "Notes";
           if (!title) return null;
+
     return (
       <div className="notebook-show">
         <ExpandedSideNavContainer currentUser={this.props.currentUser} />
@@ -24,7 +24,7 @@ class TestIndex extends Component {
         {/* <EditModalContainer notebook={this.props.notebook}/> */}
 
         {/* renders all notes */}
-        <NoteShow title={title}  currentNote={this.props.currentNote} />
+        <NoteShow />
         {/* renders individual note */}
       </div>
     );

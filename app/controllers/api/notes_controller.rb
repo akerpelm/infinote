@@ -7,7 +7,6 @@ class Api::NotesController < ApplicationController
 
     def show
         @note = Note.find(params[:id])
-        render :show
         if @note
             render :show
         else

@@ -3,7 +3,7 @@ import { fetchNotebook, updateNotebook, removeNotebookErrors} from '../../action
 import { deleteNotebook } from '../../util/notebooks_api_util'
 import NotebookShow from './notebook_show'
 import { logout } from '../../actions/session_actions'
-import { fetchNotes } from '../../actions/note_actions'
+import { fetchNote, fetchNotes } from '../../actions/note_actions'
 
 const mapStateToProps = (state, ownProps) => {
 let dbNotes = Object.values(state.entities.notes)
@@ -29,6 +29,7 @@ let findNoteById = (notebook, noteId) => {
 
 const mapDispatchToProps = dispatch => ({
   fetchNotes: () => dispatch(fetchNotes()),
+  fetchNote: (noteId) => dispatch(fetchNote(noteId)),
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
   updateNotebook: notebook => dispatch(updateNotebook(notebook)),
   removeNotebookErrors: () => dispatch(removeNotebookErrors()),
