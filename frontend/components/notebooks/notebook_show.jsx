@@ -10,11 +10,12 @@ export class NotebookShow extends Component {
   constructor(props) {
     super(props);
 
-    this.state = props.notebook;
+    // this.state = props.notebook;
     // this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
+    this.props.fetchNotes()
   }
   // handleChange(field) {
   //   return (e) =>
@@ -34,12 +35,15 @@ export class NotebookShow extends Component {
       <div className="notebook-show">
         <ExpandedSideNavContainer currentUser={this.props.currentUser} />
         {/* renders right nav */}
-        <TestContainer />
         <NotesIndex title={title} notes={this.props.notes} />
         {/* <EditModalContainer notebook={this.props.notebook}/> */}
 
         {/* renders all notes */}
-        <NoteShow title={title} currentNote={this.props.currentNote} />
+        <NoteShow
+          title={title}
+          fetchNotes={this.props.fetchNotes}
+          currentNote={this.props.currentNote}
+        />
         {/* renders individual note */}
       </div>
     );

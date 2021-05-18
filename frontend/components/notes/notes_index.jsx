@@ -34,6 +34,7 @@ class NotesIndex extends React.Component {
                 ? `${this.props.notes.length}  note`
                 : `${this.props.notes.length} notes`}
             </div>
+
           </div>
         </div>
 

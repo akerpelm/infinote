@@ -1,11 +1,12 @@
 import React from "react";
+import {withRouter} from 'react-router'
 
 export class NoteShow extends React.Component {
   constructor(props) {
     super(props);
     // console.log('hi')
     // debugger
-    // this.state = this.props.currentNote
+    this.state = this.props.currentNote
     // this.handleChange = this.handleChange.bind(this);
 }
 
@@ -15,9 +16,9 @@ export class NoteShow extends React.Component {
     //          [field] : e.target.value
     //      })
     // }
-    // componentDidMount() {
-    //     currentNote
-    // }
+    componentDidMount() {
+        this.props.fetchNotes(this.props.match.params.noteId);
+    }
     
     // componentWillUnmount() {
     //     debugger
@@ -29,6 +30,7 @@ export class NoteShow extends React.Component {
         // let currentNoteId = currentNote ? currentNote.id : undefined;
         let currentNoteContent = currentNote ? currentNote.content : "Start typing";
         // debugger
+        console.log(this.state)
 
     return (
       <div className="note">
@@ -49,7 +51,7 @@ export class NoteShow extends React.Component {
     );
   }
 }
-export default NoteShow;
+export default withRouter(NoteShow);
 
 // }
 
