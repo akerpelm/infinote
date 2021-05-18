@@ -1,9 +1,8 @@
 import { connect } from 'react-redux'
-import { fetchNotebook, updateNotebook, removeNotebookErrors} from '../../actions/notebook_actions'
-import { deleteNotebook } from '../../util/notebooks_api_util'
+import { deleteNotebook, fetchNotebook, updateNotebook, removeNotebookErrors} from '../../actions/notebook_actions'
 import NotebookShow from './notebook_show'
 import { logout } from '../../actions/session_actions'
-import { fetchNote, fetchNotes } from '../../actions/note_actions'
+import { fetchNote, fetchNotes, updateNote } from '../../actions/note_actions'
 
 const mapStateToProps = (state, ownProps) => {
 let dbNotes = Object.values(state.entities.notes)
@@ -27,15 +26,16 @@ let findNoteById = (notebook, noteId) => {
   
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   fetchNotes: () => dispatch(fetchNotes()),
   fetchNote: (noteId) => dispatch(fetchNote(noteId)),
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
-  updateNotebook: notebook => dispatch(updateNotebook(notebook)),
+  updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
   removeNotebookErrors: () => dispatch(removeNotebookErrors()),
   deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId)),
   logout: () => dispatch(logout()),
-  removeNotebookErrors: () => dispatch(removeNotebookErrors())
-})
+  removeNotebookErrors: () => dispatch(removeNotebookErrors()),
+  updateNote: (note) => dispatch(updateNote(note)),
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(NotebookShow)

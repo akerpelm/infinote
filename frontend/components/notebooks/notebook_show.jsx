@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import NotesIndex from '../notes/notes_index'
 import ExpandedSideNavContainer from '../side_nav/expanded_side_nav_container'
 import NoteShow from '../notes/note_show'
-import EditModalContainer from "../notebooks/modals/edit_modal_container";
-import TestContainer from '../notes/test_container';
+;
 
 
 export class NotebookShow extends Component {
@@ -33,6 +32,8 @@ export class NotebookShow extends Component {
           notes={notes}
           fetchNote={this.props.fetchNote}
           currentNote={this.props.currentNote}
+          currentUser={this.props.currentUser}
+          updateNote={this.props.updateNote}
         />
         {/* renders individual note */}
       </div>
