@@ -13,6 +13,7 @@ let findNoteById = (notebook, noteId) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     return {
     notebook: state.entities.notebooks[ownProps.match.params.notebookId],
     notes: tempNotes,

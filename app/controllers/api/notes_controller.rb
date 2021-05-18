@@ -3,7 +3,6 @@ class Api::NotesController < ApplicationController
     def index
         @notes = current_user.notes
         render :index
-
     end
 
     def show
@@ -30,7 +29,7 @@ class Api::NotesController < ApplicationController
         if @note.update_attributes(note_params)
             render :show
         else
-            render json: @note.errors.full_messages, status: 404,
+            render json: @note.errors.full_messages, status: 404
         end
     end
 

@@ -1,4 +1,4 @@
-import * as NoteApiUtil from '../util/notes_api_util'
+import * as NotesApiUtil from '../util/notes_api_util'
 
 export const RECEIVE_ALL_NOTES = "RECEIVE_ALL_NOTES"
 export const RECEIVE_NOTE = "RECEIVE_NOTE"
@@ -17,7 +17,7 @@ const receiveNote = (note) => ({
 })
 
 const removeNote = (noteId) => ({
-    RECEIVE_ALL_NOTES,
+    REMOVE_NOTE,
     noteId
 })
 
@@ -30,12 +30,13 @@ export const removeNoteErrors = () => ({
     type: REMOVE_ERRORS
 })
 
-export const fetchNotes = () => dispatch => NoteApiUtil.fetchNotes().then(notes => dispatch(receiveAllNotes(notes)), err => (dispatch(receiveErrors(err.responseJSON))));
+export const fetchNotes = () => dispatch => NotesApiUtil.fetchNotes().then( notes => dispatch(receiveAllNotes(notes)))
+// , err => (dispatch(receiveErrors(err.responseJSON))));
 
-export const fetchNote = (noteId) => dispatch => NoteApiUtil.fetchNote(noteId).then( note => dispatch(receiveNote(note)), err => (dispatch(receiveErrors(err.responseJSON))));
+export const fetchNote = (noteId) => dispatch => NotesApiUtil.fetchNote(noteId).then( note => dispatch(receiveNote(note)), err => (dispatch(receiveErrors(err.responseJSON))));
 
-export const createNote = (note) => dispatch => NoteApiUtil.createNote(note).then( note => dispatch(fetchNote(note)), err => (dispatch(receiveErrors(err))));
+export const createNote = (note) => dispatch => NotesApiUtil.createNote(note).then( note => dispatch(receiveNote(note)), err => (dispatch(receiveErrors(err))));
 
-export const updateNote = (note) => dispatch => NoteApiUtil.updateNote(note).then (note => dispatch(receiveNote(note)), err => (dispatch(receiveErrors(err))));
+export const updateNote = (note) => dispatch => NotesApiUtil.updateNote(note).then (note => dispatch(receiveNote(note)), err => (dispatch(receiveErrors(err))));
 
-export const deleteNote = (noteId) => dispatch => NoteApiUtil.deleteNote(noteId).then( note => dispatch(removeNote(note)), err => (dispatch(receiveErrors(err))));
+export const deleteNote = (noteId) => dispatch => NotesApiUtil.deleteNote(noteId).then( note => dispatch(removeNote(note)), err => (dispatch(receiveErrors(err))));
