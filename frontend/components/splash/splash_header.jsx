@@ -13,8 +13,24 @@ const SplashHeader = () => {
         </div>
         <div className="splash-header-buttons">
           <ul>
-            <li><AiFillGithub/></li>
-            <li><AiFillLinkedin/></li>
+            <li>
+              <a href="https://www.github.com/akerpelm" target="_blank">
+                <i >
+                  <AiFillGithub/>
+                </i>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/alexander-kerpelman-22587584/"
+                target="_blank"
+              >
+                <i>
+                  <AiFillLinkedin />
+                </i>
+                
+              </a>
+            </li>
           </ul>
         </div>
       </div>

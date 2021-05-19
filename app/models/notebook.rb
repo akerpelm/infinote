@@ -17,10 +17,10 @@ class Notebook < ApplicationRecord
     foreign_key: :author_id,
     class_name: :User 
 
-    # has many notes...
-    has_many :notes,
+    has_many :notes, dependent: :destroy,
     foreign_key: :notebook_id,
     class_name: :Note
+
 
 
 end

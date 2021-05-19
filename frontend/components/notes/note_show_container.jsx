@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import NoteShow from "./note_show";
 import { withRouter } from "react-router-dom";
-import { fetchNote, updateNote } from "../../actions/note_actions";
+import { deleteNote, fetchNote, updateNote } from "../../actions/note_actions";
 
 class NoteShowContainer extends React.Component {
 
@@ -12,7 +12,7 @@ class NoteShowContainer extends React.Component {
   
   
   render() {
-    const { currentNote, notebook, notes, title, currentUser,  updateNote } = this.props
+    const { currentNote, notebook, notes, title, currentUser, deleteNote, updateNote } = this.props
     if (!currentNote) return null;
     return (
       <NoteShow
@@ -22,6 +22,9 @@ class NoteShowContainer extends React.Component {
       title={title}
       currentUser={currentUser}
       updateNote={updateNote}
+      deleteNote={deleteNote}
+      noteId = {this.props.noteId}
+      ///
       />
     )
 
@@ -37,19 +40,18 @@ const mapStateToProps = (state, ownProps) => {
     });
   };
 
+
   return {
     currentNote: findNoteById(dbNotes, ownProps.match.params.noteId)
       ? findNoteById(dbNotes, ownProps.match.params.noteId)
       : undefined,
-
     notebook: state.entities.notebooks[ownProps.match.params.notebookId],
-    notes: state.entities.notes,
-
     title: state.entities.notebooks[ownProps.match.params.notebookId]
       ? state.entities.notebooks[ownProps.match.params.notebookId].title
       : "Notes",
 
     currentUser: state.entities.users[state.session.id],
+    noteId: ownProps.match.params.noteId,
   };
 };
 
@@ -57,6 +59,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
   fetchNote: (noteId) => dispatch(fetchNote(noteId)),
   updateNote: (note) => dispatch(updateNote(note)),
+  deleteNote: (noteId) => dispatch(deleteNote(noteId)),
 }
 };
 

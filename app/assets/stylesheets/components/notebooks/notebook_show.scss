@@ -1,160 +1,192 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
-$oxygen: 'Oxygen';
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap");
+$oxygen: "Oxygen";
 
-.notebook-show{
-    display:flex;
-    align-items: center;
-    // justify-content: center;
-    height:100vh;
+.notebook-show {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  height: 100vh;
 }
-
 
 //NOTE LIST
 
 .note-list {
-    height: 100%;
-    width: 380px;
-    max-width: 670px;
-    min-width: 196px;
-    background: #f8f8f8;
-    border-right: 1px solid #e6e6e6;
+  height: 100%;
+  width: 380px;
+  max-width: 670px;
+  min-width: 196px;
+  background: #f8f8f8;
+  border-right: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  font-family: $oxygen;
+  overflow: scroll;
+  .note-list-header {
+    padding: 5px 25px;
     display: flex;
     flex-direction: column;
-    font-family: $oxygen;
-    .note-list-header {
-        padding: 5px 25px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        height: 100px;
-        box-sizing: border-box;
-        border-bottom: 1px solid #ccc;
-        .note-list-header-title {
-            width: 100%;
-            flex: 1;
-            h1 {
-                margin: 15px 0 20px;
-                font-size: 20px;
-            }
-            
-            .note-list-header-sub {
-                width: 100%;
-                margin: 5px;
-                font-size: 14px;
-            }
-        }
-    }
-    .note-list-body {
-        flex: 1;
-        overflow-y:auto;
-        .note-card {
-            height: 120px;
-            padding: 20px 25px;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid #e6e6e6;
-            text-decoration: none;
-            .note-card-head {
-                width: 100%;
-                display: flex;
-                align-items: center;
-                flex-direction: column;
-                flex: 1;
-                font-size: 14px;
-                .note-card-title {
-                    width: 100%;
-                    color: #333;
-                    font-weight: bold;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-                .note-card-desc {
-                    padding-bottom: 10px;
-                    width: 100%;
-                    color: #737373;
-                    margin-top: 5px;
-                    white-space: nowrap;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                }
-            }
-            .note-card-date {
-                color: #4d4d4d;
-                font-size: 13px;
-            }
-            &:hover {
-                cursor: pointer;
-                background: #fff;
-            }
-            &.active {
-                background: #fff;
-            }
-        }
-    }
+    align-items: flex-start;
+    height: 100px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    scroll-behavior: smooth;
+    .note-list-header-title {
+      width: 100%;
+      flex: 1;
+      h1 {
+        margin: 15px 0 20px;
+        font-size: 20px;
+      }
 
+      .note-list-header-sub {
+        width: 100%;
+        margin: 5px;
+        font-size: 14px;
+      }
+    }
+  }
+  .note-list-element {
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
+  }
+
+  .note-list-body {
+    flex: 1;
+    overflow-y: auto;
+    .note-card {
+      height: 120px;
+      padding: 20px 25px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #e6e6e6;
+      text-decoration: none;
+      .note-card-head {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex: 1;
+        font-size: 14px;
+        .note-card-title {
+          width: 100%;
+          color: #333;
+          font-weight: bold;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .note-card-desc {
+          padding-bottom: 10px;
+          width: 100%;
+          color: #737373;
+          margin-top: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .note-card-date {
+        color: #4d4d4d;
+        font-size: 13px;
+      }
+      &:hover {
+        cursor: pointer;
+        background: #fff;
+      }
+      &.active {
+        background: #fff;
+      }
+    }
+  }
 }
 
 //NOTE SHOW
 
 .note {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+  font-family: $oxygen;
+  .note-header {
+    height: 100px;
+    width: 100%;
     display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0px 0px 50px 50px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #e6e6e6;
+    i {
+      vertical-align: text-bottom;
+      padding-right: 5px;
+    }
+    .note-header-title {
+      font-size: 18px;
+      color: #737373;
+    }
+    .note-header-action-btn {
+      display: flex;
+      .action-btn {
+        color: #737373;
+        font-size: 14px;
+        opacity: 0.5;
+        margin: 0 10px;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+      &:hover .note-header-delete {
+        display: block;
+      }
+    }
+    .note-header-delete {
+      // transition: 10s;
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 30px;
+      color: #737373;
+      padding: 10px;
+      background: #f8f8f8;
+      border-radius: 4px;
+      box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
+
+      // &:hover {
+      //     display: block
+      // }
+    }
+  }
+  .note-body {
     flex: 1;
-    flex-direction: column;
-    height: 100%;
-    .note-header {
-        height: 100px;
+    padding: 20px;
+    .note-body-head {
+      input {
+        padding: 10px;
+        font-size: 30px;
+        border: none;
+        outline: none;
         width: 100%;
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        padding: 0px 0px 50px 50px;
-        box-sizing: border-box;
-        border-bottom: 1px solid #e6e6e6;
-        .note-header-date {
-            font-size: 14px;
-            color: #737373;
-        }
-        // .note-header-action-btn {
-        //     display: flex;
-        //     .action-btn {
-        //         color: #737373;
-        //         font-size: 14px;
-        //         opacity: 0.5px;
-        //         margin: 0 10px;
-                // &:hover{
-                //     opacity: 1;
-                //     cursor: pointer;
-                // }
-        //     }
-        // }
+      }
     }
-    .note-body {
-        flex: 1;
-        padding: 20px;
-        .note-body-head {
-            input {
-                padding: 10px;
-                font-size: 30px;
-                border: none;
-                outline: none;
-                width: 100%;
-            }
-        }
-        .note-body-content {
-            textarea {
-                // min-height: 60vh;
-                // max-height: 65vh;
-                // min-width: 620px;
-                // max-width: 100vh;
-                height: 600px;
-                width: 100%;
-                padding: 10px;
-                font-size: 16px;
-                border: none;
-                outline: none;
-                resize: none;
-            }
-        }
+    .note-body-content {
+      textarea {
+        // min-height: 60vh;
+        // max-height: 65vh;
+        // min-width: 620px;
+        // max-width: 100vh;
+        height: 600px;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        outline: none;
+        resize: none;
+      }
     }
+  }
 }

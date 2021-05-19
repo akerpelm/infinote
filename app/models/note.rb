@@ -4,9 +4,9 @@
 #
 #  id          :bigint           not null, primary key
 #  title       :string
-#  content     :string           not null
+#  content     :string
 #  author_id   :integer          not null
-#  notebook_id :integer          not null
+#  notebook_id :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

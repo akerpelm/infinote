@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 import { CgNotes } from "react-icons/cg";
 import { BiBookAlt } from "react-icons/bi";
-import convertToSnakeCase from '../../util/snake_case_util'
+import convertToSnakeCase from "../../util/snake_case_util";
 import { Link, withRouter } from "react-router-dom";
 // import convertToSnakeCase from "../../util/snake_case_util";
 
@@ -31,11 +31,12 @@ class ExpandedSideNav extends React.Component {
   }
   handleCreateNote(e) {
     e.preventDefault();
+    let notebookId = this.props.match.params.notebookId ? this.props.match.params.notebookId : 674
     let newNote = {
-      title: "Title",
-      content: "Start writing",
+      title: "",
+      content: "",
       authorId: this.props.currentUser.id,
-      notebookId: this.props.match.params.notebookId,
+      notebookId: notebookId,
     };
     this.props
       .createNote(convertToSnakeCase(newNote))
@@ -82,19 +83,20 @@ class ExpandedSideNav extends React.Component {
               <input placeholder="Search" />
             </div>
           </div>
-          <div className="sidenavbar-top-create-note">
+          <div
+            className="sidenavbar-top-create-note"
+            onClick={this.handleCreateNote}
+          >
             <div className="create-note-btn">
               <i className="sidenavbar-plus-icon">
                 <FaPlus />
               </i>
-              <div className="new-note" onClick={this.handleCreateNote}>
-                New Note
-              </div>
+              <div className="new-note">New Note</div>
             </div>
           </div>
           <div className="sidenavbar-top-menu-item">
             <ul className="sidenavbar-menu-btn">
-              <Link to="/notes">
+              <Link style={{ textDecoration: "none" }} to="/notes">
                 <li className="sidebar-home">
                   <i className="menu-btn-icon">
                     <AiFillHome />
@@ -103,7 +105,7 @@ class ExpandedSideNav extends React.Component {
                 </li>
               </Link>
 
-              <Link to="/notes">
+              <Link style={{ textDecoration: "none" }} to="/notes">
                 <li className="sidebar-notes">
                   <i className="menu-btn-icon">
                     <CgNotes />
@@ -112,7 +114,7 @@ class ExpandedSideNav extends React.Component {
                 </li>
               </Link>
 
-              <Link to="/notebooks">
+              <Link style={{ textDecoration: "none" }} to="/notebooks">
                 <li className="sidebar-notebooks">
                   <i className="menu-btn-icon">
                     <BiBookAlt />
@@ -121,7 +123,7 @@ class ExpandedSideNav extends React.Component {
                 </li>
               </Link>
 
-              <Link to="/notes">
+              <Link style={{ textDecoration: "none" }} to="/notes">
                 <li className="sidebar-tags">
                   <i className="menu-btn-icon">
                     <AiFillTag />

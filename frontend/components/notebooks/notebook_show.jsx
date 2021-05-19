@@ -19,13 +19,18 @@ export class NotebookShow extends Component {
     if (!title) return null;
     let notes = this.props.notes ? this.props.notes : undefined;
 
+    if (!this.props.allNotes) return null;
     return (
       <div className="notebook-show">
         <ExpandedSideNavContainer currentUser={this.props.currentUser} />
-        <NotesIndex title={title} notes={this.props.notes} />
+        <NotesIndex
+          fetchNotes={this.props.fetchNotes}
+          title={title}
+          notes={this.props.notes}
+          allNotes={this.props.allNotes}
+        />
         {/* selector so this.props.notes are only notes for this notbeook */}
-        <NoteShowContainer fetchNote={this.props.fetchNote}/>
-        {/* renders individual note */}
+        <NoteShowContainer />
       </div>
     );
   }

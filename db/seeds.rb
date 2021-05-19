@@ -11,6 +11,7 @@
 demo = User.create(email: "demo_user@infinote.com", password: "infinote", username: "DemoUser")
 user1 = User.create(email: "test@test.com", password: "password")
 
+main_notebook = Notebook.create(title: "Notes", author_id: 1, id: 0)
 notebook1 = Notebook.create(title: "When to Short VIX", author_id: 1)
 notebook2 = Notebook.create(title: "Net Option Pricing Effect Development", author_id: 1)
 notebook2 = Notebook.create(title: "Uranium Bull Thesis", author_id: 1)

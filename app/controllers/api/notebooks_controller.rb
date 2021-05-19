@@ -4,6 +4,8 @@ class Api::NotebooksController < ApplicationController
 
     def index
         @notebooks = current_user.notebooks
+        # notebooks.each notebook render notebook.notes < inefficient
+        # use includes and ad dto jbuilder
         render :index
     end
 

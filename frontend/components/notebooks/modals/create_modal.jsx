@@ -8,6 +8,7 @@ import convertToSnakeCase from "../../../util/snake_case_util";
 class CreateModal extends Component {
   constructor(props) {
     super(props);
+  
     this.state = props.notebook;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -21,7 +22,7 @@ class CreateModal extends Component {
   renderErrors() {
     return (
       <ul className="error-ul">
-        {this.props.errors.map((error, i) => (
+        {Array.from(this.props.errors).map((error, i) => (
           <li className="error-li" key={`error-${i}`}>
             {error}
           </li>

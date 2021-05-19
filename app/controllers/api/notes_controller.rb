@@ -2,6 +2,8 @@ class Api::NotesController < ApplicationController
 
     def index
         @notes = current_user.notes
+        # @notebook = @notes.each do note => note.notebook
+        # 
         render :index
     end
 
@@ -19,16 +21,17 @@ class Api::NotesController < ApplicationController
         if @note.save
             render :show
         else
-            render json: @note.errors.full_messages, status: 404
+            render json: @note.errors.full_messages, status: 422
         end
     end
 
     def update 
         @note = Note.find(params[:id])
+        # debugger
         if @note.update_attributes(note_params)
             render :show
         else
-            render json: @note.errors.full_messages, status: 404
+            render json: @note.errors.full_messages, status: 422
         end
     end
 
@@ -43,7 +46,7 @@ class Api::NotesController < ApplicationController
 
     private
     def note_params
-        params.require(:note).permit(:title, :content, :author_id, :notebook_id)
+        params.require(:note).permit(:id, :title, :content, :author_id, :notebook_id, :updated_at, :created_at)
     end
 
 
