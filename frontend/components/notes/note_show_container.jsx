@@ -9,9 +9,8 @@ class NoteShowContainer extends React.Component {
   componentDidMount() {
     this.props.fetchNote(this.props.match.params.noteId);
   }
- 
   
-
+  
   render() {
     const { currentNote, notebook, notes, title, currentUser,  updateNote } = this.props
     if (!currentNote) return null;

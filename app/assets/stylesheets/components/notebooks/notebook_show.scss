@@ -70,6 +70,7 @@ $oxygen: 'Oxygen';
                     text-overflow: ellipsis;
                 }
                 .note-card-desc {
+                    padding-bottom: 10px;
                     width: 100%;
                     color: #737373;
                     margin-top: 5px;
@@ -107,7 +108,7 @@ $oxygen: 'Oxygen';
         display: flex;
         align-items: flex-end;
         justify-content: space-between;
-        padding: 20px;
+        padding: 0px 0px 50px 50px;
         box-sizing: border-box;
         border-bottom: 1px solid #e6e6e6;
         .note-header-date {

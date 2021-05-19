@@ -47,7 +47,7 @@ class NotesIndex extends React.Component {
                     <div className="note-card-title">{note.title}</div>
                     <div className="note-card-desc">{note.content}</div>
                   </div>
-                  <div className="note-card-date">Updated...</div>
+                  <div className="note-card-date">Updated {note.updated_at}</div>
                 </div>
               </div>
             </div>

@@ -5,21 +5,23 @@ import convertToSnakeCase from "../../util/snake_case_util";
 export class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.currentNote;
 
+    this.state = props.currentNote;
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
   handleUpdate(e) {
-    debugger
     e.preventDefault();
     this.props
       .updateNote(convertToSnakeCase(this.state))
-      .then(() =>
-        this.props.history.push(`/notebooks/${this.props.notebook.id}`)
-      );
+      // .then(() =>
+      // );
   }
 
+  // componentWillUnmount() {
+      // this.props.history.push(`/notebooks/${this.props.notebook.id}/notes/${this.props.currentNote.id}`)
+  // }
+  
   handleChange(field) {
     // debugger
     return (e) =>
@@ -36,7 +38,6 @@ export class NoteShow extends React.Component {
 
     return (
       <div className="note" onBlur={this.handleUpdate}>
-        {/* <form onChange={this.handleUpdate}> */}
         <div className="note-header">
           <div className="note-header-date">{this.props.title}</div>
           <div className="note-header-action-btn"></div>
