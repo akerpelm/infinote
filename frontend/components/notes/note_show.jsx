@@ -73,12 +73,14 @@ export class NoteShow extends React.Component {
           <div className="note-body-head">
             <input
               value={this.state.title}
+              placeholder={this.state.title || 'Title'}
               onChange={this.handleChange("title")}
             />
           </div>
           <div className="note-body-content">
             <textarea
               value={this.state.content}
+              placeholder={this.state.content || "Start writing..."}
               onChange={this.handleChange("content")}
               // onChange={this.handleUpdate}
               // on submit needed? stop from doing anything , e.preventDefault()

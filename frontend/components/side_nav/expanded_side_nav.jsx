@@ -31,7 +31,7 @@ class ExpandedSideNav extends React.Component {
   }
   handleCreateNote(e) {
     e.preventDefault();
-    let notebookId = this.props.match.params.notebookId ? this.props.match.params.notebookId : null
+    let notebookId = this.props.match.params ? this.props.match.params.notebookId : 0
     let newNote = {
       title: "",
       content: "",
@@ -42,7 +42,7 @@ class ExpandedSideNav extends React.Component {
       .createNote(convertToSnakeCase(newNote))
       .then((response) =>
         this.props.history.push(
-          `/notebooks/${this.props.match.params.notebookId}/notes/${response.note.id}`
+          `/notebooks/${notebookId}/notes/${response.note.id}`
         )
       );
   }

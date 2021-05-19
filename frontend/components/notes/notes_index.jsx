@@ -48,7 +48,7 @@ class NotesIndex extends React.Component {
             <div className="note-list-element" key={note.id}>
               <Link
                 style={{ textDecoration: "none" }}
-                to={`/notebooks/${this.props.match.params.notebookId}/notes/${note.id}`}
+                to={`/notebooks/${note.notebookId}/notes/${note.id}`}
                 // to={`/notebooks/${this.props.match.params.notebookId}/notes/${note.id}`}
               >
                 <div className="note-list-body">
