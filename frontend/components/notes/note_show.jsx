@@ -4,6 +4,7 @@ import convertToSnakeCase from "../../util/snake_case_util";
 import { FaTrash } from "react-icons/fa";
 import { BiBookAlt } from "react-icons/bi";
 
+
 export class NoteShow extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +29,7 @@ export class NoteShow extends React.Component {
   // shouldComponentUpdate to set state
   componentDidUpdate(prevProps) {
     if (prevProps.noteId !== this.props.noteId) {
-      this.setState(this.props.currentNote)
+      this.setState(this.props.currentNote);
     }
   }
 
@@ -65,6 +66,9 @@ export class NoteShow extends React.Component {
             <div className="note-header-delete">Delete note?</div>
           </div>
         </div>
+        {/* <div className="test-quill"> */}
+          {/* <ReactQuill modules={App.modules} formats={App.formats} onChange={this.handleBody} value={} /> */}
+        {/* </div> */}
         <div className="note-body" onBlur={this.handleUpdate}>
           <div className="note-body-head">
             <input
@@ -86,4 +90,5 @@ export class NoteShow extends React.Component {
     );
   }
 }
+
 export default withRouter(NoteShow);

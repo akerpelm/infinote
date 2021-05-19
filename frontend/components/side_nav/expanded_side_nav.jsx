@@ -31,7 +31,7 @@ class ExpandedSideNav extends React.Component {
   }
   handleCreateNote(e) {
     e.preventDefault();
-    let notebookId = this.props.match.params.notebookId ? this.props.match.params.notebookId : 674
+    let notebookId = this.props.match.params.notebookId ? this.props.match.params.notebookId : null
     let newNote = {
       title: "",
       content: "",
@@ -53,7 +53,6 @@ class ExpandedSideNav extends React.Component {
   // }
 
   render() {
-    // debugger
     let title = this.props.currentUser.username || this.props.currentUser.email;
     let firstLetter = title[0].toUpperCase();
 

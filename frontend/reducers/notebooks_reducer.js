@@ -8,7 +8,6 @@ const NotebooksReducer = (state = {}, action) => {
             nextState = action.notebooks;
             return nextState;
         case RECEIVE_NOTEBOOK:
-            // debugger
             nextState[action.notebook.id] = action.notebook;
             return nextState;
         case REMOVE_NOTEBOOK: 

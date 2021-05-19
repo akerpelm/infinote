@@ -27,7 +27,7 @@ class Api::NotesController < ApplicationController
 
     def update 
         @note = Note.find(params[:id])
-        # debugger
+
         if @note.update_attributes(note_params)
             render :show
         else
@@ -46,7 +46,7 @@ class Api::NotesController < ApplicationController
 
     private
     def note_params
-        params.require(:note).permit(:id, :title, :content, :author_id, :notebook_id, :updated_at, :created_at)
+        params.require(:note).permit(:id, :title, :content, :author_id, :notebook_id)
     end
 
 

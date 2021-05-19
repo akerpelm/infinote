@@ -18,6 +18,15 @@ class NotesIndex extends React.Component {
   }
 
   render() {
+    const { allNotes, match } = this.props
+    // debugger
+    // const conditionalLink = allNotes.length === 0 ? null : this.props.allNotes.filter(
+      //   (note) => note.id == this.props.match.params.noteId
+      // )[0].notebookId ||= 'hi'
+      // console.log(conditionalLink)
+      // let conditionalLink = this.props.allNotes.filter((note) => note.id == this.props.match.params.noteId)[0].notebookId === undefined ? undefined : this.props.allNotes.filter((note) => note.id == this.props.match.params.noteId)[0].notebookId
+      // console.log(conditionalLink)
+
     return (
       <div className="note-list">
         <div className="note-list-header">
@@ -40,6 +49,7 @@ class NotesIndex extends React.Component {
               <Link
                 style={{ textDecoration: "none" }}
                 to={`/notebooks/${this.props.match.params.notebookId}/notes/${note.id}`}
+                // to={`/notebooks/${this.props.match.params.notebookId}/notes/${note.id}`}
               >
                 <div className="note-list-body">
                   <div className="note-card">
