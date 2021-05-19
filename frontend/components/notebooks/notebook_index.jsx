@@ -3,6 +3,7 @@ import NotebookIndexItem from "./notebook_index_item";
 import { BsSearch } from "react-icons/bs";
 import CreateModal from "./modals/create_modal";
 import ReducedSideNavContainer from "../side_nav/reduced_side_nav_container";
+import convertToSnakeCase from "../../util/snake_case_util";
 
 class NotebookIndex extends React.Component {
   constructor(props) {
@@ -14,6 +15,22 @@ class NotebookIndex extends React.Component {
   }
 
   render() {
+    // debugger;
+    // if (this.props.notebooks) {
+    //   for (let i = 0; i < this.props.notebooks.length; i++)
+    //     if (
+    //       !(this.props.notebooks[i].title === "My First Notebook" &&
+    //       this.props.notebooks[i].authorId === this.props.user.id)
+    //     ) {
+    //       this.props.action(
+    //         convertToSnakeCase({
+    //           title: "My First Notebook",
+    //           authorId: this.props.user.id,
+    //         })
+    //       );
+    //     } 
+    //   }
+
     return (
       <div className="notebook-index-wrapper">
         <div className="reduced-side-nav">

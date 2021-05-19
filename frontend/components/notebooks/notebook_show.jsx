@@ -11,7 +11,6 @@ export class NotebookShow extends Component {
   }
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
-    this.props.fetchNotes();
   }
 
   render() {
@@ -20,6 +19,7 @@ export class NotebookShow extends Component {
     let notes = this.props.notes ? this.props.notes : undefined;
 
     if (!this.props.allNotes) return null;
+    // debugger
     return (
       <div className="notebook-show">
         <ExpandedSideNavContainer currentUser={this.props.currentUser} />

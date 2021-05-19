@@ -43,9 +43,11 @@ export class NoteShow extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
+    debugger
+    let path = this.props.history.location.pathname.includes("/0/notes") ? '0/' : this.props.notebook.id 
     this.props
       .deleteNote(this.props.currentNote.id)
-      .then(this.props.history.push(`/notebooks/${this.props.notebook.id}`));
+      .then(this.props.history.push(`/notebooks/${path}`));
   }
 
   render() {
@@ -63,17 +65,19 @@ export class NoteShow extends React.Component {
             <i className="action-btn" onClick={this.handleDelete}>
               <FaTrash />
             </i>
-            <div className="note-header-delete">Delete note?</div>
+            <div className="note-header-delete" onClick={this.handleDelete}>
+              Delete note?
+            </div>
           </div>
         </div>
         {/* <div className="test-quill"> */}
-          {/* <ReactQuill modules={App.modules} formats={App.formats} onChange={this.handleBody} value={} /> */}
+        {/* <ReactQuill modules={App.modules} formats={App.formats} onChange={this.handleBody} value={} /> */}
         {/* </div> */}
         <div className="note-body" onBlur={this.handleUpdate}>
           <div className="note-body-head">
             <input
               value={this.state.title}
-              placeholder={this.state.title || 'Title'}
+              placeholder={this.state.title || "Title"}
               onChange={this.handleChange("title")}
             />
           </div>

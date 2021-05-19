@@ -15,6 +15,7 @@ class NotesIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchNotes();
+
   }
 
   render() {

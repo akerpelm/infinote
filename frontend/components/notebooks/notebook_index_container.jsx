@@ -7,12 +7,8 @@ import NotebookIndex from './notebook_index'
 const mapStateToProps = (state) => ({
         notebooks: Object.values(state.entities.notebooks),
         user: state.entities.users[state.session.id],
-        notebook: {
-        title: '',
-        authorId: state.session.id,
-        },
-        formType: "create",
         errors: state.errors.session,
+        
     
 
 })

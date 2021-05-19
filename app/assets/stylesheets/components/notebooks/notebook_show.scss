@@ -23,6 +23,7 @@ $oxygen: "Oxygen";
   overflow: scroll;
   .note-list-header {
     padding: 5px 25px;
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -117,7 +118,8 @@ $oxygen: "Oxygen";
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0px 0px 50px 50px;
+    padding: 0px 0px 69px 50px;
+    margin-top: 10px;
     box-sizing: border-box;
     border-bottom: 1px solid #e6e6e6;
     i {
@@ -142,6 +144,14 @@ $oxygen: "Oxygen";
       }
       &:hover .note-header-delete {
         display: block;
+        background-color: #f8f8f8;
+        cursor: point;
+        &:hover {
+          background-color: #737373;
+          cursor: pointer;;
+          color: white
+        }
+
       }
     }
     .note-header-delete {
