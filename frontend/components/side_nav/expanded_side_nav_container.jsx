@@ -9,8 +9,6 @@ import ExpandedSideNav from "./expanded_side_nav";
 
 
 const mapStateToProps = (state) => ({
-    // debugger
-    // user: state.entities.users[1]
     currentUser: state.entities.users[state.session.id],
     notebooks: state.entities.notebooks,
     notes: state.entities.notes,

@@ -8,10 +8,7 @@ export class EditModalContainer extends Component {
     constructor(props) {
         super(props)
     }
-    // componentDidMount() {
-    //     this.props.fetchNotebook(this.props.notebookId)
-    // }
-    
+
     render() {
         // const { action, formType, notebook } = this.props
         if (!this.props.notebook) return null;

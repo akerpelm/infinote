@@ -15,22 +15,6 @@ class NotebookIndex extends React.Component {
   }
 
   render() {
-    // debugger;
-    // if (this.props.notebooks) {
-    //   for (let i = 0; i < this.props.notebooks.length; i++)
-    //     if (
-    //       !(this.props.notebooks[i].title === "My First Notebook" &&
-    //       this.props.notebooks[i].authorId === this.props.user.id)
-    //     ) {
-    //       this.props.action(
-    //         convertToSnakeCase({
-    //           title: "My First Notebook",
-    //           authorId: this.props.user.id,
-    //         })
-    //       );
-    //     } 
-    //   }
-
     return (
       <div className="notebook-index-wrapper">
         <div className="reduced-side-nav">

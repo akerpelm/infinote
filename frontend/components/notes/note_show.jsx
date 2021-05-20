@@ -5,10 +5,9 @@ import convertToSnakeCase from "../../util/snake_case_util";
 import { FaTrash, FaEllipsisH } from "react-icons/fa";
 import { BiBookAlt, BiBook } from "react-icons/bi";
 import { AiFillCaretRight } from "react-icons/bi";
-// import NoteSelectNotebook from "./note_select_notebook_container";
+import DeleteModalContainer from "../notebooks/modals/delete_modal_container";
 import MoveNoteModal from "../notebooks/modals/move_note_modal";
 import EditModalContainer from "../notebooks/modals/edit_modal_container";
-import DeleteModalContainer from "../notebooks/modals/delete_modal_container";
 
 export class NoteShow extends React.Component {
   constructor(props) {
@@ -22,7 +21,15 @@ export class NoteShow extends React.Component {
   }
   handleUpdate(e) {
     e.preventDefault();
-    this.props.updateNote(convertToSnakeCase(this.state));
+    this.props.updateNote(
+      convertToSnakeCase({
+        id: this.state.id,
+        title: this.state.title,
+        content: this.state.content,
+        notebookId: this.props.currentNote.notebookId
+      })
+    );
+    //deconstruct ? this.state.title, etc
   }
 
   componentDidUpdate(prevProps) {
@@ -32,7 +39,6 @@ export class NoteShow extends React.Component {
   }
 
   handleChange(field) {
-    // debugger
     return (e) =>
       this.setState({
         [field]: e.target.value,
@@ -57,7 +63,6 @@ export class NoteShow extends React.Component {
 
   render() {
     const { currentNote } = this.props;
-    // debugger;
     if (currentNote.notebookId !== 0) {
       return (
         <div className="note">
@@ -68,34 +73,29 @@ export class NoteShow extends React.Component {
               </i>
               {this.props.title}
             </div>
-            <div className="note-show-action-dropdown">
-              <section
-                className="note-show-action-dropdown-btn"
-                onClick={this.toggleActive}
-              >
-                <FaEllipsisH className="ellipsis-i" />
-                <ul className="note-show-action-dropdown-ul">
-                  <li>
-                    <span
-                      onClick={this.toggleActive}
-                      className="move-note-wrapper"
-                    >
-                      <MoveNoteModal />
-                    </span>
-                  </li>
-                  <li>
-                    <span onClick={this.toggleActive}>
-                      {<EditModalContainer /> || "hi"}
-                    </span>
-                  </li>
-                  <li>
-                    <span>
-                      <DeleteModalContainer />
-                    </span>
-                  </li>
-                  <li onClick={this.handleDelete}>Move Note to Trash</li>
-                </ul>
-              </section>
+            <div>
+              <ul className="note-show-actions">
+                <li>
+                  <button>
+                    <MoveNoteModal />
+                  </button>
+                </li>
+                <li>
+                  <button onClick={this.handleDelete}>
+                    Move Note to Trash
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <EditModalContainer />
+                  </button>
+                </li>
+                <li>
+                  <button>
+                    <DeleteModalContainer />
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
           <div className="note-body" onBlur={this.handleUpdate}>
@@ -111,8 +111,6 @@ export class NoteShow extends React.Component {
                 value={this.state.content}
                 placeholder={this.state.content || "Start writing..."}
                 onChange={this.handleChange("content")}
-                // onChange={this.handleUpdate}
-                // on submit needed? stop from doing anything , e.preventDefault()
               />
             </div>
           </div>
@@ -130,26 +128,19 @@ export class NoteShow extends React.Component {
               </i>
               {this.props.title}
             </div>
-            <div className="note-header-action-btn"></div>
-            <div className="note-show-action-dropdown">
-              <section
-                className="note-show-action-dropdown-btn"
-                onClick={this.toggleActive}
-              >
-                <FaEllipsisH className="ellipsis-i" />
-                {/* <FaEllipsisH className="ellipsis-i" /> */}
-                <ul className="note-show-action-dropdown-ul">
-                  <li>
-                    <span
-                      onClick={this.toggleActive}
-                      className="move-note-wrapper"
-                    >
-                      <MoveNoteModal />
-                    </span>
-                  </li>
-                  <li onClick={this.handleDelete}>Move Note to Trash</li>
-                </ul>
-              </section>
+            <div>
+              <ul className="note-show-actions">
+                <li>
+                  <button>
+                    <MoveNoteModal />
+                  </button>
+                </li>
+                <li>
+                  <button onClick={this.handleDelete}>
+                    Move Note to Trash
+                  </button>
+                </li>
+              </ul>
             </div>
           </div>
 
@@ -166,7 +157,6 @@ export class NoteShow extends React.Component {
                 value={this.state.content}
                 placeholder={this.state.content || "Start writing..."}
                 onChange={this.handleChange("content")}
-
               />
             </div>
           </div>
@@ -178,3 +168,35 @@ export class NoteShow extends React.Component {
 }
 
 export default withRouter(NoteShow);
+
+{
+  /* <div className="note-show-action-dropdown">
+  <section
+    className="note-show-action-dropdown-btn"
+    onClick={this.toggleActive}
+  >
+    <FaEllipsisH className="ellipsis-i" />
+    <ul className="note-show-action-dropdown-ul">
+      <li>
+        <span
+          onClick={this.toggleActive}
+          className="move-note-wrapper"
+        >
+          <MoveNoteModal />
+        </span>
+      </li>
+      <li>
+        <span onClick={this.toggleActive}>
+          {<EditModalContainer /> || "hi"}
+        </span>
+      </li>
+      <li>
+        <span>
+          <DeleteModalContainer />
+        </span>
+      </li>
+      <li onClick={this.handleDelete}>Move Note to Trash</li>
+    </ul>
+  </section>
+</div> */
+}

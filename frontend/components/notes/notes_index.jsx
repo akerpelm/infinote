@@ -21,10 +21,7 @@ class NotesIndex extends React.Component {
   }
 
   render() {
-    const { notes, title } = this.props
-    // const updateTime = 
-    // debugger
-    
+    const { notes, title } = this.props    
     return (
       <div className="note-list">
         <div className="note-list-header">

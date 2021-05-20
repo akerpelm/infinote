@@ -22,7 +22,7 @@ class DeleteModal extends Component {
       <div className="delete-notebook-modal">
           <Link
             to="/notebooks"
-            style={{ textDecoration: "none" }}
+            // style={{ textDecoration: "none", color: "#737373" }}
             onClick={this.handleDelete}
           >
             Delete Notebook

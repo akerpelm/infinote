@@ -8,6 +8,10 @@ import {
 import NotebookShow from "./notebook_show";
 import { logout } from "../../actions/session_actions";
 import { fetchNote, fetchNotes, updateNote } from "../../actions/note_actions";
+import moment from "moment";
+moment().format();
+
+
 
 const mapStateToProps = (state, ownProps) => {
   let dbNotes = Object.values(state.entities.notes);
@@ -30,9 +34,11 @@ const mapStateToProps = (state, ownProps) => {
     return filteredNotes;
   };
 
+  let compare = (a, b) => ( new Date(b.updatedAt) - new Date(a.updatedAt))
+
   return {
     // notes: dbNotes ? dbNotes : undefined,
-    notes: filtered(ownProps.match.params.notebookId),
+    notes: filtered(ownProps.match.params.notebookId).sort(compare),
     notebook: state.entities.notebooks[ownProps.match.params.notebookId],
     allNotes: dbNotes,
     currentNote: findNoteById(dbNotes, ownProps.match.params.noteId)

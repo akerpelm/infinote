@@ -28,7 +28,6 @@ class Api::NotesController < ApplicationController
 
     def update 
         @note = Note.find(params[:id])
-
         if @note.update_attributes(note_params)
             render :show
         else

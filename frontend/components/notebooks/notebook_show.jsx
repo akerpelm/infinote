@@ -7,20 +7,17 @@ import NoteShowContainer from "../notes/note_show_container";
 export class NotebookShow extends Component {
   constructor(props) {
     super(props);
-    // debugger
   }
   componentDidMount() {
     this.props.fetchNotebook(this.props.match.params.notebookId);
   }
 
   render() {
-    // let title = this.props.notebook ? this.props.notebook.title : "Notes";
     let title = this.props.title
     if (!title) return null;
     let notes = this.props.notes ? this.props.notes : undefined;
 
     if (!this.props.allNotes) return null;
-    // debugger
     return (
       <div className="notebook-show">
         <ExpandedSideNavContainer currentUser={this.props.currentUser} />

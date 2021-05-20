@@ -82,12 +82,12 @@ $oxygen: "Oxygen";
           padding: 8px 30px;
           text-align: center;
           text-decoration: none;
-          background: #cccccc;
-          color: rgb(195, 93, 71);
+          background: rgb(195, 93, 71);
+          color: #cccccc;
           cursor: pointer;
           text-align: left;
           &:hover {
-            background-color: #f8f8f8;
+            background-color: rgb(130, 190, 194);
           }
         }
       }

@@ -11,12 +11,52 @@ $oxygen: "Oxygen";
     height: 100px;
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
-    padding: 0px 0px 69px 50px;
-    margin-top: 10px;
+    padding: 25px;
+    // padding: 0px 0px 69px 50px;
+    // margin-top: 10px;
     box-sizing: border-box;
     border-bottom: 1px solid #e6e6e6;
+
+    .note-show-actions {
+      font-family: $oxygen;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 14px;
+      color: #737373;
+      text-decoration: none;
+      // cursor: pointer;
+      border-radius: 5px;
+      a {
+        border-radius: 5px;
+        text-decoration: none;
+        color: #737373;
+        &:hover {
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: #ccc;
+          color: white;
+        }
+      }
+      // padding-top: 50px;
+      // padding-right: 20px;
+      button {
+        background-color: white;
+        padding: 2px;
+        outline: none;
+        color: #737373;
+        border: 1px solid white;
+        &:hover {
+          background-color: #ccc;
+          color: white;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
     i {
       vertical-align: text-bottom;
       padding-right: 5px;
@@ -24,6 +64,8 @@ $oxygen: "Oxygen";
     .note-header-title {
       font-size: 18px;
       color: #737373;
+      display: flex;
+      // padding: 0 40px auto;
     }
     .note-header-action-btn {
       display: flex;
@@ -93,55 +135,54 @@ $oxygen: "Oxygen";
       }
     }
   }
-  .note-show-action-dropdown-btn {
-    border: none;
-    box-shadow: none;
-    outline: none;
-    cursor: pointer;
-    color: #000;
-  }
-  // .note-show-action-dropdown{
-  //     // padding-top: 20px
-  // }
-  .ellipsis-i {
-    color: #737373;
-    font-size: 14px;
-    font-weight: light;
-    margin-right: 30px;
-  }
-  .note-show-action-dropdown-ul {
-    position: absolute;
-    display: hidden;
-    margin: 0;
-    padding: 0;
-    right: 20px;
-    // top: 24.5%;
-    background: #ccc;
-    transform: rotateX(-90deg);
-    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-    text-decoration: none;
-  }
-  .note-show-action-dropdown-ul.active {
-    transform: rotateX(0deg);
-  }
-  .note-show-action-dropdown-ul li {
-    list-style: none;
-    font-family: $oxygen;
-    font-size: 14px;
-    font-weight: bolder;
-    width: 100%;
-    display: block;
-    padding: 8px 30px;
-    text-align: center;
-    text-decoration: none;
-    background: #f8f8f8;
-    color: #000;
-    cursor: pointer;
-    text-align: left;
-  }
-  .note-show-action-dropdown-ul li:hover {
-    background-color: #f1f1f1;
-  }
 }
-
-
+//   .note-show-action-dropdown-btn {
+//     border: none;
+//     box-shadow: none;
+//     outline: none;
+//     cursor: pointer;
+//     color: #000;
+//   }
+//   // .note-show-action-dropdown{
+//   //     // padding-top: 20px
+//   // }
+//   .ellipsis-i {
+//     color: #737373;
+//     font-size: 14px;
+//     font-weight: light;
+//     margin-right: 30px;
+//   }
+//   .note-show-action-dropdown-ul {
+//     position: absolute;
+//     display: hidden;
+//     margin: 0;
+//     padding: 0;
+//     right: 20px;
+//     // top: 24.5%;
+//     background: #ccc;
+//     transform: rotateX(-90deg);
+//     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+//     text-decoration: none;
+//   }
+//   .note-show-action-dropdown-ul.active {
+//     transform: rotateX(0deg);
+//   }
+//   .note-show-action-dropdown-ul li {
+//     list-style: none;
+//     font-family: $oxygen;
+//     font-size: 14px;
+//     font-weight: bolder;
+//     width: 100%;
+//     display: block;
+//     padding: 8px 30px;
+//     text-align: center;
+//     text-decoration: none;
+//     background: #f8f8f8;
+//     color: #000;
+//     cursor: pointer;
+//     text-align: left;
+//   }
+//   .note-show-action-dropdown-ul li:hover {
+//     background-color: #f1f1f1;
+//   }
+// }

@@ -5,10 +5,8 @@ import { withRouter } from "react-router";
 class EditModal extends Component {
   constructor(props) {
     super(props);
-
     this.state = props.notebook;
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.evaluateErrors = this.evaluateErrors.bind(this);
   }
 
   handleChange(field) {
@@ -19,13 +17,11 @@ class EditModal extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateNotebook(this.state)
-          .then(() => this.toggleModal());
-
+    this.props.updateNotebook(this.state).then(() => this.toggleModal());
   }
 
   toggleModal = () => {
-    document.querySelector(".modal").classList.toggle("modal-hidden");
+    document.querySelector(".edit-modal").classList.toggle("modal-hidden");
   };
 
   renderErrors() {
@@ -43,7 +39,7 @@ class EditModal extends Component {
   render() {
     return (
       <div>
-        <div className="modal modal-hidden">
+        <div className="edit-modal modal-hidden">
           <div className="modal-contents">
             <header className="modal-create-header">
               <h1 className="modal-create-title">
