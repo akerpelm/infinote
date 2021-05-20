@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import convertToSnakeCase from "../../util/snake_case_util";
 import { FaTrash } from "react-icons/fa";
 import { BiBookAlt } from "react-icons/bi";
+import NoteSelectNotebook from "./note_select_notebook_container";
 
 
 export class NoteShow extends React.Component {
@@ -69,6 +70,10 @@ export class NoteShow extends React.Component {
               Delete note?
             </div>
           </div>
+            <div className="move-note-wrapper">
+              <NoteSelectNotebook />
+            </div> 
+            {/* move this up one div ^ */}
         </div>
         {/* <div className="test-quill"> */}
         {/* <ReactQuill modules={App.modules} formats={App.formats} onChange={this.handleBody} value={} /> */}

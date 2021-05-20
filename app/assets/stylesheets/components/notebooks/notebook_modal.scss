@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
+$oxygen: 'Oxygen';
+
+.modal {
+    outline-style: none;
+    position: absolute;
+    font-family: $oxygen;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(42, 51, 60, 0.4);
+    // padding: 20px 25px 18px;
+    
+    .modal-contents {
+        min-width: 450px;
+        max-width: 650px;
+        min-height: 200px;
+        background-color: white;
+        border-radius: 4px;
+        padding: 1rem 2rem;
+    };
+
+    .modal-create-header {
+        padding: 0px 25px 18px;
+    }
+    
+    .modal-create-title {
+        font-size: 18px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+
+        .modal-close-span {
+            color: #737373;
+            cursor: pointer;
+            font-size: 16px
+            // margin: 1rem 2rem;
+    
+        }
+    };
+    .modal-close-span:hover {
+        color: black;
+    }
+    .modal-create-info {
+        // line-height: 20px;
+        padding-top: 25px;
+        font-size: 14px;
+    };
+    .modal-create-form {
+        padding: 0px 25px 0px 25px
+    }
+    .modal-name-label {
+        font-size: 12px;
+        display: block;
+        margin-bottom: 50px;
+    }
+    .modal-title-input {
+        margin-top: 10px;
+        font-size: 16px;
+        width: 95%;
+        padding: 10px 10px;
+    }
+    .modal-buttons {
+        border-top: 2px solid #d9d9d9;
+        padding: 20px 0px;
+        display: flex;
+        justify-content: flex-end;
+    };
+    .modal-cancel {
+        font-family: $oxygen;
+        cursor: pointer;
+        margin: 0 10px 0 0;
+        color: #737373;
+        padding: 10px 15px;
+        background: white;
+        border-width: 1px;
+        border-radius: 4px;
+        
+    };
+    .modal-cancel:hover {
+        background: white;
+        color: black;
+    };
+
+    .modal-submit {
+        font-family: $oxygen;
+        background: rgb(195, 93, 71);
+        vertical-align: middle;
+        display: inline-flex;
+        border-radius: 4px;
+        padding: 10px 20px;
+        border: none;
+        color: white
+    };
+    .modal-submit:hover {
+        background-color:rgb(130, 190, 194);
+    }
+     .error-ul {
+        text-align: left;
+        font-size: 12px;
+        display: inline-block;
+
+        // width: 300px;
+        color: red;
+     };
+}
+.modal-hidden {
+        display: none;
+}
+
+
+
