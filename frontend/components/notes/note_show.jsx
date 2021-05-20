@@ -1,10 +1,14 @@
 import React from "react";
 import { withRouter } from "react-router";
+import { Link } from "react-router-dom";
 import convertToSnakeCase from "../../util/snake_case_util";
-import { FaTrash } from "react-icons/fa";
-import { BiBookAlt } from "react-icons/bi";
-import NoteSelectNotebook from "./note_select_notebook_container";
-
+import { FaTrash, FaEllipsisH } from "react-icons/fa";
+import { BiBookAlt, BiBook } from "react-icons/bi";
+import { AiFillCaretRight } from "react-icons/bi";
+// import NoteSelectNotebook from "./note_select_notebook_container";
+import MoveNoteModal from "../notebooks/modals/move_note_modal";
+import EditModalContainer from "../notebooks/modals/edit_modal_container";
+import DeleteModalContainer from "../notebooks/modals/delete_modal_container";
 
 export class NoteShow extends React.Component {
   constructor(props) {
@@ -19,15 +23,8 @@ export class NoteShow extends React.Component {
   handleUpdate(e) {
     e.preventDefault();
     this.props.updateNote(convertToSnakeCase(this.state));
-    // .then(() =>
-    // );
   }
 
-  // componentWillUnmount() {
-  // this.props.history.push(`/notebooks/${this.props.notebook.id}/notes/${this.props.currentNote.id}`)
-  // }
-
-  // shouldComponentUpdate to set state
   componentDidUpdate(prevProps) {
     if (prevProps.noteId !== this.props.noteId) {
       this.setState(this.props.currentNote);
@@ -42,10 +39,17 @@ export class NoteShow extends React.Component {
       });
   }
 
+  toggleActive = () => {
+    document
+      .querySelector(".note-show-action-dropdown-ul")
+      .classList.toggle("active");
+  };
+
   handleDelete(e) {
     e.preventDefault();
-    debugger
-    let path = this.props.history.location.pathname.includes("/0/notes") ? '0/' : this.props.notebook.id 
+    let path = this.props.history.location.pathname.includes("/0/notes")
+      ? "0/"
+      : this.props.notebook.id;
     this.props
       .deleteNote(this.props.currentNote.id)
       .then(this.props.history.push(`/notebooks/${path}`));
@@ -62,22 +66,39 @@ export class NoteShow extends React.Component {
             </i>
             {this.props.title}
           </div>
-          <div className="note-header-action-btn">
-            <i className="action-btn" onClick={this.handleDelete}>
-              <FaTrash />
-            </i>
-            <div className="note-header-delete" onClick={this.handleDelete}>
-              Delete note?
-            </div>
+          <div className="note-header-action-btn"></div>
+          <div className="note-show-action-dropdown">
+            <section
+              className="note-show-action-dropdown-btn"
+              onClick={this.toggleActive}
+            >
+              <FaEllipsisH className="ellipsis-i" />
+              {/* <FaEllipsisH className="ellipsis-i" /> */}
+              <ul className="note-show-action-dropdown-ul">
+                <li>
+                  {/* <span
+                    onClick={this.toggleActive}
+                    className="move-note-wrapper"
+                  > */}
+                    <MoveNoteModal />
+                  {/* </span> */}
+                </li>
+                <li>
+                  {/* <span onClick={this.toggleActive}> */}
+                    <EditModalContainer />
+                  {/* </span> */}
+                </li>
+                <li>
+                  {/* <span> */}
+                    <DeleteModalContainer />
+                  {/* </span> */}
+                </li>
+                <li onClick={this.handleDelete}>Move Note to Trash</li>
+              </ul>
+            </section>
           </div>
-            <div className="move-note-wrapper">
-              <NoteSelectNotebook />
-            </div> 
-            {/* move this up one div ^ */}
         </div>
-        {/* <div className="test-quill"> */}
-        {/* <ReactQuill modules={App.modules} formats={App.formats} onChange={this.handleBody} value={} /> */}
-        {/* </div> */}
+
         <div className="note-body" onBlur={this.handleUpdate}>
           <div className="note-body-head">
             <input

@@ -120,7 +120,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   action: (notebook) => dispatch(createNotebook(notebook)),
   removeNotebookErrors: () => dispatch(removeNotebookErrors()),
-  modalFalse: () => dispatch(modalFalse()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateModal);

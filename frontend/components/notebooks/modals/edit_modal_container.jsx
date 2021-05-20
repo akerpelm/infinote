@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { fetchNotebook, removeNotebookErrors, updateNotebook } from '../../../actions/notebook_actions'
 import EditModal from './edit_modal'
+import { withRouter } from 'react-router-dom'
 
 export class EditModalContainer extends Component {
     constructor(props) {
@@ -44,4 +45,4 @@ const mapDispatchToProps = dispatch => ({
     removeNotebookErrors: () => dispatch(removeNotebookErrors())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditModalContainer)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(EditModalContainer))

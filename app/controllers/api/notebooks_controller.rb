@@ -20,7 +20,6 @@ class Api::NotebooksController < ApplicationController
     end
 
     def create
-        debugger
         @notebook = Notebook.new(notebook_params)
         if @notebook.save
             render :show

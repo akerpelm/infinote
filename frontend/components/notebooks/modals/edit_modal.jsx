@@ -40,10 +40,6 @@ class EditModal extends Component {
     );
   }
 
-  // evaluateErrors() {
-  //   this.props.errors === [] ? this.renderErrors() : null;
-  // }
-
   render() {
     return (
       <div>
@@ -88,10 +84,9 @@ class EditModal extends Component {
           </div>
         </div>
         <div>
-          <button onClick={this.toggleModal} className="new-notebook-button">
-            <i>{/* <BiBookAdd className="notebook-icon" /> */}</i>
+          <div onClick={this.toggleModal} className="new-notebook-button">
             Rename Notebook
-          </button>
+          </div>
         </div>
       </div>
     );

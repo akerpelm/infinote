@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { deleteNotebook, fetchNotebook, fetchNotebooks } from '../../../actions/notebook_actions';
-
+import {withRouter} from 'react-router-dom'
 import DeleteModal from './delete_modal'
 
 export class DeleteModalContainer extends Component {
@@ -42,4 +42,4 @@ const mapDispatchToProps = dispatch => ({
     
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DeleteModalContainer)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(DeleteModalContainer))

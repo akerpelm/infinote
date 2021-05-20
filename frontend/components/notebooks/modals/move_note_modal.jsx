@@ -39,6 +39,9 @@ class MoveNoteModal extends Component {
   }
 
   render() {
+    if (!this.props.notebook || !this.props.currentNoteNotebook) {
+      return null;
+    }
     return (
       <div>
         <div className="modal modal-hidden">
@@ -89,12 +92,9 @@ class MoveNoteModal extends Component {
           </div>
         </div>
         <div>
-          <button onClick={this.toggleModal} className="new-notebook-button">
-            <i>
-              <BiBookAdd className="notebook-icon" />
-            </i>
-            Move
-          </button>
+          <span onClick={this.toggleModal} className="new-notebook-button">
+            Move Note...
+          </span>
         </div>
       </div>
     );
@@ -102,9 +102,13 @@ class MoveNoteModal extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  let currentNote = state.entities.notes[ownProps.match.params.noteId];
+  let currentNoteNotebook = state.entities.notebooks[currentNote.notebookId]
   return {
     notebooks: Object.values(state.entities.notebooks),
-    currentNote: state.entities.notes[ownProps.match.params.noteId]
+    currentNote,
+    currentNoteNotebook
+
   };
 };
 

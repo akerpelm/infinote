@@ -16,9 +16,9 @@ const receiveNote = (note) => ({
   note,
 });
 
-const removeNote = (noteId) => ({
+const removeNote = (note) => ({
   type: REMOVE_NOTE,
-  noteId,
+  note,
 });
 
 const receiveErrors = (errors) => ({
@@ -50,8 +50,8 @@ export const updateNote = (note) => (dispatch) =>
     (err) => dispatch(receiveErrors(err))
   );
 
-export const deleteNote = (noteId) => (dispatch) =>
-  NotesApiUtil.deleteNote(noteId).then(
+export const deleteNote = (note) => (dispatch) =>
+  NotesApiUtil.deleteNote(note).then(
     (note) => dispatch(removeNote(note)),
     (err) => dispatch(receiveErrors(err))
   );

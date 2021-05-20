@@ -3,6 +3,7 @@ $oxygen: 'Oxygen';
 
 .modal {
     outline-style: none;
+    z-index: 1;
     position: absolute;
     font-family: $oxygen;
     top: 0;
@@ -115,3 +116,10 @@ $oxygen: 'Oxygen';
 
 
 
+.delete-notebook-modal {
+    color: black;
+    text-decoration: none;
+    a {
+        color: black
+    }
+}
