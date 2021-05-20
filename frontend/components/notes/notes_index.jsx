@@ -3,11 +3,12 @@ import { withRouter } from "react-router";
 import { FaEllipsisH } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import MoveNoteModal from '../notebooks/modals/move_note_modal'
+import moment from 'moment'
+moment().format();
 
 class NotesIndex extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleClick = this.handleClick.bind(this);
   }
 
   toggleActive = () => {
@@ -20,38 +21,32 @@ class NotesIndex extends React.Component {
   }
 
   render() {
-    const { allNotes, match } = this.props
+    const { notes, title } = this.props
+    // const updateTime = 
     // debugger
-    // const conditionalLink = allNotes.length === 0 ? null : this.props.allNotes.filter(
-      //   (note) => note.id == this.props.match.params.noteId
-      // )[0].notebookId ||= 'hi'
-      // console.log(conditionalLink)
-      // let conditionalLink = this.props.allNotes.filter((note) => note.id == this.props.match.params.noteId)[0].notebookId === undefined ? undefined : this.props.allNotes.filter((note) => note.id == this.props.match.params.noteId)[0].notebookId
-      // console.log(conditionalLink)
+    
     return (
       <div className="note-list">
         <div className="note-list-header">
           <div className="note-list-header-title">
-            <h1>{this.props.title}</h1>
+            <h1>{title}</h1>
           </div>
           <div className="note-list-header-sub">
             <div className="note-count">
-              {this.props.notes.length === 1
-                ? `${this.props.notes.length}  note`
-                : `${this.props.notes.length} notes`}
+              {notes.length === 1
+                ? `${notes.length}  note`
+                : `${notes.length} notes`}
             </div>
             {/* <MoveNoteModal/> */}
           </div>
         </div>
 
-        {this.props.notes.map((note) => {
+        {notes.map((note) => {
           return (
-            // <div onClick={this.handleClick(note.id)} key={note.id}>
             <div className="note-list-element" key={note.id}>
               <Link
                 style={{ textDecoration: "none" }}
                 to={`/notebooks/${note.notebookId}/notes/${note.id}`}
-                // to={`/notebooks/${this.props.match.params.notebookId}/notes/${note.id}`}
               >
                 <div className="note-list-body">
                   <div className="note-card">
@@ -60,7 +55,7 @@ class NotesIndex extends React.Component {
                       <div className="note-card-desc">{note.content}</div>
                     </div>
                     <div className="note-card-date">
-                      Updated {note.updatedAt}
+                      {moment().to(note.updatedAt)}
                     </div>
                   </div>
                 </div>

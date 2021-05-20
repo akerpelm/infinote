@@ -55,7 +55,9 @@ class ReducedSideNav extends React.Component {
       <nav className="sidebar">
         <div className="sidebar-buttons">
           <div className="sidebar-user">
-            <div className="user-initial">{userInitial}</div>
+            <Link to="/notes" style={{ textDecoration: "none" }}>
+              <div className="user-initial">{userInitial}</div>
+            </Link>
           </div>
           <div className="buttons-1">
             <button className="sidebar-search">

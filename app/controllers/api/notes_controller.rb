@@ -1,7 +1,7 @@
 class Api::NotesController < ApplicationController
 
     def index
-        @notes = current_user.notes
+        @notes = current_user.notes.order(updated_at: :desc)
         # @notebook = @notes.each do note => note.notebook
         # 
         render :index

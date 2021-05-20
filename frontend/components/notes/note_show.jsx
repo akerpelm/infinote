@@ -57,7 +57,7 @@ export class NoteShow extends React.Component {
 
   render() {
     const { currentNote } = this.props;
-    debugger;
+    // debugger;
     if (currentNote.notebookId !== 0) {
       return (
         <div className="note">
@@ -68,14 +68,12 @@ export class NoteShow extends React.Component {
               </i>
               {this.props.title}
             </div>
-            <div className="note-header-action-btn"></div>
             <div className="note-show-action-dropdown">
               <section
                 className="note-show-action-dropdown-btn"
                 onClick={this.toggleActive}
               >
                 <FaEllipsisH className="ellipsis-i" />
-                {/* <FaEllipsisH className="ellipsis-i" /> */}
                 <ul className="note-show-action-dropdown-ul">
                   <li>
                     <span
@@ -100,7 +98,6 @@ export class NoteShow extends React.Component {
               </section>
             </div>
           </div>
-
           <div className="note-body" onBlur={this.handleUpdate}>
             <div className="note-body-head">
               <input

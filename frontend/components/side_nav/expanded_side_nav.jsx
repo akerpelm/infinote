@@ -30,7 +30,9 @@ class ExpandedSideNav extends React.Component {
   }
   handleCreateNote(e) {
     e.preventDefault();
-    let notebookId = this.props.match.params.notebookId ? this.props.match.params.notebookId : 0
+    let notebookId = this.props.match.params.notebookId
+      ? this.props.match.params.notebookId
+      : 0;
     let newNote = {
       title: "",
       content: "",
@@ -51,9 +53,14 @@ class ExpandedSideNav extends React.Component {
   //         .classList.toggle('active')
   // }
 
+  toggleActive = () => {
+    document
+      .querySelector(".expanded-side-nav-action-dropdown-ul")
+      .classList.toggle("active");
+  };
   render() {
     let title = this.props.currentUser.username || this.props.currentUser.email;
-    title = title.length > 8 ? title.slice(0, 8) + '...' : title
+    title = title.length > 8 ? title.slice(0, 8) + "..." : title;
     let firstLetter = title[0].toUpperCase();
 
     return (
@@ -63,15 +70,16 @@ class ExpandedSideNav extends React.Component {
             <div className="sidenavbar-profile-icon">{firstLetter}</div>
             <div className="sidenavbar-profile-title">
               {title}
-              <span
-                className="action-dropdown-button"
-                onClick={this.toggleActive}
-              >
-                <i className="sidenavbar-icon">
-                  <FaAngleDown />
-                </i>
-                <p onClick={this.handleClick}>Log out</p>
-              </span>
+              <div className="expanded-side-nav-action-dropdown">
+                <section className="expanded-side-nav-action-dropdown-btn">
+                  <i className="sidebar-icon" onClick={this.toggleActive}>
+                    <FaAngleDown className="angledown-i" />
+                  </i>
+                  <ul className="expanded-side-nav-action-dropdown-ul">
+                    <li onClick={this.handleClick}>Log out</li>
+                  </ul>
+                </section>
+              </div>
             </div>
           </div>
           <div className="sidenavbar-top-search">
