@@ -14,7 +14,8 @@ export class NotebookShow extends Component {
   }
 
   render() {
-    let title = this.props.notebook ? this.props.notebook.title : "Notes";
+    // let title = this.props.notebook ? this.props.notebook.title : "Notes";
+    let title = this.props.title
     if (!title) return null;
     let notes = this.props.notes ? this.props.notes : undefined;
 

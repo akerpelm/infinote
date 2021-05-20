@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import { FaEllipsisH } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import MoveNoteModal from '../notebooks/modals/move_note_modal'
 
 class NotesIndex extends React.Component {
   constructor(props) {
@@ -27,7 +28,6 @@ class NotesIndex extends React.Component {
       // console.log(conditionalLink)
       // let conditionalLink = this.props.allNotes.filter((note) => note.id == this.props.match.params.noteId)[0].notebookId === undefined ? undefined : this.props.allNotes.filter((note) => note.id == this.props.match.params.noteId)[0].notebookId
       // console.log(conditionalLink)
-
     return (
       <div className="note-list">
         <div className="note-list-header">
@@ -40,6 +40,7 @@ class NotesIndex extends React.Component {
                 ? `${this.props.notes.length}  note`
                 : `${this.props.notes.length} notes`}
             </div>
+            {/* <MoveNoteModal/> */}
           </div>
         </div>
 
@@ -59,7 +60,7 @@ class NotesIndex extends React.Component {
                       <div className="note-card-desc">{note.content}</div>
                     </div>
                     <div className="note-card-date">
-                      Updated {note.updated_at}
+                      Updated {note.updatedAt}
                     </div>
                   </div>
                 </div>

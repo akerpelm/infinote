@@ -39,15 +39,16 @@ const mapStateToProps = (state, ownProps) => {
       return note.id == noteId;
     });
   };
-
-
   return {
     currentNote: findNoteById(dbNotes, ownProps.match.params.noteId)
       ? findNoteById(dbNotes, ownProps.match.params.noteId)
       : undefined,
     notebook: state.entities.notebooks[ownProps.match.params.notebookId],
+    // title: state.entities.notebooks[ownProps.match.params.notebookId]
+    //   ? state.entities.notebooks[ownProps.match.params.notebookId].title
+    //   : "Notes",
     title: state.entities.notebooks[ownProps.match.params.notebookId]
-      ? state.entities.notebooks[ownProps.match.params.notebookId].title
+      ? state.entities.notebooks[ownProps.match.params.notebookId].title : [ownProps.match.params.notebookId] == 0 ? "Uncategorized Notes"
       : "Notes",
 
     currentUser: state.entities.users[state.session.id],

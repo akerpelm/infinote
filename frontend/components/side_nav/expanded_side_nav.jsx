@@ -20,7 +20,6 @@ class ExpandedSideNav extends React.Component {
     this.handleCreateNote = this.handleCreateNote.bind(this);
   }
 
-  // this method was created with the assistance of Tim Fraczak, a colleague of mine.
   componentDidMount() {
     this.props.fetchNotebooks();
     this.props.fetchNotes();

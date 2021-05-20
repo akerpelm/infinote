@@ -57,69 +57,126 @@ export class NoteShow extends React.Component {
 
   render() {
     const { currentNote } = this.props;
-    return (
-      <div className="note">
-        <div className="note-header">
-          <div className="note-header-title">
-            <i>
-              <BiBookAlt />
-            </i>
-            {this.props.title}
+    debugger;
+    if (currentNote.notebookId !== 0) {
+      return (
+        <div className="note">
+          <div className="note-header">
+            <div className="note-header-title">
+              <i>
+                <BiBookAlt />
+              </i>
+              {this.props.title}
+            </div>
+            <div className="note-header-action-btn"></div>
+            <div className="note-show-action-dropdown">
+              <section
+                className="note-show-action-dropdown-btn"
+                onClick={this.toggleActive}
+              >
+                <FaEllipsisH className="ellipsis-i" />
+                {/* <FaEllipsisH className="ellipsis-i" /> */}
+                <ul className="note-show-action-dropdown-ul">
+                  <li>
+                    <span
+                      onClick={this.toggleActive}
+                      className="move-note-wrapper"
+                    >
+                      <MoveNoteModal />
+                    </span>
+                  </li>
+                  <li>
+                    <span onClick={this.toggleActive}>
+                      {<EditModalContainer /> || "hi"}
+                    </span>
+                  </li>
+                  <li>
+                    <span>
+                      <DeleteModalContainer />
+                    </span>
+                  </li>
+                  <li onClick={this.handleDelete}>Move Note to Trash</li>
+                </ul>
+              </section>
+            </div>
           </div>
-          <div className="note-header-action-btn"></div>
-          <div className="note-show-action-dropdown">
-            <section
-              className="note-show-action-dropdown-btn"
-              onClick={this.toggleActive}
-            >
-              <FaEllipsisH className="ellipsis-i" />
-              {/* <FaEllipsisH className="ellipsis-i" /> */}
-              <ul className="note-show-action-dropdown-ul">
-                <li>
-                  {/* <span
-                    onClick={this.toggleActive}
-                    className="move-note-wrapper"
-                  > */}
-                    <MoveNoteModal />
-                  {/* </span> */}
-                </li>
-                <li>
-                  {/* <span onClick={this.toggleActive}> */}
-                    <EditModalContainer />
-                  {/* </span> */}
-                </li>
-                <li>
-                  {/* <span> */}
-                    <DeleteModalContainer />
-                  {/* </span> */}
-                </li>
-                <li onClick={this.handleDelete}>Move Note to Trash</li>
-              </ul>
-            </section>
-          </div>
-        </div>
 
-        <div className="note-body" onBlur={this.handleUpdate}>
-          <div className="note-body-head">
-            <input
-              value={this.state.title}
-              placeholder={this.state.title || "Title"}
-              onChange={this.handleChange("title")}
-            />
+          <div className="note-body" onBlur={this.handleUpdate}>
+            <div className="note-body-head">
+              <input
+                value={this.state.title}
+                placeholder={this.state.title || "Title"}
+                onChange={this.handleChange("title")}
+              />
+            </div>
+            <div className="note-body-content">
+              <textarea
+                value={this.state.content}
+                placeholder={this.state.content || "Start writing..."}
+                onChange={this.handleChange("content")}
+                // onChange={this.handleUpdate}
+                // on submit needed? stop from doing anything , e.preventDefault()
+              />
+            </div>
           </div>
-          <div className="note-body-content">
-            <textarea
-              value={this.state.content}
-              placeholder={this.state.content || "Start writing..."}
-              onChange={this.handleChange("content")}
-              // onChange={this.handleUpdate}
-              // on submit needed? stop from doing anything , e.preventDefault()
-            />
-          </div>
+          {/* </form>  */}
         </div>
-        {/* </form>  */}
-      </div>
-    );
+      );
+    } else {
+      // this does not work
+      return (
+        <div className="note">
+          <div className="note-header">
+            <div className="note-header-title">
+              <i>
+                <BiBookAlt />
+              </i>
+              {this.props.title}
+            </div>
+            <div className="note-header-action-btn"></div>
+            <div className="note-show-action-dropdown">
+              <section
+                className="note-show-action-dropdown-btn"
+                onClick={this.toggleActive}
+              >
+                <FaEllipsisH className="ellipsis-i" />
+                {/* <FaEllipsisH className="ellipsis-i" /> */}
+                <ul className="note-show-action-dropdown-ul">
+                  <li>
+                    <span
+                      onClick={this.toggleActive}
+                      className="move-note-wrapper"
+                    >
+                      <MoveNoteModal />
+                    </span>
+                  </li>
+                  <li onClick={this.handleDelete}>Move Note to Trash</li>
+                </ul>
+              </section>
+            </div>
+          </div>
+
+          <div className="note-body" onBlur={this.handleUpdate}>
+            <div className="note-body-head">
+              <input
+                value={this.state.title}
+                placeholder={this.state.title || "Title"}
+                onChange={this.handleChange("title")}
+              />
+            </div>
+            <div className="note-body-content">
+              <textarea
+                value={this.state.content}
+                placeholder={this.state.content || "Start writing..."}
+                onChange={this.handleChange("content")}
+
+              />
+            </div>
+          </div>
+          {/* </form>  */}
+        </div>
+      );
+    }
   }
 }
 

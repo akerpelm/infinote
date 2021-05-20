@@ -19,13 +19,15 @@ class MoveNoteModal extends Component {
   }
 
   handleClick(notebook) {
-    this.props.currentNote.notebookId = notebook.id;    
-    this.props.updateNote(convertToSnakeCase(this.props.currentNote))
+    this.props.currentNote.notebookId = notebook.id;
+    this.props
+      .updateNote(convertToSnakeCase(this.props.currentNote))
       .then(
         this.props.history.push(
           `/notebooks/${notebook.id}/notes/${this.props.currentNote.id}`
         )
-      ).then(this.toggleModal());
+      )
+      .then(this.toggleModal());
   }
   // componentWillUnmount() {
   //   this.props.removeNotebookErrors();
@@ -39,76 +41,91 @@ class MoveNoteModal extends Component {
   }
 
   render() {
-    if (!this.props.notebook || !this.props.currentNoteNotebook) {
+    // debugger;
+
+    if (this.props.match.params.notebookId === 0) {
       return null;
-    }
-    return (
-      <div>
-        <div className="modal modal-hidden">
-          <div className="modal-contents">
-            <header className="modal-create-header">
-              <h1 className="modal-create-title">
-                Move note to...
-                <div className="modal-close">
-                  <span className="modal-close-span" onClick={this.toggleModal}>
-                    X
-                  </span>
-                </div>
-              </h1>
-              <div className="move-note-modal-ul">
-                <ul>
-                  {this.props.notebooks.map((notebook, i) => {
-                    if (notebook.id !== this.props.currentNoteNotebook.id) {
-                      return (
-                        <li
-                          className="move-note-modal-li"
-                          key={i}
-                          onClick={() => this.handleClick(notebook)}
-                        >
-                          {notebook.title}
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
+    } else {
+      // if (!this.props.notebook || !this.props.currentNoteNotebook) {
+      // if (!this.props.currentNoteNotebook) {
+      //   return null;
+      // }
+      // debugger
+      if (this.props.match.params.notebookId === 0) {
+        return null;
+      } else {
+        return (
+          <div>
+            <div className="modal modal-hidden">
+              <div className="modal-contents">
+                <header className="modal-create-header">
+                  <h1 className="modal-create-title">
+                    Move note to...
+                    <div className="modal-close">
+                      <span
+                        className="modal-close-span"
+                        onClick={this.toggleModal}
+                      >
+                        X
+                      </span>
+                    </div>
+                  </h1>
+                  <div className="move-note-modal-ul">
+                    <ul>
+                      {this.props.notebooks.map((notebook, i) => {
+                        if (notebook.id !== this.props.currentNoteNotebook.id) {
+                          return (
+                            <li
+                              className="move-note-modal-li"
+                              key={i}
+                              onClick={() => this.handleClick(notebook)}
+                            >
+                              {notebook.title}
+                            </li>
+                          );
+                        }
+                      })}
+                    </ul>
+                  </div>
+                  <p className="modal-create-info"></p>
+                </header>
+                <form className="modal-create-form">
+                  <div className="modal-buttons">
+                    <input
+                      className="modal-cancel"
+                      type="submit"
+                      onClick={this.toggleModal}
+                      value="Cancel"
+                    />
+                    <input
+                      className="modal-submit"
+                      type="submit"
+                      value="Continue"
+                    />
+                  </div>
+                </form>
               </div>
-              <p className="modal-create-info"></p>
-            </header>
-            <form className="modal-create-form">
-              <div className="modal-buttons">
-                <input
-                  className="modal-cancel"
-                  type="submit"
-                  onClick={this.toggleModal}
-                  value="Cancel"
-                />
-                <input
-                  className="modal-submit"
-                  type="submit"
-                  value="Continue"
-                />
-              </div>
-            </form>
+            </div>
+            <div>
+              <span onClick={this.toggleModal} className="new-notebook-button">
+                Move Note...
+              </span>
+            </div>
           </div>
-        </div>
-        <div>
-          <span onClick={this.toggleModal} className="new-notebook-button">
-            Move Note...
-          </span>
-        </div>
-      </div>
-    );
+        );
+      }
+    }
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
   let currentNote = state.entities.notes[ownProps.match.params.noteId];
-  let currentNoteNotebook = state.entities.notebooks[currentNote.notebookId]
+  let currentNoteNotebook = state.entities.notebooks[currentNote.notebookId] ? state.entities.notebooks[currentNote.notebookId] : { id: 0};
+  // let currentNoteNotebook = state.entities.notebooks[currentNote.notebookId]
   return {
     notebooks: Object.values(state.entities.notebooks),
     currentNote,
-    currentNoteNotebook
-
+    currentNoteNotebook,
   };
 };
 

@@ -9,6 +9,7 @@ class Api::NotesController < ApplicationController
 
     def show
         @note = Note.find(params[:id])
+        # @notes = current_user.notes.order("updated_at DESC")
         if @note
             render :show
         else

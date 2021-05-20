@@ -30,8 +30,6 @@ const mapStateToProps = (state, ownProps) => {
     return filteredNotes;
   };
 
-
-  // debugger
   return {
     // notes: dbNotes ? dbNotes : undefined,
     notes: filtered(ownProps.match.params.notebookId),
@@ -42,6 +40,12 @@ const mapStateToProps = (state, ownProps) => {
       : undefined,
     errors: state.errors.notebook,
     currentUser: state.entities.users[state.session.id],
+    title: state.entities.notebooks[ownProps.match.params.notebookId]
+      ? state.entities.notebooks[ownProps.match.params.notebookId].title
+      : [ownProps.match.params.notebookId] == 0 &&
+        ownProps.history.location.pathname != '/notes'
+      ? "Uncategorized Notes"
+      : "Notes",
   };
 };
 
