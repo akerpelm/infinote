@@ -138,7 +138,7 @@ render() { //conditional rendering based on the presence of other notebooks
 
 
 
-## Future Directions
+## Future Direction
 * Many features are still a work in progress. The following are some major components I hope to implement shortly:
   * Tags - ability to group notes by tags, as a further way of filtering notes.
   * Rich Text Editing - more flexibility with note editing would be beneficial.
