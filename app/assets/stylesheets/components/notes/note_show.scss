@@ -123,6 +123,16 @@ $oxygen: "Oxygen";
     background-color: #f8f8f8;
     flex: 1;
     padding: 20px;
+    .alt-note-body-head {
+      background-color: #f8f8f8;
+      input {
+        padding: 10px;
+        font-size: 30px;
+        border: none;
+        outline: none;
+        width: 100%;
+        background: #f8f8f8
+      }
     .note-body-head {
       background-color: #f8f8f8;
       input {
@@ -136,10 +146,12 @@ $oxygen: "Oxygen";
       .note-body-head-input {
         padding: 10px;
         font-size: 30px;
-        border: none;
-        outline: none;
         width: 100%;
-        background: #f8f8f8
+        background: #f8f8f8;
+        // overflow-x: visible;
+         border: none;
+        outline: none;
+        resize: none;
       }
     }
     .note-body-content {
