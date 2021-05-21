@@ -20,6 +20,7 @@ $oxygen: "Oxygen";
     border-bottom: 1px solid #e6e6e6;
 
     .note-show-actions {
+      background: #f8f8f8;
       font-family: $oxygen;
       display: flex;
       flex-direction: column;
@@ -55,11 +56,11 @@ $oxygen: "Oxygen";
       // padding-top: 50px;
       // padding-right: 20px;
       button {
-        background-color: white;
+        background-color: #f8f8f8;
         padding: 2px;
         outline: none;
         color: #737373;
-        border: 1px solid white;
+        border: 1px solid #f8f8f8;
         &:hover {
           background-color: #ccc;
           color: white;
@@ -119,9 +120,11 @@ $oxygen: "Oxygen";
     }
   }
   .note-body {
+    background-color: #f8f8f8;
     flex: 1;
     padding: 20px;
     .note-body-head {
+      background-color: #f8f8f8;
       input {
         padding: 10px;
         font-size: 30px;
@@ -132,6 +135,7 @@ $oxygen: "Oxygen";
     }
     .note-body-content {
       textarea {
+        background-color: #f8f8f8;
         // min-height: 60vh;
         // max-height: 65vh;
         // min-width: 620px;
@@ -208,7 +212,7 @@ $oxygen: "Oxygen";
   height: 100%;
   width: 103vh;
   overflow: hidden;
-  background-color: rgb(248, 248, 248);
+  background-color: #f8f8f8;
   .empty-note-show{ 
     align-items: center;
     display: flex;

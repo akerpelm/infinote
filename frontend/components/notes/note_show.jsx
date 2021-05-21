@@ -101,7 +101,7 @@ export class NoteShow extends React.Component {
           </div>
           <div className="note-body" onBlur={this.handleUpdate}>
             <div className="note-body-head">
-              <input
+              <input className="note-body-head"
                 value={this.state.title}
                 placeholder={this.state.title || "Title"}
                 onChange={this.handleChange("title")}
@@ -146,7 +146,7 @@ export class NoteShow extends React.Component {
           </div>
 
           <div className="note-body" onBlur={this.handleUpdate}>
-            <div className="note-body-head">
+            <div className="">
               <input
                 value={this.state.title}
                 placeholder={this.state.title || "Title"}
