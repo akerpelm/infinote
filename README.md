@@ -1,1 +1,1 @@
-##infiNote
+* Infinote
