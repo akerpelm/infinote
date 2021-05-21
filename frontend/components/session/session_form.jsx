@@ -44,7 +44,11 @@ class SessionForm extends Component {
         <p className="redirect-login">
           Already have an account?
           <br />
-          <Link className="redirect-login" to="/login">
+          <Link
+            style={{ color: "Black" }}
+            className="redirect-login"
+            to="/login"
+          >
             Sign in
           </Link>
         </p>
@@ -55,7 +59,7 @@ class SessionForm extends Component {
         <p className="redirect-login">
           Don't have an account?
           <br />
-          <Link className="redirect-login" to="/register">
+          <Link style={{color: "Black"}} className="redirect-login" to="/register">
             Create account
           </Link>
         </p>
@@ -63,22 +67,25 @@ class SessionForm extends Component {
     );
 
     return (
-      <>
+      <div  className="session-form-wrapper">
+        <img className="infinote-bg" src="images/infinote_background.png" alt="bg" />
         <div className="wrapper">
           <div className="session-form-div">
             {
+              <Link to="/">
               <img
                 src="images/infinote_logo_2.png"
                 alt="infinote_logo_2"
                 className="infinote-logo"
-              />
+                />
+                </Link>
             }
             <header className="session-form-header">
               <p className="slogan">Infinitely possible.</p>
             </header>
             <SessionFormDemo />
             <form className="session-form" onSubmit={this.handleSubmit}>
-              <p className="session-or">or</p>
+              {/* <p className="session-or">or</p> */}
               <div className="error-div">
                 <ul className="error-ul">{this.renderErrors()}</ul>
               </div>
@@ -111,7 +118,7 @@ class SessionForm extends Component {
             <br />
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

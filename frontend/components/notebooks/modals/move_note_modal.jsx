@@ -43,7 +43,7 @@ class MoveNoteModal extends Component {
 
   render() {
     let notebooks =
-      this.props.notebooks.length <= 1 ? (
+      this.props.notebooks.length < 1 ? (
         <h2 className="move-note-modal-h2">No other notebook exists!</h2>
       ) : (
         this.props.notebooks.map((notebook, i) => {

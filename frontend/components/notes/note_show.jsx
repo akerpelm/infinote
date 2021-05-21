@@ -92,7 +92,7 @@ export class NoteShow extends React.Component {
                   </button>
                 </li>
                 <li>
-                  <button>
+                  <button className = "delete-modal-btn">
                     <DeleteModalContainer />
                   </button>
                 </li>

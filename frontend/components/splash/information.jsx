@@ -1,6 +1,7 @@
 import React from "react";
 
 const Information = () => {
+    
   return (
     <div>
       <div className="information-page">
@@ -38,17 +39,50 @@ const Information = () => {
               <img src="/images/infinote_logo_1.png" alt="logo_1" />
             </div>
           </div>
+
           <div className="row footer-flex">
-            <div className="link-section">
-              <p className="link-section-header">Stack</p>
-              <ul>
-                <li>Hi</li>
-              </ul>
-            </div>
             <div className="link-section">
               <p className="link-section-header">Features</p>
               <ul>
-                <li>Hi</li>
+                <li>
+                  Create, update, and
+                  <br /> delete notes in realtime.
+                </li>
+                <li>
+                  Create notebooks to
+                  <br /> house notes.
+                </li>
+                <li style={{ textDecoration: "underline" }}>In Progress:</li>
+                <li>
+                  Create note tags
+                  <br />
+                  to allow filtering by tags.
+                </li>
+                <li>
+                  Implement search functionality
+                  <br /> to quickly access other features.
+                </li>
+              </ul>
+            </div>
+            <div className="link-section">
+              <p className="link-section-header">About Me</p>
+              <ul>
+                <li>I press buttons for a living.</li>
+                <li>Former healthcare professional.</li>
+                <li>Fluency in three spoken languages.</li>
+                <li>Interests include finance,<br/>progressive rock, and soccer.</li>
+              </ul>
+            </div>
+            <div className="link-section">
+              <p className="link-section-header">Technical Tools</p>
+              <ul>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Ruby on Rails</li>
+                <li>Redux</li>
+                <li>PostgreSQL</li>
+                <li>Ruby</li>
+                <li>SQLite</li>
               </ul>
             </div>
             <div className="link-section">
@@ -58,24 +92,25 @@ const Information = () => {
                   <a
                     href="https://www.linkedin.com/in/alexander-kerpelman-22587584/"
                     target="_blank"
-                  >LinkedIn</a>
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.github.com/akerpelm" target="_blank">
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/akerpz/" target="_blank">
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto: akerpelm@u.rochester.edu">Email</a>
                 </li>
               </ul>
             </div>
-            {/* <div className="link-section">
-                    <p className="link-section-header">Stack</p>
-                    <ul>
-                        <li>Hi</li>
-                    </ul>
-                    
-                </div>
-                <div className="link-section">
-                    <p className="link-section-header">Stack</p>
-                    <ul>
-                        <li>Hi</li>
-                    </ul>
-                    
-                </div> */}
           </div>
         </div>
       </footer>

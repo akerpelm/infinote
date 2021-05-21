@@ -42,29 +42,31 @@ $oxygen: 'Oxygen';
             text-decoration: none;
 
         }
-        .action-dropdown-ul.active {
-            transform: rotateX(0deg);
+        //this may work...do not delete
+        
+        // .action-dropdown-ul.active {
+        //     transform: rotateX(0deg);
             
-        }
+        // }
        
-        .action-dropdown-ul li { 
-            list-style: none;
-            font-family: $oxygen;
-            font-size: 14px;
-            font-weight: bolder;
-            width: 100%;
-            display:block;
-            padding: 8px 30px;
-            text-align: center;
-            text-decoration: none;
-            background: #f8f8f8;
-            color: #000;
-            cursor: pointer;
-            text-align: left;
-        }
-        .action-dropdown-ul li:hover { 
-            background-color: #f1f1f1;
-        }
+        // .action-dropdown-ul li { 
+        //     list-style: none;
+        //     font-family: $oxygen;
+        //     font-size: 14px;
+        //     font-weight: bolder;
+        //     width: 100%;
+        //     display:block;
+        //     padding: 8px 30px;
+        //     text-align: center;
+        //     text-decoration: none;
+        //     background: #f8f8f8;
+        //     color: #000;
+        //     cursor: pointer;
+        //     text-align: left;
+        // }
+        // .action-dropdown-ul li:hover { 
+        //     background-color: #f1f1f1;
+        // }
     };
 
 };

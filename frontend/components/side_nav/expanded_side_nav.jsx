@@ -92,7 +92,7 @@ class ExpandedSideNav extends React.Component {
                     <li className="logout-li" onClick={this.handleClick}>
                       Log out {title}
                     </li>
-                    <li>Update Profile</li>
+                    <li className="change-user-li">Update Profile</li>
                   </ul>
                 </section>
               </div>

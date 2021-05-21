@@ -40,6 +40,17 @@ $oxygen: "Oxygen";
           background-color: #ccc;
           color: white;
         }
+         delete-modal-btn {
+        border-radius: 5px;
+        text-decoration: none;
+        color: #737373;
+        &:hover {
+          cursor: pointer;
+          border-radius: 5px;
+          background-color: #ccc;
+          color: white;
+        }
+      }
       }
       // padding-top: 50px;
       // padding-right: 20px;
