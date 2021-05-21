@@ -5,7 +5,8 @@
 * infiNote allows users to seamlessy create notes, notebooks, and tags as a means of organizing their thoughts into a centralized application.
 
 ## Demo
-Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.com/#/)
+Here is a link to the web application: <a href="http://infinote-app.herokuapp.com/#/" target="_blank">infiNote</a>
+
 
 
 ## Major Technologies Used: 
