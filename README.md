@@ -19,16 +19,86 @@ Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.
 * Users can create an account to house their notes and notebooks. Users have the ability to sign in if they have already registered an account.
 * Users can navigate the application through the use of a demo user, without the need to register an account.
 * Errors are rendered if a user already exists or if a password is not valid.
-* Backend user authentication includes password salting and hasing. The user's password is never stored in the database.
-* Frontend user authentication includes the ability to refresh the page without having to login. Additionally, certain URL paths are protected, only logged in users have access to them.
+* 
 ![Session Snippet](https://user-images.githubusercontent.com/77806372/119147315-76804a80-ba19-11eb-9e0f-f4db761baa81.JPG)
+
+* Backend user authentication includes session token generation in addition to password salting and hasing. The user's password is never stored in the database: 
+```ruby
+class User < ApplicationRecord
+    ...
+    
+    after_initialize :ensure_session_token
+
+    def self.find_by_credentials(email, password)
+        user = User.find_by(email: email)
+        if user && user.is_password?(password)
+            user
+        else
+            nil
+        end
+    end
+
+    def is_password?(password)
+        pw_object = BCrypt::Password.new(self.password_digest)
+        pw_object.is_password?(password) #bcrypt is_password method
+    end
+
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def ensure_session_token
+        self.session_token ||= SecureRandom::base64
+    end
+
+    def reset_session_token!
+        self.session_token = SecureRandom::base64
+        self.save!
+        self.session_token
+    end
+
+end
+
+
+```
+* Frontend user authentication includes the ability to refresh the page without having to login. Additionally, certain URL paths are protected, only logged in users have access to them: 
+
 
 ### Notes:
 * Users may create new notes and begin editing them within a matter of seconds.
+```jsx
+  handleUpdate(e) { //allows notes to update in real-time, setting the react component state to the user's input
+    e.preventDefault();
+    this.props.updateNote(
+      convertToSnakeCase({
+        id: this.state.id,
+        title: this.state.title,
+        content: this.state.content,
+        notebookId: this.props.currentNote.notebookId
+      })
+    );
+  }
+
+  componentDidUpdate(prevProps) { //updates the note component's state
+    if (prevProps.noteId !== this.props.noteId) {
+      this.setState(this.props.currentNote);
+    }
+  }
+
+  handleChange(field) { //changes the state as the user is typing
+    return (e) =>
+      this.setState({
+        [field]: e.target.value,
+      });
+  }
+
+```
+
 * Editing a note pushes it to the the top of the notebook, sorting notes by most recently updated. 
+![Notes Snippet](https://user-images.githubusercontent.com/77806372/119149439-839e3900-ba1b-11eb-80c7-09cee4264668.JPG)
 * Notes created within a notebook will be housed in that notebook. All other notes will not be added to a notebook.
 * Notes can be moved from one notebook to another, or deleted. 
-![Notes Snippet](https://user-images.githubusercontent.com/77806372/119149439-839e3900-ba1b-11eb-80c7-09cee4264668.JPG)
 
 
 
