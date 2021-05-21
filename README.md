@@ -5,6 +5,7 @@
 
 ## Demo
 Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.com/#/)
+
 ![Landing Screenshot](https://user-images.githubusercontent.com/77806372/119143307-767e4b80-ba15-11eb-8d67-7115b2194ae8.JPG)
 
 ## Major Technologies Used
@@ -19,7 +20,7 @@ Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.
 * Users can create an account to house their notes and notebooks. Users have the ability to sign in if they have already registered an account.
 * Users can navigate the application through the use of a demo user, without the need to register an account.
 * Errors are rendered if a user already exists or if a password is not valid.
-* 
+
 ![Session Snippet](https://user-images.githubusercontent.com/77806372/119147315-76804a80-ba19-11eb-9e0f-f4db761baa81.JPG)
 
 * Backend user authentication includes session token generation in addition to password salting and hasing. The user's password is never stored in the database: 
@@ -95,7 +96,7 @@ end
 
 ```
 
-* Editing a note pushes it to the the top of the notebook, sorting notes by most recently updated. 
+* Editing a note pushes it to the the top of the notebook, sorting notes by most recently updated.  
 ![Notes Snippet](https://user-images.githubusercontent.com/77806372/119149439-839e3900-ba1b-11eb-80c7-09cee4264668.JPG)
 * Notes created within a notebook will be housed in that notebook. All other notes will not be added to a notebook.
 * Notes can be moved from one notebook to another, or deleted. 
