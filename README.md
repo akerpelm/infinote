@@ -97,6 +97,7 @@ end
 ```
 
 * Editing a note pushes it to the the top of the notebook, sorting notes by most recently updated.  
+
 ![Notes Snippet](https://user-images.githubusercontent.com/77806372/119149439-839e3900-ba1b-11eb-80c7-09cee4264668.JPG)
 * Notes created within a notebook will be housed in that notebook. All other notes will not be added to a notebook.
 * Notes can be moved from one notebook to another, or deleted. 
