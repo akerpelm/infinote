@@ -48,6 +48,11 @@ class ExpandedSideNav extends React.Component {
       );
   }
 
+  handleRedirect(e) {
+    e.preventDefault();
+    this.props.history.push("/notebooks")
+  }
+
   // toggleActive = () => {
   //     document.querySelector('.action-dropdown-ul')
   //         .classList.toggle('active')
@@ -60,23 +65,34 @@ class ExpandedSideNav extends React.Component {
   };
   render() {
     let title = this.props.currentUser.username || this.props.currentUser.email;
-    title = title.length > 8 ? title.slice(0, 8) + "..." : title;
+    let abbrTitle = title.length > 8 ? title.slice(0, 8) + "..." : title;
     let firstLetter = title[0].toUpperCase();
 
     return (
       <div className="sidenavbar">
         <div className="sidenavbar-top">
           <div className="sidenavbar-top-profile">
-            <div className="sidenavbar-profile-icon">{firstLetter}</div>
+            <div className="sidenavbar-profile-icon">
+              <Link to="/notes" style={{textDecoration: "none" }}>
+                <div className="user-initial">{firstLetter}</div>
+              </Link>
+              {/* {firstLetter} */}
+            </div>
             <div className="sidenavbar-profile-title">
-              {title}
+              {abbrTitle}
               <div className="expanded-side-nav-action-dropdown">
                 <section className="expanded-side-nav-action-dropdown-btn">
-                  <i className="sidebar-icon" onClick={this.toggleActive}>
-                    <FaAngleDown className="angledown-i" />
+                  <i className="sidebar-icon">
+                    <FaAngleDown
+                      className="angledown-i"
+                      onClick={this.toggleActive}
+                    />
                   </i>
                   <ul className="expanded-side-nav-action-dropdown-ul">
-                    <li onClick={this.handleClick}>Log out</li>
+                    <li className="logout-li" onClick={this.handleClick}>
+                      Log out {title}
+                    </li>
+                    <li>Update Profile</li>
                   </ul>
                 </section>
               </div>

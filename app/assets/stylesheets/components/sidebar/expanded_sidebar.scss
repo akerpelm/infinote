@@ -26,10 +26,19 @@ $oxygen: "Oxygen";
         margin-right: 10px;
         border: 3px solid #1a1a1a;
         color: darkgrey;
+        background-color: rgb(130, 190, 194);
+        padding-left: 1px;
         text-align: center;
         text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
         font: 31px Arial, sans-serif;
         border-radius: 50%;
+        &:hover {
+          background-color: rgb(195, 93, 71);
+        }
+        a {
+          text-decoration: none;
+          color: darkgrey;
+        }
       }
       .expanded-side-nav-action-dropdown {
         .sienavbar-profile-title {
@@ -61,8 +70,9 @@ $oxygen: "Oxygen";
           display: hidden;
           margin: 0;
           padding: 0;
-          left: 60px;
+          left: 100px;
           top: 50px;
+          border-radius: 5px;
           // background: #cccccc;
           transform: rotateX(-90deg);
           box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -70,9 +80,14 @@ $oxygen: "Oxygen";
         }
         .expanded-side-nav-action-dropdown-ul.active {
           transform: rotateX(0deg);
-        }
+        };
         .expanded-side-nav-action-dropdown-ul li {
-          border-radius: 4px;
+          &:first-child {
+            border-bottom: 1px solid #737373;
+                      text-align: center;
+
+          }
+          border-radius: 2px;
           list-style: none;
           font-family: $oxygen;
           font-size: 14px;
@@ -124,6 +139,9 @@ $oxygen: "Oxygen";
         padding: 8px 10px;
         border-radius: 50px;
         cursor: pointer;
+        &:hover {
+          background-color: rgb(130, 190, 194);
+        }
         .sidenavbar-plus-icon {
           font-size: 12px;
         }

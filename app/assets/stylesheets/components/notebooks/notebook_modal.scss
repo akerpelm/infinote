@@ -116,6 +116,7 @@ $oxygen: 'Oxygen';
         border-radius: 4px;
         padding: 10px 20px;
         border: none;
+        cursor: pointer;
         color: white
     };
     .modal-submit:hover {
@@ -292,6 +293,12 @@ $oxygen: 'Oxygen';
     }
     
     
+}
+
+.move-note-modal-h2 {
+    size: 18px;
+    padding-top: 20px;
+    font-weight: bolder;
 }
 
 //move note modal

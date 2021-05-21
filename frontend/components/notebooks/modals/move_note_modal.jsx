@@ -21,6 +21,7 @@ class MoveNoteModal extends Component {
   handleClick(notebook) {
     // console.log(this.props.currentNote.notebookId);
     this.props.currentNote.notebookId = notebook.id;
+    //newnote = object.assign or spread with current note + new id (dont reassign props)
     // console.log(this.props.currentNote.notebookId);
     this.props
       .updateNote(convertToSnakeCase(this.props.currentNote))
@@ -28,9 +29,8 @@ class MoveNoteModal extends Component {
       .then(
         this.props.history.push(
           `/notebooks/${notebook.id}/notes/${this.props.currentNote.id}`
-          )
-      )
-      console.log('end')
+        )
+      );
   }
 
   toggleModal = () => {
@@ -42,12 +42,31 @@ class MoveNoteModal extends Component {
   }
 
   render() {
+    let notebooks =
+      this.props.notebooks.length <= 1 ? (
+        <h2 className="move-note-modal-h2">No other notebook exists!</h2>
+      ) : (
+        this.props.notebooks.map((notebook, i) => {
+          if (notebook.id !== this.props.currentNoteNotebook.id) {
+            return (
+              <li
+                className="move-note-modal-li"
+                key={i}
+                onClick={() => this.handleClick(notebook)}
+              >
+                {notebook.title}
+              </li>
+            );
+          }
+        })
+      );
+
     return (
       <div>
         <div className="modal modal-hidden">
           <div className="modal-contents">
-            <header className="modal-create-header">
-              <h1 className="modal-create-title">
+            <header className="move-modal-create-header">
+              <h1 className="move-modal-create-title">
                 Move note to...
                 <div className="modal-close">
                   <span className="modal-close-span" onClick={this.toggleModal}>
@@ -56,21 +75,7 @@ class MoveNoteModal extends Component {
                 </div>
               </h1>
               <div className="move-note-modal-ul">
-                <ul>
-                  {this.props.notebooks.map((notebook, i) => {
-                    if (notebook.id !== this.props.currentNoteNotebook.id) {
-                      return (
-                        <li
-                          className="move-note-modal-li"
-                          key={i}
-                          onClick={() => this.handleClick(notebook)}
-                        >
-                          {notebook.title}
-                        </li>
-                      );
-                    }
-                  })}
-                </ul>
+                <ul>{notebooks}</ul>
               </div>
               {/* <p className="modal-create-info"></p> */}
             </header>

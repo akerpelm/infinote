@@ -62,6 +62,7 @@ export class NoteShow extends React.Component {
   }
 
   render() {
+    //p
     const { currentNote } = this.props;
     if (currentNote.notebookId !== 0) {
       return (

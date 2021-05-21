@@ -34,10 +34,8 @@ class NotesIndex extends React.Component {
                 ? `${notes.length}  note`
                 : `${notes.length} notes`}
             </div>
-            {/* <MoveNoteModal/> */}
           </div>
         </div>
-
         {notes.map((note) => {
           return (
             <div className="note-list-element" key={note.id}>
