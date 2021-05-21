@@ -66,7 +66,7 @@ end
 
 
 ### Notes:
-* Users may create new notes and begin editing them within a matter of seconds.
+* Users may create new notes and begin editing them within a matter of seconds. 
 ```jsx
   handleUpdate(e) { //allows notes to update in real-time, setting the react component state to the user's input
     e.preventDefault();
@@ -80,7 +80,7 @@ end
     );
   }
 
-  componentDidUpdate(prevProps) { //updates the note component's state
+  componentDidUpdate(prevProps) { //updates the note component's state to render the most recently selected note
     if (prevProps.noteId !== this.props.noteId) {
       this.setState(this.props.currentNote);
     }
@@ -100,6 +100,39 @@ end
 * Notes created within a notebook will be housed in that notebook. All other notes will not be added to a notebook.
 * Notes can be moved from one notebook to another, or deleted. 
 
+```jsx
+handleClick(notebook) { //logic to handle the moving of a note from one notebook to another
+    this.props.currentNote.notebookId = notebook.id;
+    this.props
+      .updateNote(convertToSnakeCase(this.props.currentNote))
+      .then(this.toggleModal())
+      .then(
+        this.props.history.push(
+          `/notebooks/${notebook.id}/notes/${this.props.currentNote.id}`
+        )
+      );
+  }
+
+render() { //conditional rendering based on the presence of other notebooks
+    let notebooks =
+      this.props.notebooks.length < 1 ? (
+        <h2 className="move-note-modal-h2">No other notebook exists!</h2>
+      ) : (
+        this.props.notebooks.map((notebook, i) => {
+          if (notebook.id !== this.props.currentNoteNotebook.id) {
+            return (
+              <li
+                className="move-note-modal-li"
+                key={i}
+                onClick={() => this.handleClick(notebook)}
+              >
+                {notebook.title}
+              </li>
+            );
+          }
+        })
+      );
+```
 
 
 
