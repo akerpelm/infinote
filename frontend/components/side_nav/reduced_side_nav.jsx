@@ -1,5 +1,6 @@
 import React from "react";
 import { BsSearch } from "react-icons/bs";
+import { RiLogoutBoxFill } from "react-icons/ri";
 import {
   AiFillTag,
   AiFillHome,
@@ -9,13 +10,14 @@ import {
 import { CgNotes } from "react-icons/cg";
 import { BiBookAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import convertToSnakeCase from '../../util/snake_case_util'
-import { withRouter } from 'react-router-dom'
+import convertToSnakeCase from "../../util/snake_case_util";
+import { withRouter } from "react-router-dom";
 
 class ReducedSideNav extends React.Component {
   constructor(props) {
     super(props);
     this.handleCreateNote = this.handleCreateNote.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -31,7 +33,6 @@ class ReducedSideNav extends React.Component {
     let notebookId = this.props.match.params.notebookId
       ? this.props.match.params.notebookId
       : 0;
-    // let notebookId = 0;
     let newNote = {
       title: "",
       content: "",
@@ -60,9 +61,9 @@ class ReducedSideNav extends React.Component {
             </Link>
           </div>
           <div className="buttons-1">
-            <button className="sidebar-search">
+            {/* <button className="sidebar-search">
               <BsSearch />
-            </button>
+            </button> */}
             <button className="sidebar-new" onClick={this.handleCreateNote}>
               +
             </button>
@@ -100,6 +101,11 @@ class ReducedSideNav extends React.Component {
               >
                 <AiFillLinkedin />
               </a>
+            </li>
+            <li onClick={this.handleClick}>
+              <i className="menu-btn-icon">
+                <RiLogoutBoxFill />
+              </i>
             </li>
           </ul>
         </div>

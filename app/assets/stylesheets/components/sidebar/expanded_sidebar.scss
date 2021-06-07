@@ -96,7 +96,7 @@ $oxygen: "Oxygen";
         border: 1px solid #737373;
         text-align: center;
       }
-  
+
       border-radius: 2px;
       list-style: none;
       font-family: $oxygen;
@@ -121,9 +121,16 @@ $oxygen: "Oxygen";
 
 .sidenavbar-top-search {
   padding: 15px;
+  .search-output {
+    display: block;
+    position: absolute;
+    top: 120px;
+    background-color: green;
+  }
   .sidenavbar-search-icon {
     font-size: 20px;
   }
+
   .search-block {
     display: flex;
     align-items: center;
@@ -168,7 +175,7 @@ $oxygen: "Oxygen";
     li {
       display: flex;
       align-items: center;
-      padding: 10px 18px;
+      padding: 10px 25px;
       color: #ccc;
       text-decoration: none;
       .menu-btn-icon {
@@ -189,13 +196,12 @@ $oxygen: "Oxygen";
       }
     }
   }
-     
 }
 
- .change-user-li {
-   border: 1px solid #737373;
-   text-align: center;
-      }
+.change-user-li {
+  border: 1px solid #737373;
+  text-align: center;
+}
 //   .sidenavbar-top {
 //     flex: 1;
 //     .sidenavbar-top-profile {

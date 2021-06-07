@@ -26,7 +26,7 @@ export class NoteShow extends React.Component {
         id: this.state.id,
         title: this.state.title,
         content: this.state.content,
-        notebookId: this.props.currentNote.notebookId
+        notebookId: this.props.currentNote.notebookId,
       })
     );
     //deconstruct ? this.state.title, etc
@@ -92,7 +92,7 @@ export class NoteShow extends React.Component {
                   </button>
                 </li>
                 <li>
-                  <button className = "delete-modal-btn">
+                  <button className="delete-modal-btn">
                     <DeleteModalContainer />
                   </button>
                 </li>
@@ -100,13 +100,7 @@ export class NoteShow extends React.Component {
             </div>
           </div>
           <div className="note-body" onBlur={this.handleUpdate}>
-            <div className="note-body-head alt-note-body-head">
-              <input className="note-body-head-input alt-note-body-head"
-                value={this.state.title}
-                placeholder={this.state.title || "Title"}
-                onChange={this.handleChange("title")}
-              />
-            </div>
+            
             <div className="note-body-content">
               <textarea
                 value={this.state.content}
@@ -146,7 +140,7 @@ export class NoteShow extends React.Component {
           </div>
 
           <div className="note-body" onBlur={this.handleUpdate}>
-            <div className="">
+            <div className="note-body-head">
               <input
                 value={this.state.title}
                 placeholder={this.state.title || "Title"}

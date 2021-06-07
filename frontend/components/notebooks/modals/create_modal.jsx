@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BiBookAdd } from "react-icons/bi";
-import { createNotebook, removeNotebookErrors } from "../../../actions/notebook_actions";
+import {
+  createNotebook,
+  removeNotebookErrors,
+} from "../../../actions/notebook_actions";
 import convertToSnakeCase from "../../../util/snake_case_util";
 // import { convertToSnakeCase } from '../../../util/snake_case_util'
 
 class CreateModal extends Component {
   constructor(props) {
     super(props);
-  
+
     this.state = props.notebook;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -52,12 +55,12 @@ class CreateModal extends Component {
     return (
       <div>
         <div className="modal modal-hidden">
-          <div className="modal-contents">
+          <div className="modal-contents" >
             <header className="modal-create-header">
               <h1 className="modal-create-title">
                 Create new notebook
                 <div className="modal-close">
-                  <span className="modal-close-span" onClick={this.toggleModal}>
+                  <span className="modal-close-span">
                     X
                   </span>
                 </div>
@@ -90,6 +93,7 @@ class CreateModal extends Component {
                   className="modal-submit"
                   type="submit"
                   value="Continue"
+                  
                 />
               </div>
             </form>
