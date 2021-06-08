@@ -93,7 +93,6 @@ class ExpandedSideNav extends React.Component {
     let title = this.props.currentUser.username || this.props.currentUser.email;
     let abbrTitle = title.length > 8 ? title.slice(0, 8) + "..." : title;
     let firstLetter = title[0].toUpperCase();
-    console.log(this.state);
 
     return (
       <div className="sidenavbar">

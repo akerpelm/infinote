@@ -1,23 +1,24 @@
 import React from "react";
 import { withRouter } from "react-router";
-import { Link } from "react-router-dom";
 import convertToSnakeCase from "../../util/snake_case_util";
-import { FaTrash, FaEllipsisH } from "react-icons/fa";
-import { BiBookAlt, BiBook } from "react-icons/bi";
-import { AiFillCaretRight } from "react-icons/bi";
+import { BiBookAlt } from "react-icons/bi";
 import DeleteModalContainer from "../notebooks/modals/delete_modal_container";
 import MoveNoteModal from "../notebooks/modals/move_note_modal";
 import EditModalContainer from "../notebooks/modals/edit_modal_container";
+import ReactQuill from "react-quill";
 
 export class NoteShow extends React.Component {
   constructor(props) {
     super(props);
+    // let testThis = this;
 
     this.state = props.currentNote;
+    // debugger
 
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleBodyChange = this.handleBodyChange(this);
   }
   handleUpdate(e) {
     e.preventDefault();
@@ -29,7 +30,6 @@ export class NoteShow extends React.Component {
         notebookId: this.props.currentNote.notebookId,
       })
     );
-    //deconstruct ? this.state.title, etc
   }
 
   componentDidUpdate(prevProps) {
@@ -38,11 +38,27 @@ export class NoteShow extends React.Component {
     }
   }
 
-  handleChange(field) {
-    return (e) =>
+  handleBodyChange(val) {
+    this.setState({ content: val });
+    // e.preventDefault();
+    // return (e) => {
+    this.setState({});
+  }
+  //   debugger;
+  //   return (e) => {
+  //     debugger;
+  //     this.setState({
+  //       content: html,
+  //     });
+  //   };
+  // }
+
+  handleChange(field, arg) {
+    return (e) => {
       this.setState({
         [field]: e.target.value,
       });
+    };
   }
 
   toggleActive = () => {
@@ -63,6 +79,7 @@ export class NoteShow extends React.Component {
 
   render() {
     //p
+
     const { currentNote } = this.props;
     if (currentNote.notebookId !== 0) {
       return (
@@ -100,16 +117,35 @@ export class NoteShow extends React.Component {
             </div>
           </div>
           <div className="note-body" onBlur={this.handleUpdate}>
-            
+            <div className="test"></div>
+            <div className="note-body-head">
+              <input
+                className="note-body-head"
+                value={this.state.title}
+                placeholder={this.state.title || "Title"}
+                onChange={this.handleChange("title")}
+              />
+            </div>
+
             <div className="note-body-content">
-              <textarea
+              {/* <textarea
                 value={this.state.content}
                 placeholder={this.state.content || "Start writing..."}
                 onChange={this.handleChange("content")}
+              /> */}
+              <ReactQuill
+                theme="snow"
+                value={this.state.content}
+                placeholder={this.state.content || "Start writing..."}
+                onChange={(content, delta, source, editor) => {
+                  // this.setState({})
+                  this.setState({
+                    content: content,
+                  });
+                }}
               />
             </div>
           </div>
-          {/* </form>  */}
         </div>
       );
     } else {
@@ -142,16 +178,27 @@ export class NoteShow extends React.Component {
           <div className="note-body" onBlur={this.handleUpdate}>
             <div className="note-body-head">
               <input
+                className="note-body-head"
                 value={this.state.title}
                 placeholder={this.state.title || "Title"}
                 onChange={this.handleChange("title")}
               />
             </div>
             <div className="note-body-content">
-              <textarea
+              {/* <textarea
                 value={this.state.content}
                 placeholder={this.state.content || "Start writing..."}
                 onChange={this.handleChange("content")}
+              /> */}
+              <ReactQuill
+                theme="snow"
+                value={this.state.content}
+                placeholder={this.state.content || "Start writing..."}
+                onChange={(content, delta, source, editor) => {
+                  this.setState({
+                    content: content,
+                  });
+                }}
               />
             </div>
           </div>
@@ -163,35 +210,3 @@ export class NoteShow extends React.Component {
 }
 
 export default withRouter(NoteShow);
-
-{
-  /* <div className="note-show-action-dropdown">
-  <section
-    className="note-show-action-dropdown-btn"
-    onClick={this.toggleActive}
-  >
-    <FaEllipsisH className="ellipsis-i" />
-    <ul className="note-show-action-dropdown-ul">
-      <li>
-        <span
-          onClick={this.toggleActive}
-          className="move-note-wrapper"
-        >
-          <MoveNoteModal />
-        </span>
-      </li>
-      <li>
-        <span onClick={this.toggleActive}>
-          {<EditModalContainer /> || "hi"}
-        </span>
-      </li>
-      <li>
-        <span>
-          <DeleteModalContainer />
-        </span>
-      </li>
-      <li onClick={this.handleDelete}>Move Note to Trash</li>
-    </ul>
-  </section>
-</div> */
-}
