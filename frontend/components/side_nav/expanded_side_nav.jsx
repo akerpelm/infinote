@@ -18,18 +18,9 @@ import { useState } from "react";
 class ExpandedSideNav extends React.Component {
   constructor(props) {
     super(props);
-    // debugger
-    // this.state = {
-    //   filtered: [props.notes],
-    //   showMenu: false,
-    //   handleClickRedirect: false,
-    // }
 
     this.handleClick = this.handleClick.bind(this);
     this.handleCreateNote = this.handleCreateNote.bind(this);
-    // this.handleChange = this.handleChange.bind(this);
-    // this.showMenu = this.showMenu.bind(this);
-    // this.closeMenu = this.closeMenu.bind(this);
   }
 
   componentDidMount() {

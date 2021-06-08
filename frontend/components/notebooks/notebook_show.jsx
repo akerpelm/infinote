@@ -31,8 +31,6 @@ export class NotebookShow extends Component {
           notes={this.props.notes}
           allNotes={this.props.allNotes}
         />
-        {/* selector so this.props.notes are only notes for this notbeook */}
-        {/* note id in params??? if yes => if no : dont render  */}
         {this.props.location.pathname.includes("/notes/") ? (
           <NoteShowContainer />
         ) : (
