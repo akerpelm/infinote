@@ -25,6 +25,10 @@ class User < ApplicationRecord
     has_many :notes,
     foreign_key: :author_id,
     class_name: :Note
+
+    has_many :tags,
+    foreign_key: :author_id,
+    class_name: :Tag
     
     after_initialize :ensure_session_token
 

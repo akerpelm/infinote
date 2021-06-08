@@ -6,7 +6,7 @@
 #  title       :string
 #  content     :string
 #  author_id   :integer          not null
-#  notebook_id :integer
+#  notebook_id :integer          default(0), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
