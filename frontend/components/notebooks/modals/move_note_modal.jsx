@@ -19,10 +19,7 @@ class MoveNoteModal extends Component {
   }
 
   handleClick(notebook) {
-    // console.log(this.props.currentNote.notebookId);
     this.props.currentNote.notebookId = notebook.id;
-    //newnote = object.assign or spread with current note + new id (dont reassign props)
-    // console.log(this.props.currentNote.notebookId);
     this.props
       .updateNote(convertToSnakeCase(this.props.currentNote))
       .then(this.toggleModal())

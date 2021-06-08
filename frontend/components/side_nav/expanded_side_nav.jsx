@@ -1,5 +1,5 @@
 import React from "react";
-import { RiLogoutBoxFill } from 'react-icons/ri'
+import { RiLogoutBoxFill } from "react-icons/ri";
 import { FaAngleDown, FaPlus } from "react-icons/fa";
 import { BsSearch } from "react-icons/bs";
 import {
@@ -71,19 +71,6 @@ class ExpandedSideNav extends React.Component {
     this.props.history.push("/notebooks");
   }
 
-  // handleChange(e) {
-  //   e.preventDefault();
-  //   let searchable = {};
-  //   Object.values(this.props.notes).forEach((note) => {
-  //     if (note.title.includes(e.target.value) === true) {
-  //       searchable[note.id] = note;
-  //     }
-  //   });
-  //   // console.log(searchable, "searchable");
-
-  //   this.setState(searchable);
-  // }
-
   toggleActive = () => {
     document
       .querySelector(".expanded-side-nav-action-dropdown-ul")
@@ -102,7 +89,6 @@ class ExpandedSideNav extends React.Component {
               <Link to="/notes" style={{ textDecoration: "none" }}>
                 <div className="user-initial">{firstLetter}</div>
               </Link>
-              {/* {firstLetter} */}
             </div>
             <div className="sidenavbar-profile-title">
               {abbrTitle}
@@ -209,7 +195,9 @@ class ExpandedSideNav extends React.Component {
                 </a>
               </li>
               <li onClick={this.handleClick}>
-                <i className="menu-btn-icon"><RiLogoutBoxFill/></i>
+                <i className="menu-btn-icon">
+                  <RiLogoutBoxFill />
+                </i>
                 Log Out
               </li>
             </ul>

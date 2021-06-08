@@ -10,15 +10,11 @@ import ReactQuill from "react-quill";
 export class NoteShow extends React.Component {
   constructor(props) {
     super(props);
-    // let testThis = this;
-
     this.state = props.currentNote;
-    // debugger
 
     this.handleUpdate = this.handleUpdate.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
-    this.handleBodyChange = this.handleBodyChange(this);
   }
   handleUpdate(e) {
     e.preventDefault();
@@ -37,21 +33,6 @@ export class NoteShow extends React.Component {
       this.setState(this.props.currentNote);
     }
   }
-
-  handleBodyChange(val) {
-    this.setState({ content: val });
-    // e.preventDefault();
-    // return (e) => {
-    this.setState({});
-  }
-  //   debugger;
-  //   return (e) => {
-  //     debugger;
-  //     this.setState({
-  //       content: html,
-  //     });
-  //   };
-  // }
 
   handleChange(field, arg) {
     return (e) => {
@@ -78,7 +59,7 @@ export class NoteShow extends React.Component {
   }
 
   render() {
-    //p
+    let htmlElements = ["<p>", "<br>", "<h1>", "<h2>"];
 
     const { currentNote } = this.props;
     if (currentNote.notebookId !== 0) {
@@ -128,17 +109,15 @@ export class NoteShow extends React.Component {
             </div>
 
             <div className="note-body-content">
-              {/* <textarea
-                value={this.state.content}
-                placeholder={this.state.content || "Start writing..."}
-                onChange={this.handleChange("content")}
-              /> */}
               <ReactQuill
                 theme="snow"
                 value={this.state.content}
-                placeholder={this.state.content || "Start writing..."}
+                placeholder={htmlElements.forEach((el) => {
+                  return this.state.content.includes(el)
+                    ? this.state.content
+                    : "Start writing...";
+                })}
                 onChange={(content, delta, source, editor) => {
-                  // this.setState({})
                   this.setState({
                     content: content,
                   });
@@ -185,15 +164,14 @@ export class NoteShow extends React.Component {
               />
             </div>
             <div className="note-body-content">
-              {/* <textarea
-                value={this.state.content}
-                placeholder={this.state.content || "Start writing..."}
-                onChange={this.handleChange("content")}
-              /> */}
               <ReactQuill
                 theme="snow"
                 value={this.state.content}
-                placeholder={this.state.content || "Start writing..."}
+                placeholder={htmlElements.forEach((el) => {
+                  return this.state.content.includes(el)
+                    ? this.state.content
+                    : "Start writing";
+                })}
                 onChange={(content, delta, source, editor) => {
                   this.setState({
                     content: content,
@@ -202,7 +180,6 @@ export class NoteShow extends React.Component {
               />
             </div>
           </div>
-          {/* </form>  */}
         </div>
       );
     }

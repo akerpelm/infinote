@@ -139,18 +139,19 @@ $oxygen: "Oxygen";
       background-color: #f8f8f8;
       input {
         padding: 10px;
-        font-size: 30px;
+        font-size: 2.25em;
         border: none;
         outline: none;
         width: 100%;
-        background: #f8f8f8
+        background: #f8f8f8;
+        text-overflow: ellipsis
       }
       .note-body-head-input {
         padding: 10px;
         font-size: 30px;
         width: 100%;
         background: #f8f8f8;
-        // overflow-x: visible;
+        text-overflow: ellipsis;
          border: none;
         outline: none;
         resize: none;
