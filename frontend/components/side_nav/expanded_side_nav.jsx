@@ -156,7 +156,7 @@ class ExpandedSideNav extends React.Component {
                 </li>
               </Link>
 
-              <Link style={{ textDecoration: "none" }} to="/notes">
+              <Link style={{ textDecoration: "none" }} to="/tags">
                 <li className="sidebar-tags">
                   <i className="menu-btn-icon">
                     <AiFillTag />

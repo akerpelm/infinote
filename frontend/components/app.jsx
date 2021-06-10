@@ -14,6 +14,7 @@ const App = () => {
         <AuthRoute path="/login" component={LoginFormContainer} />
 
         <ProtectedRoute path="/notes" component={UserLanding} />
+        <ProtectedRoute path="/tags" component={UserLanding} />
         <ProtectedRoute path="/notebooks" component={UserLanding} />
         <ProtectedRoute path="/notebooks/:notebookId" component={UserLanding} />
         <AuthRoute exact path="/" component={Splash} />

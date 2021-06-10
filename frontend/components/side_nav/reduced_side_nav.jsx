@@ -84,7 +84,7 @@ class ReducedSideNav extends React.Component {
                 <BiBookAlt />
               </li>
             </Link>
-            <Link to="/notebooks">
+            <Link to="/tags">
               <li className="sidebar-tags">
                 <AiFillTag />
               </li>

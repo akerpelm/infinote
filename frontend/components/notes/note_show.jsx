@@ -61,6 +61,11 @@ export class NoteShow extends React.Component {
   render() {
     let htmlElements = ["<p>", "<br>", "<h1>", "<h2>"];
 
+    var toolbarOptions = [
+      ["bold", "italic"],
+      ["link", "image"],
+    ];
+
     const { currentNote } = this.props;
     if (currentNote.notebookId !== 0) {
       return (
@@ -101,6 +106,8 @@ export class NoteShow extends React.Component {
             <div className="test"></div>
             <div className="note-body-head">
               <input
+                modules={toolbarOptions}
+                formates={toolbarOptions}
                 className="note-body-head"
                 value={this.state.title}
                 placeholder={this.state.title || "Title"}
@@ -112,11 +119,12 @@ export class NoteShow extends React.Component {
               <ReactQuill
                 theme="snow"
                 value={this.state.content}
-                placeholder={htmlElements.forEach((el) => {
-                  return this.state.content.includes(el)
-                    ? this.state.content
-                    : "Start writing...";
-                })}
+                placeholder="Start writing..."
+                // placeholder={htmlElements.forEach((el) => {
+                //   return this.state.content.includes(el)
+                //     ? this.state.content
+                //     : "Start writing...";
+                // })}
                 onChange={(content, delta, source, editor) => {
                   this.setState({
                     content: content,
@@ -172,6 +180,7 @@ export class NoteShow extends React.Component {
                     ? this.state.content
                     : "Start writing";
                 })}
+                placeholder={"Start writing"}
                 onChange={(content, delta, source, editor) => {
                   this.setState({
                     content: content,

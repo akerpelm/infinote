@@ -22,4 +22,8 @@ class Note < ApplicationRecord
     foreign_key: :notebook_id,
     class_name: :Notebook
 
+    has_many :tags, 
+    through: :tagged_notes,
+    source: :tag
+
 end

@@ -3,7 +3,6 @@ import NotebookIndexItem from "./notebook_index_item";
 import { BsSearch } from "react-icons/bs";
 import CreateModal from "./modals/create_modal";
 import ReducedSideNavContainer from "../side_nav/reduced_side_nav_container";
-import convertToSnakeCase from "../../util/snake_case_util";
 
 class NotebookIndex extends React.Component {
   constructor(props) {
@@ -23,14 +22,14 @@ class NotebookIndex extends React.Component {
         <div className="notebook-index">
           <div className="notebook-header">
             <h3 className="notebooks-title">Notebooks</h3>
-            <div className="notebooks-search-bar-div">
+            {/* <div className="notebooks-search-bar-div">
               <input
                 className="notebooks-search-bar"
                 type="input"
                 placeholder="Find Notebooks..."
               />
               <BsSearch className="notebooks-search-bar-icon" />
-            </div>
+            </div> */}
           </div>
           <header className="notebook-count-new">
             <p className="notebook-count">
@@ -66,5 +65,3 @@ class NotebookIndex extends React.Component {
 }
 
 export default NotebookIndex;
-
-// notebook = { notebook } key = { idx } > Notebooks

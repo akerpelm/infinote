@@ -35,15 +35,20 @@ export const deleteTag = (tagId) => {
   });
 };
 
-export const createTaggedNote = (taggedNote) => {
-    return $.ajax({
-        method: "POST",
-        url: `api/notes/${taggedNote.note_id}/tagged_notes`
-    })
-}
+//   create = api_note_tagged_notes
+//   POST /api/notes/:note_id tagged_notes
 
-
-//   create = api_note_tagged_notes 
-//   POST /api/notes/:note_id tagged_notes                                        
- 
 //   DELETE /api/notes/:note_id/tagged_notes/:id
+export const createTaggedNote = (taggedNote) => {
+  return $.ajax({
+    method: "POST",
+    url: `api/notes/${taggedNote.note_id}/tagged_notes`,
+  });
+};
+
+export const deleteTaggedNote = (taggedNote) => {
+  return $.ajax({
+    method: "DELETE",
+    url: `api/notes/${taggedNote.note_id}/tagged_notes/${taggedNote.tag_id}`,
+  });
+};

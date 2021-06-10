@@ -14,19 +14,20 @@
  *= require_self
  */
 
- @import './reset.scss';
+@import "./reset.scss";
 //  @import './fonteawesome_scss/fontawesome.scss';
 //  @import './fonteawesome_scss/solid.scss';
- @import'./components/session/user_actions.scss';
- @import './components/session/splash_info.scss';
- @import './components/session/demo_login.scss';
- @import './components/session/session_form.scss';
- @import './components//session/information.scss';
- @import './components/session/splash_header.scss';
- @import './components/notebooks/notebook_index.scss';
- @import './components/notebooks/notebook_index_item.scss';
- @import './components/notebooks/notebook_modal.scss';
- @import './components//sidebar/reduced_sidebar.scss';
- @import './components//sidebar/expanded_sidebar.scss';
- @import './components/notes/note_show.scss';
- @import './components//notes/quill.scss'
+@import "./components/session/user_actions.scss";
+@import "./components/session/splash_info.scss";
+@import "./components/session/demo_login.scss";
+@import "./components/session/session_form.scss";
+@import "./components//session/information.scss";
+@import "./components/session/splash_header.scss";
+@import "./components/notebooks/notebook_index.scss";
+@import "./components/notebooks/notebook_index_item.scss";
+@import "./components/notebooks/notebook_modal.scss";
+@import "./components//sidebar/reduced_sidebar.scss";
+@import "./components//sidebar/expanded_sidebar.scss";
+@import "./components/notes/note_show.scss";
+@import "./components//notes/quill.scss";
+@import "./components/tags/tags.scss";
