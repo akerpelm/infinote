@@ -24,7 +24,7 @@ class Api::TagsController < ApplicationController
     def destroy
         @tag = Tag.find(params[:id])
 
-        if @tag && @tag.ddestroy
+        if @tag && @tag.destroy
             render :show
         else
             render json: ["This tag does not exist"]

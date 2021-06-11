@@ -2,27 +2,18 @@ import React from "react";
 import ReducedSideNavContainer from "../side_nav/reduced_side_nav_container";
 import { BsSearch, BsPlusSquareFill } from "react-icons/bs";
 import convertToSnakeCase from "../../util/snake_case_util";
+import { DropdownItem, DropdownMenu } from "./dropdown";
 
 class TagsIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.handleCreateTag = this.handleCreateTag.bind(this);
   }
   componentDidMount() {
     this.props.fetchTags();
   }
 
-  handleCreateTag(e) {
-    e.preventDefault();
-    let newTag = {
-      name: "",
-      authorId: this.props.currentUser.id,
-    };
-    this.props.action(convertToSnakeCase(newTag));
-  }
-
   render() {
-    const { tags, openModal } = this.props;
+    const { tags, openModal, deleteTag } = this.props;
     return (
       <div className="tags-index-wrapper">
         <div className="reduced-side-nav">
@@ -55,14 +46,9 @@ class TagsIndex extends React.Component {
               {tags.map((tag) => {
                 return (
                   <div className="tag-list-element" key={tag.id}>
-                    <div className="tag-list-info">
-                      {tag.name}
-                      <span
-                        className="tag-list-dropdown"
-                        onClick={() => setOpen()}
-                      >
-                        ...
-                      </span>
+                    <div className="tag-list-info">{tag.name}</div>
+                    <div className="dropdown-li">
+                      <DropdownMenu deleteTag={deleteTag} tag={tag} />
                     </div>
                   </div>
                 );

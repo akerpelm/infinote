@@ -11,7 +11,7 @@ $oxygen: "Oxygen";
   top: 0;
   // position: absolute;
   padding: 24px 0 0 60px;
-  width: 380px;
+  width: 450px;
   background: #fff;
   box-shadow: 0 0 0 1px rgba(99, 114, 130, 0.16),
     0 4px 12px rgba(27, 39, 51, 0.08);
@@ -85,7 +85,8 @@ $oxygen: "Oxygen";
       margin: 16px 0 3px;
       height: 198px;
       .tag-list-element {
-        height: 46px;
+        display: flex;
+        height: 80px;
         left: 0px;
         top: 50px;
         width: 100%;
@@ -100,8 +101,73 @@ $oxygen: "Oxygen";
           &:hover {
             text-decoration: underline;
           }
-          .tag-list-dropdown {
-            color: pink;
+        }
+      }
+      .dropdown-li {
+        display: flex;
+        align-items: center;
+        padding-bottom: 6px;
+        // position: relative;
+        .dropdown {
+          position: absolute;
+          right: 0px;
+          margin-right: 20px;
+          cursor: pointer;
+        }
+        .dropdown-item-div {
+          border-radius: 1px;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+          background-color: pink;
+          p {
+            background-color: #fff;
+          }
+          .dropdown-item-delete {
+            border: 1px solid #ccc;
+            position: absolute;
+            right: 0px;
+            top: 20px;
+            font-weight: bold;
+            // box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+            padding: auto;
+            z-index: 1;
+            width: 200px;
+            text-align: center;
+            padding: 5px;
+            border-top-right-radius: 2px;
+            border-top-left-radius: 2px;
+            &:hover {
+              background-color: rgb(195, 93, 71);
+              color: #fff;
+            }
+          }
+          .dropdown-item-update {
+            border: 1px solid #ccc;
+            border-top: 1px solid #fff;
+            // border-right: 1px solid #ccc;
+            // border-left: 1px solid #ccc;
+            position: absolute;
+            right: 0px;
+            top: 45px;
+            font-weight: bold;
+            padding: auto;
+            z-index: 1;
+            width: 200px;
+            text-align: center;
+            padding: 5px;
+            border-bottom-left-radius: 2px;
+            border-bottom-right-radius: 2px;
+            &:hover {
+              background-color: rgb(195, 93, 71);
+              color: #fff;
+            }
+          }
+        }
+        .test-dropdown {
+          position: absolute;
+          margin-left: 5px;
+          text-decoration: none;
+          &:hover {
+            text-decoration: none;
           }
         }
       }

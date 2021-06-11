@@ -3,6 +3,7 @@ import { openModal } from "../../actions/modal_actions";
 import { logout } from "../../actions/session_actions";
 import {
   createTag,
+  deleteTag,
   fetchTags,
   removeTagErrors,
 } from "../../actions/tag_actions";
@@ -22,7 +23,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
     fetchTags: () => dispatch(fetchTags()),
-    action: (tag) => dispatch(createTag(tag)),
+    deleteTag: (tag) => dispatch(deleteTag(tag)),
     removeTagErrors: () => dispatch(removeTagErrors),
     openModal: (modal) => dispatch(openModal(modal)),
   };

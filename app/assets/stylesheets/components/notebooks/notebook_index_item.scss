@@ -3,6 +3,12 @@ $oxygen: 'Oxygen';
 
 
 //... actions
+.ellipsis-icon {
+            color: #333333;
+            font-weight: light;
+            font-size: 10px;
+           
+        };
 .sort-row {
     height: 40px;
     line-height: 20px;
@@ -18,7 +24,8 @@ $oxygen: 'Oxygen';
         .ellipsis-icon {
             color: #737373;
             font-weight: light;
-            font-size: 14px
+            font-size: 10px;
+           
         };
         
         .action-dropdown-button {
