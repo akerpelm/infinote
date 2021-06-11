@@ -1,4 +1,4 @@
 json.key_format! camelize: :lower
 
 
-json.partial!, tag: @tag
+json.partial! 'tag', tag: @tag

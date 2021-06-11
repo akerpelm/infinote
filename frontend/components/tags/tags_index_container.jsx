@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { openModal } from "../../actions/modal_actions";
 import { logout } from "../../actions/session_actions";
 import {
   createTag,
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchTags: () => dispatch(fetchTags()),
     action: (tag) => dispatch(createTag(tag)),
     removeTagErrors: () => dispatch(removeTagErrors),
+    openModal: (modal) => dispatch(openModal(modal)),
   };
 };
 

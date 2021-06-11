@@ -60,7 +60,7 @@ class CreateModal extends Component {
               <h1 className="modal-create-title">
                 Create new notebook
                 <div className="modal-close">
-                  <span className="modal-close-span">
+                  <span className="modal-close-span" onClick={this.toggleModal}>
                     X
                   </span>
                 </div>

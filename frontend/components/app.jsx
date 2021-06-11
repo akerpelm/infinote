@@ -5,10 +5,12 @@ import Splash from "./splash/splash";
 import LoginFormContainer from "./session/login_form_container";
 import RegistrationFormContainer from "./session/registration_form_container";
 import UserLanding from "./user_landing/user_landing";
+import Modal from "./modal/modal";
 
 const App = () => {
   return (
     <div>
+      <Modal/>
       <Switch>
         <AuthRoute path="/register" component={RegistrationFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />

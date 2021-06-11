@@ -14,9 +14,9 @@
  *= require_self
  */
 
+
 @import "./reset.scss";
-//  @import './fonteawesome_scss/fontawesome.scss';
-//  @import './fonteawesome_scss/solid.scss';
+@import "./palette.scss";
 @import "./components/session/user_actions.scss";
 @import "./components/session/splash_info.scss";
 @import "./components/session/demo_login.scss";
@@ -31,3 +31,4 @@
 @import "./components/notes/note_show.scss";
 @import "./components//notes/quill.scss";
 @import "./components/tags/tags.scss";
+@import "./components/modals/modal.scss";
