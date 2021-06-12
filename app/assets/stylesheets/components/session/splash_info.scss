@@ -1,42 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;500;700&display=swap");
 
-$oswald: 'Oswald', sans serif;
+$oswald: "Oswald", sans serif;
+
+.splash-wrapper {
+  background-color: rgba(195, 93, 71, 0.05);
+}
 .infinote-logo_1 {
-    width: 150px;
-    height: auto;
-    // display: inline;
-    padding-left: 5px
+  width: 150px;
+  height: auto;
+  // display: inline;
+  padding-left: 5px;
 }
 .splash-info {
+  font-family: $oswald;
+  font-size: 16px;
+  display: flex;
 
-    font-family: $oswald;
-    font-size: 16px;
+  .titles {
     display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    // color: ;
+  }
 
-    .titles {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        align-items: center;
-        // color: ;
-    }
-    
-    .slogan {
-        font-weight: 500;
-        font-size: 56px;
-        margin-top: 50px;
-        margin-bottom: 20px
-        // justify-content: center;
-        // align-items: center;
-    }
-    .subhead {
-        font-weight: 300;
-        font-size: 30px;
-        padding-bottom: 30px;
-    }
-
+  .slogan {
+    font-weight: 500;
+    font-size: 56px;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    // justify-content: center;
+    // align-items: center;
+  }
+  .subhead {
+    font-weight: 300;
+    font-size: 30px;
+    padding-bottom: 30px;
+  }
 }
-    .infinote-logo_1 {
-        margin-left: 150px;
-        margin-top: 20px;
-    }
+.infinote-logo_1 {
+  margin-left: 150px;
+  margin-top: 20px;
+}

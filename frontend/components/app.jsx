@@ -10,11 +10,10 @@ import Modal from "./modal/modal";
 const App = () => {
   return (
     <div>
-      <Modal/>
+      <Modal />
       <Switch>
         <AuthRoute path="/register" component={RegistrationFormContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
-
         <ProtectedRoute path="/notes" component={UserLanding} />
         <ProtectedRoute path="/tags" component={UserLanding} />
         <ProtectedRoute path="/notebooks" component={UserLanding} />

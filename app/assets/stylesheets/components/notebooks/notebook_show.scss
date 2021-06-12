@@ -13,9 +13,9 @@ $oxygen: "Oxygen";
 
 .note-list {
   height: 100%;
-  width: 380px;
   max-width: 670px;
-  min-width: 196px;
+  min-width: 380px;
+  width: 380px;
   background: #f8f8f8;
   border-right: 1px solid #e6e6e6;
   display: flex;
@@ -23,6 +23,11 @@ $oxygen: "Oxygen";
   font-family: $oxygen;
   overflow: scroll;
   .note-list-header {
+    max-width: 670px;
+    width: 380px;
+    min-width: 196px;
+    position: fixed;
+    background: #f8f8f8;
     padding: 25px 25px;
     font-weight: bold;
     display: flex;
@@ -31,6 +36,7 @@ $oxygen: "Oxygen";
     height: 100px;
     box-sizing: border-box;
     border-bottom: 1px solid #ccc;
+    border-right: 1px solid #e6e6e6;
     scroll-behavior: smooth;
     .note-list-header-title {
       width: 100%;
@@ -47,22 +53,32 @@ $oxygen: "Oxygen";
       }
     }
   }
+  .note-list-wrapper {
+    margin-top: 100px;
+  }
+
   .note-list-element {
     text-decoration: none;
 
-    &:focus, &:hover, &:visited, &:link, &:active {
-        text-decoration: none;
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
     }
-  }
 
-  .note-list-body {
-    flex: 1;
-    overflow-y: auto;
-    .note-card {
+    .note-list-body {
+      flex: 1;
+      overflow-y: auto;
+
+      .note-card {
+      }
       height: 120px;
-      padding: 20px 25px;
+      padding: 20px 25px 10px 25px;
       display: flex;
       flex-direction: column;
+      text-overflow: ellipsis;
       border: 1px solid #e6e6e6;
       text-decoration: none;
       .note-card-head {
@@ -107,3 +123,73 @@ $oxygen: "Oxygen";
 }
 
 //NOTE SHOW
+
+.dropdown-li {
+  height: 0px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  // position: relative;
+  .dropdown {
+    top: 75px;
+    left: 360px;
+    position: absolute;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .dropdown-item-div {
+    border-radius: 1px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: pink;
+    p {
+      background-color: #fff;
+    }
+    .notebook-dropdown-item-delete {
+      border: 1px solid #ccc;
+      position: absolute;
+      right: 0px;
+      top: 47px;
+      font-weight: bold;
+      z-index: 1;
+      width: 200px;
+      text-align: center;
+      padding: 5px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      &:hover {
+        background-color: rgb(195, 93, 71);
+        color: #fff;
+      }
+    }
+    .test-dropdown-item-update {
+      width: 200px;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      background-color: white;
+      font-weight: bold;
+      position: absolute;
+      right: 0px;
+      top: 20px;
+      //   font-weight: bold;
+      z-index: 1;
+      //   width: 200px;
+      //   text-align: center;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      &:hover {
+        background-color: rgb(195, 93, 71);
+        color: #fff;
+      }
+    }
+  }
+  .test-dropdown {
+    position: absolute;
+    margin-left: 5px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

@@ -2,7 +2,8 @@ import React from "react";
 import ReducedSideNavContainer from "../side_nav/reduced_side_nav_container";
 import { BsSearch, BsPlusSquareFill } from "react-icons/bs";
 import convertToSnakeCase from "../../util/snake_case_util";
-import { DropdownItem, DropdownMenu } from "./dropdown";
+import { Link } from "react-router-dom";
+import { DropdownMenu } from "./tag_dropdown";
 
 class TagsIndex extends React.Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class TagsIndex extends React.Component {
               <div className="create-tag-btn">
                 <BsPlusSquareFill
                   className="create-tag-btn"
-                  onClick={() => openModal("tag")}
+                  onClick={() => openModal("create-tag")}
                 />
               </div>
             </div>
@@ -46,9 +47,18 @@ class TagsIndex extends React.Component {
               {tags.map((tag) => {
                 return (
                   <div className="tag-list-element" key={tag.id}>
-                    <div className="tag-list-info">{tag.name}</div>
+                    <Link
+                      style={{ textDecoration: "none", padding: "0" }}
+                      to={`/tags/${tag.id}`}
+                    >
+                      <div className="tag-list-info">{tag.name}</div>
+                    </Link>
                     <div className="dropdown-li">
-                      <DropdownMenu deleteTag={deleteTag} tag={tag} />
+                      <DropdownMenu
+                        deleteTag={deleteTag}
+                        tag={tag}
+                        openModal={openModal}
+                      />
                     </div>
                   </div>
                 );

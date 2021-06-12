@@ -30,6 +30,10 @@ export class NotebookShow extends Component {
           title={title}
           notes={this.props.notes}
           allNotes={this.props.allNotes}
+          notebook={this.props.notebook}
+          deleteNotebook={this.props.deleteNotebook}
+          openModal={this.props.openModal}
+          updateNotebook={this.props.updateNotebook}
         />
         {this.props.location.pathname.includes("/notes/") ? (
           <NoteShowContainer />

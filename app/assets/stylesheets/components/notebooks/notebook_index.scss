@@ -1,98 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
-$oxygen: 'Oxygen';
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap");
+$oxygen: "Oxygen";
 
-
-.notebook-index-wrapper{
-    display:flex;
-    // align-items: center;
-    height:100vh;
-    font-family: $oxygen;
+.notebook-index-wrapper {
+  display: flex;
+  // align-items: center;
+  height: 100vh;
+  font-family: $oxygen;
 }
 
 .notebook-index {
-    font-family: $oxygen;
-    width: 94.5%;
+  font-family: $oxygen;
+  width: 94.5%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+
+  .notebook-header {
+    //
+    font-weight: bolder;
     display: flex;
-    flex-direction: column;
-    margin-left: 60px;
-
-    .notebook-header {
-        //
-        font-weight: bolder;
-        display: flex;
-        min-height: 80px;
-        align-items: center;
-        font-size: 15px;
-        outline-style: none;
-        justify-content: space-between;
-        .notebooks-title {
-            font-size: 20px;
-            padding-right: 12px;
-            margin-left: 20px;
-        }
-
-        .notebooks-search-bar-div {
-            align-items: center;
-            border-radius: 4px;
-            // margin-right: 20px;
-            display: flex;
-            .notebooks-search-bar-icon{
-                position: absolute;
-                right: 20px;
-
-                display: inline-block;
-                font-size: 14px;
-                outline: none;
-                padding: 8px
-            }
-            .notebooks-search-bar{
-                display: inline-block;
-                font-size: 14px;
-                outline: none;
-                padding: 8px 10px;
-            }
-        }
+    min-height: 80px;
+    align-items: center;
+    font-size: 15px;
+    outline-style: none;
+    justify-content: space-between;
+    .notebooks-title {
+      font-size: 20px;
+      padding-right: 12px;
+      margin-left: 20px;
     }
-    .notebook-count-new {
-        display: flex;
-        font-size: 15px;
-        font-weight: bolder;
-        margin: 10px 0;
-        min-height: 24px;
-        height: 24px;
-        margin-left: 20px;
-      
 
-        .notebook-count {
-            margin-right: auto;
-            vertical-align: middle;
-            padding-top: 5px;
-        };
-        .new-notebook-button {
-            font-size: 15px;
-            font-weight: bolder;
-            color:rgb(195, 93, 71);
-            padding: 2px 0 0 0;
-            vertical-align: middle;
-            cursor: pointer;
-            background-color: Transparent;
-            border: none;
-            .notebook-icon {
-                padding: 1px 5px 0 0;
-                color:rgb(195, 93, 71);
-                vertical-align: text-top;
-                cursor: pointer;
-                font-size: 18px
-            
-            }
-        }
-    };
-    
+    .notebooks-search-bar-div {
+      align-items: center;
+      border-radius: 4px;
+      // margin-right: 20px;
+      display: flex;
+      .notebooks-search-bar-icon {
+        position: absolute;
+        right: 20px;
 
+        display: inline-block;
+        font-size: 14px;
+        outline: none;
+        padding: 8px;
+      }
+      .notebooks-search-bar {
+        display: inline-block;
+        font-size: 14px;
+        outline: none;
+        padding: 8px 10px;
+      }
+    }
+  }
+  .notebook-count-new {
+    display: flex;
+    font-size: 15px;
+    font-weight: bolder;
+    margin: 10px 0;
+    min-height: 24px;
+    height: 24px;
+    margin-left: 20px;
 
+    .notebook-count {
+      margin-right: auto;
+      vertical-align: middle;
+      padding-top: 5px;
+    }
+    .new-notebook-button {
+      font-size: 15px;
+      font-weight: bolder;
+      color: rgb(195, 93, 71);
+      padding: 2px 0 0 0;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: Transparent;
+      border: none;
+      .notebook-icon {
+        padding: 1px 5px 0 0;
+        color: rgb(195, 93, 71);
+        vertical-align: text-top;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
+  }
 
-
-.notebook-table {
+  .notebook-table {
     border-top: 2px solid #5b6b70;
     overflow: scroll;
     // height: 100vh;
@@ -100,68 +93,138 @@ $oxygen: 'Oxygen';
     font-family: $oxygen;
     margin-left: 20px;
 
-
     .notebook-sort {
-        height: 37px;
-        font-size: 11px;
-        line-height: 20px;
-        font-weight: lighter;
-        color: #bcbcbc;
-        background-color: #f8f8f8;
-    
-        
-        .sort-title {
-            cursor: pointer;
-          
-            text-align: left;
-        };
-        
-        .sort-cb {
-            cursor: pointer;
-            text-align: left;
-        };
-        
-        .sort-update {
-            cursor: pointer;
-            text-align: left;
-        };
-        
-        .sort-action {
-            text-align: end;
-            cursor: pointer;
-        };
-    };
+      height: 37px;
+      font-size: 11px;
+      line-height: 20px;
+      font-weight: lighter;
+      color: #bcbcbc;
+      background-color: #f8f8f8;
 
-    .sort-body{
-        position: relative;
-        box-sizing: border-box;
-        height: auto;        
+      .sort-title {
+        cursor: pointer;
+
+        text-align: left;
+      }
+
+      .sort-cb {
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .sort-update {
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .sort-action {
+        text-align: end;
+        cursor: pointer;
+      }
     }
 
-    tr:nth-child(2n+2){
-        background-color: #f8f8f8;
-    };
+    .sort-body {
+      position: relative;
+      box-sizing: border-box;
+      height: auto;
+    }
+
+    tr:nth-child(2n + 2) {
+      background-color: #f8f8f8;
+    }
 
     .sort-row:hover {
-        background-color: #f2f2f2;
+      background-color: #f2f2f2;
     }
     .notebook-author {
-        overflow: hidden;
+      overflow: hidden;
     }
     .notebook-sort-link-notebook {
-        color: black;
-        font-size: 18px;
-        vertical-align: text-bottom;
-        padding-right: 5px;
+      color: black;
+      font-size: 18px;
+      vertical-align: text-bottom;
+      padding-right: 5px;
     }
     .notebook-sort-link {
-        text-decoration: none;
-        color: black;
+      text-decoration: none;
+      color: black;
     }
     .notebook-sort-link:hover {
-        text-decoration: underline;
-        color: black
+      text-decoration: underline;
+      color: black;
     }
-}
+  }
 }
 
+//notebook dropdown
+.index-dropdown {
+  top: -10px;
+  position: absolute;
+  right: 0px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.index-dropdown-li {
+  height: 0px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  position: relative;
+  .index-dropdown-item-div {
+    border-radius: 1px;
+    background-color: #fff;
+    position: absolute;
+    right: 20px p {
+
+    }
+    .index-notebook-dropdown-item-delete {
+      font-size: 16px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      background: #fff;
+      border: 1px solid #ccc;
+      position: absolute;
+      top: -5px;
+      right: -10px;
+      font-weight: bold;
+      z-index: 1;
+      width: 200px;
+      text-align: center;
+      padding: 5px;
+      border-radius: 4px;
+      border-bottom-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      &:hover {
+        background-color: rgb(195, 93, 71);
+        color: #fff;
+      }
+    }
+    .index-test-dropdown-item-update {
+      width: 200px;
+      text-align: center;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      background-color: white;
+      font-weight: bold;
+      position: absolute;
+      right: 0px;
+      top: 20px;
+      //   font-weight: bold;
+      z-index: 1;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      &:hover {
+        background-color: rgb(195, 93, 71);
+        color: #fff;
+      }
+    }
+  }
+  .test-dropdown {
+    position: absolute;
+    margin-left: 5px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

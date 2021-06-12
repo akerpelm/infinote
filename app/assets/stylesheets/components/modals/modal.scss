@@ -55,6 +55,7 @@ $oxygen: "Oxygen";
   }
   .tag-form-container {
     padding: 0 25px;
+    position: relative;
     .modal-label {
       display: block;
       margin-bottom: 8px;
@@ -103,7 +104,7 @@ $oxygen: "Oxygen";
         margin: 0 10px 0 0;
         background-color: transparent;
         border: 1px solid #737373;
-        color: #ccc;
+        color: #737373;
         border-radius: 4px;
         padding: 10px 15px;
         font-size: 14px;

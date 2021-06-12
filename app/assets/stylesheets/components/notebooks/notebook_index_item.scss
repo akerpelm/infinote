@@ -1,84 +1,154 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap');
-$oxygen: 'Oxygen';
-
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400&display=swap");
+$oxygen: "Oxygen";
 
 //... actions
 .ellipsis-icon {
-            color: #333333;
-            font-weight: light;
-            font-size: 10px;
-           
-        };
-.sort-row {
-    height: 40px;
-    line-height: 20px;
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    vertical-align: middle;
-    position:relative;
-    text-decoration: none;
-    .sort-action-row {
-        padding: .5rem;
-        text-align: end;
-        .ellipsis-icon {
-            color: #737373;
-            font-weight: light;
-            font-size: 10px;
-           
-        };
-        
-        .action-dropdown-button {
-            border: none;
-            box-shadow: none;
-            outline: none;
-            cursor: pointer;
-            color: #000;
-        }
-        //problem child
-        .action-dropdown-ul {
-            position: absolute;
-            display: hidden;
-            margin: 0;
-            padding: 0;
-            right: 1.75%;
-            top: 24.5%;
-            background: #ccc;
-            transform: rotateX(-90deg);
-            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-            text-decoration: none;
-
-        }
-        //this may work...do not delete
-        
-        // .action-dropdown-ul.active {
-        //     transform: rotateX(0deg);
-            
-        // }
-       
-        // .action-dropdown-ul li { 
-        //     list-style: none;
-        //     font-family: $oxygen;
-        //     font-size: 14px;
-        //     font-weight: bolder;
-        //     width: 100%;
-        //     display:block;
-        //     padding: 8px 30px;
-        //     text-align: center;
-        //     text-decoration: none;
-        //     background: #f8f8f8;
-        //     color: #000;
-        //     cursor: pointer;
-        //     text-align: left;
-        // }
-        // .action-dropdown-ul li:hover { 
-        //     background-color: #f1f1f1;
-        // }
-    };
-
-};
-
- .action-dropdown-link {
-        text-decoration: none;
-        color: #000
+  color: #333333;
+  font-weight: light;
+  font-size: 10px;
+  padding-bottom: 5px;
 }
+.nb-td {
+  padding-top: 20px;
+}
+.sort-row {
+  height: 60px;
+  line-height: 20px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  .sort-action-row {
+    padding: 0.5rem;
+    text-align: end;
+    .ellipsis-icon {
+      color: #737373;
+      font-weight: light;
+      font-size: 10px;
+    }
+
+    .action-dropdown-button {
+      border: none;
+      box-shadow: none;
+      outline: none;
+      cursor: pointer;
+      color: #000;
+    }
+    //problem child
+    .action-dropdown-ul {
+      position: absolute;
+      display: hidden;
+      margin: 0;
+      padding: 0;
+      right: 1.75%;
+      top: 24.5%;
+      background: #ccc;
+      transform: rotateX(-90deg);
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+    }
+    //this may work...do not delete
+
+    // .action-dropdown-ul.active {
+    //     transform: rotateX(0deg);
+
+    // }
+
+    // .action-dropdown-ul li {
+    //     list-style: none;
+    //     font-family: $oxygen;
+    //     font-size: 14px;
+    //     font-weight: bolder;
+    //     width: 100%;
+    //     display:block;
+    //     padding: 8px 30px;
+    //     text-align: center;
+    //     text-decoration: none;
+    //     background: #f8f8f8;
+    //     color: #000;
+    //     cursor: pointer;
+    //     text-align: left;
+    // }
+    // .action-dropdown-ul li:hover {
+    //     background-color: #f1f1f1;
+    // }
+  }
+}
+
+.action-dropdown-link {
+  text-decoration: none;
+  color: #000;
+}
+
+// //notebook-dropdown
+// .dropdown-li {
+//   height: 0px;
+//   display: flex;
+//   align-items: center;
+//   padding-bottom: 6px;
+//   // position: relative;
+//   // .dropdown {
+//   //   bottom: 15px;
+//   //   position: absolute;
+//   //   right: 0px;
+//   //   margin-right: 20px;
+//   //   cursor: pointer;
+//   // }
+//   .dropdown-item-div {
+//     border-radius: 1px;
+//     box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+//     background-color: pink;
+//     p {
+//       background-color: #fff;
+//     }
+//     .notebook-dropdown-item-delete {
+//       border: 1px solid #ccc;
+//       position: absolute;
+//       right: 0px;
+//       top: 50px;
+//       font-weight: bold;
+//       z-index: 1;
+//       width: 200px;
+//       text-align: center;
+//       padding: 5px;
+//       border-bottom-right-radius: 4px;
+//       border-bottom-left-radius: 4px;
+//       &:hover {
+//         background-color: rgb(195, 93, 71);
+//         color: #fff;
+//       }
+//     }
+//     .test-dropdown-item-update {
+//       width: 200px;
+//       text-align: center;
+//       padding: 5px;
+//       border: 1px solid #ccc;
+//       border-top: 1px solid #ccc;
+//       background-color: white;
+//       font-weight: bold;
+//       position: absolute;
+//       right: 0px;
+//       top: 20px;
+//       //   font-weight: bold;
+//       z-index: 1;
+//       //   width: 200px;
+//       //   text-align: center;
+//       border-top-left-radius: 4px;
+//       border-top-right-radius: 4px;
+//       &:hover {
+//         background-color: rgb(195, 93, 71);
+//         color: #fff;
+//       }
+//     }
+//   }
+//   .test-dropdown {
+//     position: absolute;
+//     margin-left: 5px;
+//     text-decoration: none;
+//     &:hover {
+//       text-decoration: none;
+//     }
+//   }
+// }

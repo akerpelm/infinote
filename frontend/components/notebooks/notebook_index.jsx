@@ -54,6 +54,8 @@ class NotebookIndex extends React.Component {
                   notebook={notebook}
                   user={this.props.user}
                   key={notebook.id}
+                  deleteNotebook={this.props.deleteNotebook}
+                  openModal={this.props.openModal}
                 />
               ))}
             </tbody>

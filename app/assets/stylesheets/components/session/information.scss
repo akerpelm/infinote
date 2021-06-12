@@ -27,6 +27,8 @@ $oswald: "Oswald", sans serif;
     .information-texts {
       text-align: left;
       padding-bottom: 20px;
+      padding-right: 5px;
+
       h2 {
         font-size: 18px;
         font-weight: bolder;
@@ -34,6 +36,7 @@ $oswald: "Oswald", sans serif;
       }
       p {
         font-family: $oxygen;
+        padding-right: 5px;
       }
     }
   }
@@ -73,6 +76,9 @@ $oswald: "Oswald", sans serif;
         height: 40px;
         width: auto;
         img {
+          display: none;
+          padding-left: 20px;
+
           height: 50px;
           width: auto;
         }
@@ -82,7 +88,7 @@ $oswald: "Oswald", sans serif;
 
   .footer-flex {
     display: flex;
-       opacity: 0.6;
+    opacity: 0.6;
     transition: opacity 1s ease-in-out;
     -moz-transition: opacity 1s ease-in-out;
     -webkit-transition: opacity 1s ease-in-out;

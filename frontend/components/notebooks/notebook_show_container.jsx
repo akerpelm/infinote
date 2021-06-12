@@ -9,9 +9,8 @@ import NotebookShow from "./notebook_show";
 import { logout } from "../../actions/session_actions";
 import { fetchNote, fetchNotes, updateNote } from "../../actions/note_actions";
 import moment from "moment";
+import { openModal } from "../../actions/modal_actions";
 moment().format();
-
-
 
 const mapStateToProps = (state, ownProps) => {
   let dbNotes = Object.values(state.entities.notes);
@@ -34,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
     return filteredNotes;
   };
 
-  let compare = (a, b) => ( new Date(b.updatedAt) - new Date(a.updatedAt))
+  let compare = (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt);
 
   return {
     // notes: dbNotes ? dbNotes : undefined,
@@ -49,7 +48,7 @@ const mapStateToProps = (state, ownProps) => {
     title: state.entities.notebooks[ownProps.match.params.notebookId]
       ? state.entities.notebooks[ownProps.match.params.notebookId].title
       : [ownProps.match.params.notebookId] == 0 &&
-        ownProps.history.location.pathname != '/notes'
+        ownProps.history.location.pathname != "/notes"
       ? "Uncategorized Notes"
       : "Notes",
   };
@@ -60,6 +59,7 @@ const mapDispatchToProps = (dispatch) => ({
   fetchNote: (noteId) => dispatch(fetchNote(noteId)),
   fetchNotebook: (notebookId) => dispatch(fetchNotebook(notebookId)),
   updateNotebook: (notebook) => dispatch(updateNotebook(notebook)),
+  openModal: (modal) => dispatch(openModal(modal)),
   removeNotebookErrors: () => dispatch(removeNotebookErrors()),
   deleteNotebook: (notebookId) => dispatch(deleteNotebook(notebookId)),
   logout: () => dispatch(logout()),

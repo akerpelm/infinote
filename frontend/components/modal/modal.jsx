@@ -1,7 +1,9 @@
 import React from "react";
 import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
-import TagFormContainer from "../tags/tag_form_container";
+import TagCreateContainer from "../tags/tag_create_container";
+import NotebookEditContainer from "../notebooks/notebook_edit_container";
+// import TagUpdateContainer from "../tags/tag_update_container";
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -9,9 +11,13 @@ function Modal({ modal, closeModal }) {
   }
   let component;
   switch (modal) {
-    case "tag":
-      component = <TagFormContainer />;
+    case "create-tag":
+      component = <TagCreateContainer />;
       break;
+    case "update-notebook":
+      component = <NotebookEditContainer />;
+      break;
+
     default:
       return null;
   }

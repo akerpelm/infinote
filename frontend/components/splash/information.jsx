@@ -1,7 +1,6 @@
 import React from "react";
 
 const Information = () => {
-    
   return (
     <div>
       <div className="information-page">
@@ -12,10 +11,6 @@ const Information = () => {
           alt="infographic"
         />
         <div className="information-list">
-          <div className="information-texts">
-            <h2>INFINITE POTENTIAL</h2>
-            <p>No data caps allows you to write as many notes as you desire.</p>
-          </div>
           <div className="information-texts">
             <h2>CAPTURE AND ARRANGE YOUR IDEAS</h2>
             <p>
@@ -29,6 +24,16 @@ const Information = () => {
               Notes can be placed into notebooks for clearer organization and
               ease of access.
             </p>
+          </div>
+          <div className="information-texts">
+            <h2>MORE THAN JUST A NOTEPAD</h2>
+            <p>
+              Format your notes using a built-in rich-text-editor for full note customization.
+            </p>
+          </div>
+          <div className="information-texts">
+            <h2>INFINITE POTENTIAL</h2>
+            <p>No data caps allows you to write as many notes as you desire.</p>
           </div>
         </div>
       </div>
@@ -52,6 +57,11 @@ const Information = () => {
                   Create notebooks to
                   <br /> house notes.
                 </li>
+                <li>
+                  Rich-text-editing for
+                  <br /> more personalized
+                  <br /> notes.
+                </li>
                 <li style={{ textDecoration: "underline" }}>In Progress:</li>
                 <li>
                   Create note tags
@@ -70,7 +80,11 @@ const Information = () => {
                 <li>I press buttons for a living.</li>
                 <li>Former healthcare professional.</li>
                 <li>Fluency in three spoken languages.</li>
-                <li>Interests include finance,<br/>progressive rock, and soccer.</li>
+                <li>
+                  Interests include finance,
+                  <br />
+                  progressive rock, and soccer.
+                </li>
               </ul>
             </div>
             <div className="link-section">
@@ -78,8 +92,11 @@ const Information = () => {
               <ul>
                 <li>JavaScript</li>
                 <li>React</li>
-                <li>Ruby on Rails</li>
                 <li>Redux</li>
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MongoDB</li>
+                <li>Ruby on Rails</li>
                 <li>PostgreSQL</li>
                 <li>Ruby</li>
                 <li>SQLite</li>
@@ -90,22 +107,30 @@ const Information = () => {
               <ul>
                 <li>
                   <a
-                    href="https://www.linkedin.com/in/alexander-kerpelman-22587584/"
+                    href="https://www.linkedin.com/in/alex-kerpelman/"
                     target="_blank"
                   >
                     LinkedIn
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.github.com/akerpelm" target="_blank">
+                  <a
+                    href="https://www.github.com/akerpelm/infinote"
+                    target="_blank"
+                  >
                     GitHub
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/akerpz/" target="_blank">
-                    Instagram
+                  <a href="https://angel.co/u/alex-kerpelman" target="_blank">
+                    AngelList
                   </a>
                 </li>
+                {/* <li>
+                  <a href="https://www.instagram.com/akerpz/" target="_blank">
+                    Personal Site
+                  </a>
+                </li> */}
                 <li>
                   <a href="mailto: akerpelm@u.rochester.edu">Email</a>
                 </li>

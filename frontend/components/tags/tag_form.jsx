@@ -9,10 +9,7 @@ class TagForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      name: "",
-      authorId: this.props.currentUser.id,
-    };
+    this.state = props.notebook;
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -27,14 +24,16 @@ class TagForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let tag = this.state;
-    this.props.createTag(convertToSnakeCase(tag)).then(() => this.props.closeModal());
+    this.props
+      .createTag(convertToSnakeCase(tag))
+      .then(() => this.props.closeModal());
   }
 
   render() {
     return (
       <div className="tag-form-wrapper">
         <div className="tag-form-header">
-          <h1 className="modal-tag-name">Create new tag</h1>
+          <h1 className="modal-tag-name">{this.props.formType}</h1>
           <div onClick={this.props.closeModal} className="close-x">
             x
           </div>
@@ -46,7 +45,7 @@ class TagForm extends React.Component {
               type="text"
               className="tag-modal-input"
               value={this.state.name}
-              placeholder={'Tag name'}
+              placeholder={"Tag name"}
               onChange={this.update("name")}
             />
             <div className="tag-spacer"></div>
@@ -66,20 +65,4 @@ class TagForm extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => {
-//   debugger;
-//   return {
-//     formType: "tag",
-//     currentUser: state.entities.users[state.session.id],
-//   };
-// };
-
-// const mapDispatchToProps = (dispatch) => ({
-//   closeModal: () => dispatch(closeModal()),
-//   // fetchTags: () => dispatch(fetchTags()),
-//   createTag: (tag) => dispatch(createTag(tag)),
-// });
-
-// export default connect(mapStateToProps, mapDispatchToProps)(TagForm);
-
-export default TagForm;
+export default withRouter(TagForm);

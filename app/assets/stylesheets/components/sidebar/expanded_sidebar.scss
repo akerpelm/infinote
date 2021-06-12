@@ -15,7 +15,7 @@ $oxygen: "Oxygen";
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 15px;
+      padding: 10px 15px 15px;
       .sidenavbar-profile-icon {
         // background-color: rgb(195, 93, 71);
         justify-content: center;
@@ -209,9 +209,9 @@ $oxygen: "Oxygen";
 //       align-items: flex-end;
 //       justify-content: center;
 //       padding: 15px;
-      .user-initial {
-        color: #fff
-      }
+.user-initial {
+  color: #fff;
+}
 //         width: 30px;
 //         height: 30px;
 //         border-radius: 50%;

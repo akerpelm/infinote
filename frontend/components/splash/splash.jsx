@@ -8,7 +8,7 @@ import Information from './information'
 export class Splash extends Component {
     render() {
         return (
-            <div>
+            <div className="splash-wrapper">
                 <header>
                     <SplashHeader />
                 </header>
