@@ -62,15 +62,20 @@ const Information = () => {
                   <br /> more personalized
                   <br /> notes.
                 </li>
-                <li style={{ textDecoration: "underline" }}>In Progress:</li>
                 <li>
                   Create note tags
                   <br />
                   to allow filtering by tags.
                 </li>
+                <li style={{ textDecoration: "underline" }}>In Progress:</li>
                 <li>
                   Implement search functionality
                   <br /> to quickly access other features.
+                </li>
+                <li>
+                  Refactor code to allow separation of
+                  <br /> notebooks and notes for further
+                  <br /> flexibility of application.
                 </li>
               </ul>
             </div>
