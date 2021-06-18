@@ -24,7 +24,7 @@ export const DropdownMenu = (props) => {
             className="tag-dropdown-item-delete"
             onClick={() => props.deleteTag(props.tag.id)}
           >
-            Delete tag...
+            Delete tag
           </p>
         </div>
       </DropdownItem>

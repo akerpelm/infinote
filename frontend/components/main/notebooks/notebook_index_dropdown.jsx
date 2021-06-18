@@ -22,7 +22,7 @@ export const DropdownMenu = (props) => {
             className="index-notebook-dropdown-item-delete"
             onClick={() => props.deleteNotebook(props.notebook.id)}
           >
-            Delete notebook...
+            Delete notebook
           </p>
         </div>
       </DropdownItem>

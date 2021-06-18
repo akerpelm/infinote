@@ -27,13 +27,13 @@ export const DropdownMenu = (props) => {
             props.openModal("update-notebook");
           }}
         >
-          Update notebook...
+          Update notebook
         </p>
         <p
           className="note-dropdown-item-delete"
           onClick={() => props.openModal("delete-notebook")}
         >
-          Delete notebook...
+          Delete notebook
         </p>
       </div>
     </DropdownItem>

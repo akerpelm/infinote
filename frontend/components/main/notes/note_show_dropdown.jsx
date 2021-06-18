@@ -24,7 +24,7 @@ export const DropdownMenu = (props) => {
             className="note-dropdown-item-delete"
             onClick={() => props.openModal("move-note")}
           >
-            Move note...
+            Move note
           </p>
           <p
             className="note-dropdown-item-delete"
