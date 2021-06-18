@@ -52,7 +52,7 @@ class NotebookIndex extends React.Component {
                 <th className="sort-feature sort-title">TITLE</th>
                 <th className="sort-feature sort-cb">CREATED BY</th>
                 <th className="sort-feature sort-update">UPDATED</th>
-                {/* <th className="sort-feature sort-action">ACTIONS</th> */}
+                <th className="sort-feature sort-action">ACTIONS</th>
               </tr>
             </thead>
             <tbody className="sort-body ">

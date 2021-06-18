@@ -148,6 +148,8 @@
       padding-right: 5px;
     }
     .notebook-sort-link {
+      display: flex;
+      align-items: center;
       text-decoration: none;
       color: black;
     }
