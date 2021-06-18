@@ -12,14 +12,12 @@ export const fetchTag = (tagId) => {
   });
 };
 
-export const createTag = (tag) => {
-  return $.ajax({
+export const createTag = (tag) =>
+  $.ajax({
     method: "POST",
-    url: "/api/tags",
+    url: `/api/tags/`,
     data: { tag },
   });
-};
-
 export const updateTag = (tag) => {
   return $.ajax({
     method: "PATCH",
@@ -28,27 +26,8 @@ export const updateTag = (tag) => {
   });
 };
 
-export const deleteTag = (tagId) => {
-  return $.ajax({
+export const deleteTag = (tagId) =>
+  $.ajax({
     method: "DELETE",
     url: `/api/tags/${tagId}`,
   });
-};
-
-//   create = api_note_tagged_notes
-//   POST /api/notes/:note_id tagged_notes
-
-//   DELETE /api/notes/:note_id/tagged_notes/:id
-export const createTaggedNote = (taggedNote) => {
-  return $.ajax({
-    method: "POST",
-    url: `api/notes/${taggedNote.note_id}/tagged_notes`,
-  });
-};
-
-export const deleteTaggedNote = (taggedNote) => {
-  return $.ajax({
-    method: "DELETE",
-    url: `api/notes/${taggedNote.note_id}/tagged_notes/${taggedNote.tag_id}`,
-  });
-};

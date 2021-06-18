@@ -10,25 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
-
-@import "./reset.scss";
-@import "./palette.scss";
-@import "./components/session/user_actions.scss";
-@import "./components/session/splash_info.scss";
-@import "./components/session/demo_login.scss";
-@import "./components/session/session_form.scss";
-@import "./components//session/information.scss";
-@import "./components/session/splash_header.scss";
-@import "./components/notebooks/notebook_index.scss";
-@import "./components/notebooks/notebook_index_item.scss";
-@import "./components/notebooks/notebook_modal.scss";
-@import "./components//sidebar/reduced_sidebar.scss";
-@import "./components//sidebar/expanded_sidebar.scss";
-@import "./components/notes/note_show.scss";
-@import "./components//notes/quill.scss";
-@import "./components/tags/tags.scss";
-@import "./components/modals/modal.scss";
+ @import './base/reset.scss';
+ @import './base/fonts.scss';
+ @import './base/palette.scss';
+ @import './base/mixins.scss';
+ @import './components/*';
+ 

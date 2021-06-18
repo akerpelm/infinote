@@ -4,10 +4,9 @@ const Information = () => {
   return (
     <div>
       <div className="information-page">
-        {/* <div> */}
         <img
           className="infographic"
-          src="images/infinote_splash_infographic.png"
+          src="images/infographic.png"
           alt="infographic"
         />
         <div className="information-list">
@@ -28,7 +27,8 @@ const Information = () => {
           <div className="information-texts">
             <h2>MORE THAN JUST A NOTEPAD</h2>
             <p>
-              Format your notes using a built-in rich-text-editor for full note customization.
+              Format your notes using a built-in rich-text-editor for full note
+              customization.
             </p>
           </div>
           <div className="information-texts">
@@ -41,7 +41,7 @@ const Information = () => {
         <div className="footer-nav">
           <div className="footer-logo">
             <div className="f-logo">
-              <img src="/images/infinote_logo_1.png" alt="logo_1" />
+              <img src="/images/logo_vertical.png" alt="logo_1" />
             </div>
           </div>
 

@@ -1,7 +1,6 @@
 import {
   RECEIVE_ALL_TAGS,
   RECEIVE_TAG,
-  RECEIVE_TAGGED_NOTE,
   REMOVE_TAG,
 } from "../actions/tag_actions";
 
@@ -10,7 +9,7 @@ const TagsReducer = (state = {}, action) => {
   let nextState = Object.assign({}, state);
   switch (action.type) {
     case RECEIVE_ALL_TAGS:
-      nextState = action.tags;
+      action.tags ? (nextState = action.tags) : nextState;
       return nextState;
     case RECEIVE_TAG:
       nextState[action.tag.id] = action.tag;
@@ -20,11 +19,7 @@ const TagsReducer = (state = {}, action) => {
       return nextState;
     default:
       return state;
-    // case RECEIVE_TAGGED_NOTE:
-    //   debugger;
-    //   nextState[action.taggedNote.tag_id] = action.taggedNote;
   }
 };
 
-
-export default TagsReducer
+export default TagsReducer;

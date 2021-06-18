@@ -9,7 +9,7 @@ export const fetchNote = (noteId) => {
     method: "GET",
     url: `/api/notes/${noteId}`,
   });
-}
+};
 
 export const createNote = (note) =>
   $.ajax({

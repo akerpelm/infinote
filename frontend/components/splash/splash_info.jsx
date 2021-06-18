@@ -1,18 +1,16 @@
-import React from 'react';
-// import logo from '
+import React from "react";
 
 const SplashInfo = () => {
-    return (
+  return (
+    <div className="splash-info">
+      <div className="titles">
+        <h1 className="slogan">Accomplish more with better notes</h1>
+        <h5 className="subhead">
+          infiNote helps you capture ideas and find them fast
+        </h5>
+      </div>
+    </div>
+  );
+};
 
-            <div className='splash-info'>
-                <div className='titles'>
-                    <h1 className='slogan'>Accomplish more with better notes</h1>
-                    <h5 className='subhead'>infiNote helps you capture ideas and find them fast</h5>
-                </div>
-            </div>
-
-    )
-}
-
-export default SplashInfo
-
+export default SplashInfo;

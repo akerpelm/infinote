@@ -6,5 +6,4 @@ const UiReducer = combineReducers({
   modal,
 });
 
-
-export default UiReducer
+export default UiReducer;

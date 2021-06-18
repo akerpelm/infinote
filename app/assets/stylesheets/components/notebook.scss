@@ -1,0 +1,516 @@
+.main {
+  background-color: #f8f8f8;
+  max-width: 100vw;
+}
+
+.notebook-index-wrapper {
+  display: flex;
+  // align-items: center;
+  height: 100vh;
+  font-family: $serif;
+}
+
+.notebook-index {
+  font-family: $serif;
+  width: 94.5%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+
+  .notebook-header {
+    //
+    font-weight: bolder;
+    display: flex;
+    min-height: 80px;
+    align-items: center;
+    font-size: 15px;
+    outline-style: none;
+    justify-content: space-between;
+    .notebooks-title {
+      font-size: 20px;
+      padding-right: 12px;
+      margin-left: 20px;
+    }
+
+    .notebooks-search-bar-div {
+      align-items: center;
+      border-radius: 4px;
+      // margin-right: 20px;
+      display: flex;
+      .notebooks-search-bar-icon {
+        position: absolute;
+        right: 20px;
+
+        display: inline-block;
+        font-size: 14px;
+        outline: none;
+        padding: 8px;
+      }
+      .notebooks-search-bar {
+        display: inline-block;
+        font-size: 14px;
+        outline: none;
+        padding: 8px 10px;
+      }
+    }
+  }
+  .notebook-count-new {
+    display: flex;
+    font-size: 15px;
+    font-weight: bolder;
+    margin: 10px 0;
+    min-height: 24px;
+    height: 24px;
+    margin-left: 20px;
+
+    .notebook-count {
+      margin-right: auto;
+      vertical-align: middle;
+      padding-top: 5px;
+    }
+    .new-notebook-button {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      font-weight: bolder;
+      color: $green;
+      padding: 2px 0 0 0;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: Transparent;
+      border: none;
+      .notebook-icon {
+        padding: 1px 5px 0 0;
+        color: $green;
+        vertical-align: text-top;
+        cursor: pointer;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .notebook-table {
+    border-top: 2px solid #5b6b70;
+    overflow: scroll;
+    font-size: 14px;
+    font-family: $serif;
+    margin-left: 20px;
+
+    .notebook-sort {
+      height: 40px;
+      font-size: 11px;
+      line-height: 20px;
+      font-weight: lighter;
+      color: #4d4d4d;
+      background-color: #f8f8f8;
+
+      .sort-title {
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .sort-cb {
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .sort-update {
+        cursor: pointer;
+        text-align: left;
+      }
+
+      .sort-action {
+        text-align: end;
+        cursor: pointer;
+      }
+    }
+
+    .sort-body {
+      position: relative;
+      box-sizing: border-box;
+      height: auto;
+    }
+
+    tr:nth-child(2n + 2) {
+      background-color: #f8f8f8;
+    }
+
+    .sort-row:hover {
+      background-color: #f2f2f2;
+    }
+    .notebook-author {
+      overflow: hidden;
+    }
+    .notebook-sort-link-notebook {
+      color: black;
+      font-size: 18px;
+      vertical-align: text-bottom;
+      padding-right: 5px;
+    }
+    .notebook-sort-link {
+      text-decoration: none;
+      color: black;
+    }
+    .notebook-sort-link:hover {
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}
+
+//Notebook Show
+.ellipsis-icon {
+  color: #333333;
+  font-weight: light;
+  font-size: 10px;
+  padding-bottom: 5px;
+}
+.nb-td {
+  max-width: 400px;
+  padding-left: 10px;
+}
+.sort-row {
+  height: 40px;
+  line-height: 20px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  vertical-align: middle;
+  position: relative;
+  text-decoration: none;
+  .sort-action-row {
+    padding: 0.5rem;
+    text-align: end;
+    .ellipsis-icon {
+      color: #737373;
+      font-weight: light;
+      font-size: 16px;
+    }
+
+    //Notebook Dropdown
+    .index-dropdown {
+      top: -5px;
+      position: absolute;
+      right: 0px;
+      cursor: pointer;
+      color: #333;
+    }
+    .index-dropdown-li {
+      height: 0px;
+      display: flex;
+      align-items: center;
+      padding-bottom: 6px;
+      position: relative;
+
+      .index-dropdown-item-div {
+        border-radius: 1px;
+        background-color: #fff;
+        position: absolute;
+        right: 20px p {
+
+        }
+        .index-notebook-dropdown-item-delete {
+          font-size: 14px;
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+          background: #fff;
+          border: 1px solid #ccc;
+          position: absolute;
+          top: -5px;
+          right: -10px;
+          font-weight: 500;
+          z-index: 1;
+          width: 200px;
+          text-align: center;
+          padding: 12px 0;
+          border-radius: 4px;
+          border-bottom-right-radius: 4px;
+          border-bottom-left-radius: 4px;
+          &:hover {
+            background-color: #f2f2f2;
+            color: #333;
+          }
+        }
+        .index-test-dropdown-item-update {
+          width: 200px;
+          text-align: center;
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-top: 1px solid #ccc;
+          background-color: white;
+          font-weight: bold;
+          position: absolute;
+          right: 0px;
+          top: 20px;
+          //   font-weight: bold;
+          z-index: 1;
+          border-top-left-radius: 4px;
+          border-top-right-radius: 4px;
+          &:hover {
+            background-color: $green;
+            color: #fff;
+          }
+        }
+      }
+      .test-dropdown {
+        position: absolute;
+        margin-left: 5px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+//Notebook Show
+
+.notebook-show {
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  // justify-content: center;
+  height: 100vh;
+}
+
+//Note List
+
+.note-list {
+  height: 100vh;
+  max-width: 670px;
+  min-width: 380px;
+  width: 380px;
+  background: #f8f8f8;
+  border-right: 1px solid #e6e6e6;
+  display: flex;
+  flex-direction: column;
+  font-family: $serif;
+  overflow: scroll;
+  .note-list-header {
+    max-width: 670px;
+    width: 380px;
+    min-width: 196px;
+    // position: ;
+    background: #f8f8f8;
+    padding: 25px 25px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #e6e6e6;
+    scroll-behavior: smooth;
+    .note-list-header-title {
+      width: 100%;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      h1 {
+        margin: 0 0 20px;
+        font-size: 20px;
+      }
+
+      .note-list-header-sub {
+        width: 100%;
+        margin: 5px 0;
+        font-size: 14px;
+      }
+    }
+  }
+  .note-list-wrapper {
+    margin-top: 100px;
+  }
+
+  .note-list-element {
+    text-decoration: none;
+
+    &:focus,
+    &:hover,
+    &:visited,
+    &:link,
+    &:active {
+      text-decoration: none;
+    }
+
+    .note-list-body {
+      flex: 1;
+      overflow-y: auto;
+
+      .note-card {
+      }
+      height: 120px;
+      padding: 20px 25px 10px 25px;
+      display: flex;
+      flex-direction: column;
+      text-overflow: ellipsis;
+      border: 1px solid #e6e6e6;
+      text-decoration: none;
+      .note-card-head {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        flex: 1;
+        font-size: 14px;
+        .note-card-title {
+          width: 100%;
+          color: #333;
+          font-weight: bold;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .note-card-desc {
+          height: 50px;
+          padding-bottom: 10px;
+          width: 100%;
+          color: #737373;
+          margin-top: 5px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+      .note-card-date {
+        color: #4d4d4d;
+        font-size: 13px;
+      }
+      &:hover {
+        cursor: pointer;
+        background: #fff;
+      }
+      &.active {
+        background: #fff;
+      }
+    }
+  }
+}
+
+//NOTE SHOW
+
+.dropdown-li {
+  height: 0px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 6px;
+  // position: relative;
+  .dropdown {
+    top: 75px;
+    left: 360px;
+    position: absolute;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  .dropdown-item-div {
+    border-radius: 1px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: pink;
+    p {
+      background-color: #fff;
+    }
+  }
+  .test-dropdown {
+    position: absolute;
+    margin-left: 5px;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .note-dropdown {
+    position: relative;
+    .note-dropdown-item-div {
+      position: absolute;
+      padding: 12px 0;
+      // right: 0px;
+      font-weight: bold;
+      z-index: 1;
+      width: 200px;
+      text-align: center;
+      border-radius: 4px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+
+      p {
+        padding: 10px 0;
+        font-size: 14px;
+        &:hover {
+          background-color: #f2f2f2;
+          color: #333;
+          border-radius: 4px;
+        }
+      }
+    }
+    .note-show-dropdown-item-div {
+      position: absolute;
+      right: 0px;
+      font-weight: bold;
+      z-index: 1;
+      width: 200px;
+      text-align: center;
+      border-radius: 4px;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+      background-color: #fff;
+      padding: 12px 0;
+
+      p {
+        padding: 10px 0;
+        font-size: 14px;
+        color: #000;
+        &:hover {
+          background-color: #f2f2f2;
+          // color: #333;
+          border-radius: 4px;
+        }
+      }
+    }
+    // .note-dropdown-item-delete {
+    //   border: 1px solid #ccc;
+    //   position: absolute;
+    //   left: 0px;
+    //   top: 47px;
+    //   font-weight: bold;
+    //   z-index: 1;
+    //   width: 200px;
+    //   text-align: center;
+    //   padding: 5px;
+    //   border-bottom-right-radius: 4px;
+    //   border-bottom-left-radius: 4px;
+    //   &:hover {
+    //     background-color: rgb(195, 93, 71);
+    //     color: #fff;
+    //   }
+    // }
+    // .note-dropdown-item-update {
+    //   width: 200px;
+    //   text-align: center;
+    //   padding: 5px;
+    //   border: 1px solid #ccc;
+    //   border-top: 1px solid #ccc;
+    //   background-color: white;
+    //   font-weight: bold;
+    //   position: absolute;
+    //   right: 0px;
+    //   top: 20px;
+    //   //   font-weight: bold;
+    //   z-index: 1;
+    //   //   width: 200px;
+    //   //   text-align: center;
+    //   border-top-left-radius: 4px;
+    //   border-top-right-radius: 4px;
+    //   &:hover {
+    //     background-color: rgb(195, 93, 71);
+    //     color: #fff;
+    //   }
+    // }
+    position: relative;
+    // left: 20px;
+    svg {
+      font-size: 20px;
+    }
+    text-decoration: none;
+  }
+}

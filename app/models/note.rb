@@ -9,6 +9,7 @@
 #  notebook_id :integer          default(0), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  tag_id      :integer
 #
 class Note < ApplicationRecord
 
@@ -22,8 +23,12 @@ class Note < ApplicationRecord
     foreign_key: :notebook_id,
     class_name: :Notebook
 
-    has_many :tags, 
-    through: :tagged_notes,
-    source: :tag
+    # belongs_to :tag, optional: true,
+    # foreign_key: :tag_id,
+    # class_name: :Tag
+
+    # has_many :tags, 
+    # through: :tagged_notes,
+    # source: :tag
 
 end
