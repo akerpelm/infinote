@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-//React Icons
-import { BiBookAdd } from "react-icons/bi";
 //Util
 import {
   createNotebook,

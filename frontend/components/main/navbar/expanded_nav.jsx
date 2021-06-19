@@ -14,7 +14,7 @@ import { FaAngellist } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 import { GiRunningShoe } from "react-icons/gi";
 import { ImLoop2 } from "react-icons/im";
-import { BiBookAlt } from "react-icons/bi";
+import { RiBookletLine } from "react-icons/ri";
 //Util
 import convertToSnakeCase from "../../../util/snake_case_util";
 import * as ToggleUtil from "../../../util/component/toggle_util";
@@ -146,7 +146,7 @@ class ExpandedSideNav extends React.Component {
               <Link style={{ textDecoration: "none" }} to="/notebooks">
                 <li className="sidebar-notebooks">
                   <i className="menu-btn-icon">
-                    <BiBookAlt />
+                    <RiBookletLine />
                   </i>
                   Notebooks
                 </li>

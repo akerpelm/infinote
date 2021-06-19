@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import TagAddNote from "./tag_add_note";
 //React Icons
-import { BiBookAlt } from "react-icons/bi";
+import { RiBookletLine } from "react-icons/ri";
 import { AiFillTag } from "react-icons/ai";
 //React Quill
 import ReactQuill, { Quill } from "react-quill";
@@ -139,7 +139,7 @@ export class TagNoteShow extends React.Component {
         <div className="note-header">
           <div className="note-header-title">
             <i>
-              <BiBookAlt />
+              <RiBookletLine />
             </i>
             {notebookTitle}
           </div>
@@ -172,7 +172,7 @@ export class TagNoteShow extends React.Component {
         <div className="note-body-footer">
           <div className="note-body-form-top">
             <div className="add-tags-wrapper">
-                <div className="note-show-errors">{this.renderErrors()}</div>
+              <div className="note-show-errors">{this.renderErrors()}</div>
               <div className="add-tags" onClick={ToggleUtil.toggleTag}>
                 <p>New tag</p>
                 <AiFillTag />

@@ -44,14 +44,15 @@
         }
       }
     }
-    i {
-      vertical-align: text-bottom;
-      padding-right: 5px;
-    }
     .note-header-title {
       font-size: 18px;
       color: #4d4d4d;
       display: flex;
+      align-items: center;
+      i {
+        // vertical-align: text-bottom;
+        padding-right: 5px;
+      }
       // padding: 0 40px auto;
     }
     .note-header-action-btn {

@@ -80,11 +80,14 @@
       background-color: Transparent;
       border: none;
       .notebook-icon {
-        padding: 1px 5px 0 0;
+        padding-right: 5px;
         color: $green;
         vertical-align: text-top;
         cursor: pointer;
         font-size: 18px;
+      }
+      &:hover {
+        text-decoration: underline;
       }
     }
   }
@@ -170,6 +173,33 @@
 .nb-td {
   max-width: 400px;
   padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  .nb-td-flex {
+    display: flex;
+    align-items: center;
+  }
+  .notebook-sort-link-notes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 40px;
+    color: #313131;
+    svg {
+      padding-right: 5px;
+      font-size: 18px;
+    }
+    li {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      p:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
 }
 .sort-row {
   height: 40px;

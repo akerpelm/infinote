@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-//React Icons
-import { BiBookAdd } from "react-icons/bi";
 //Util
 import { closeModal } from "../../../actions/modal_actions";
 import { deleteNotebook } from "../../../actions/notebook_actions";

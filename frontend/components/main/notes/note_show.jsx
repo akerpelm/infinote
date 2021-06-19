@@ -3,7 +3,8 @@ import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import TagAddNote from "../tags/tag_add_note";
 //React Icons
-import { BiBookAlt } from "react-icons/bi";
+import { RiBookletLine } from "react-icons/ri";
+
 import { AiFillTag } from "react-icons/ai";
 
 //ReactQuill
@@ -150,7 +151,7 @@ export class NoteShow extends React.Component {
         <div className="note-header">
           <div className="note-header-title">
             <i>
-              <BiBookAlt />
+              <RiBookletLine />
             </i>
             {title}
           </div>

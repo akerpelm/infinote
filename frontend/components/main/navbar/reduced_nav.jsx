@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
 //React Icons
-import { BsSearch } from "react-icons/bs";
 import { RiLogoutBoxFill } from "react-icons/ri";
 import {
   AiFillTag,
@@ -11,7 +10,7 @@ import {
 } from "react-icons/ai";
 import { FaAngellist } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
-import { BiBookAlt } from "react-icons/bi";
+import { RiBookletLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 //Util
 import convertToSnakeCase from "../../../util/snake_case_util";
@@ -62,9 +61,6 @@ class ReducedSideNav extends React.Component {
             </Link>
           </div>
           <div className="buttons-1">
-            {/* <button className="sidebar-search">
-              <BsSearch />
-            </button> */}
             <button className="sidebar-new" onClick={this.handleCreateNote}>
               +
             </button>
@@ -82,7 +78,7 @@ class ReducedSideNav extends React.Component {
             </Link>
             <Link to="/notebooks">
               <li className="sidebar-notebooks">
-                <BiBookAlt />
+                <RiBookletLine />
               </li>
             </Link>
             <Link to="/tags">
