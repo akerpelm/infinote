@@ -22,7 +22,6 @@ class TagShow extends React.Component {
     let title = tag ? tag.name : "";
     let compare = (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt);
 
-    console.log(filteredNotes.sort(compare));
     return (
       <div>
         <div className="tag-show-wrapper">

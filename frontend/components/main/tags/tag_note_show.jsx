@@ -66,7 +66,6 @@ export class TagNoteShow extends React.Component {
       this.setState({
         tag: { ...this.state.tag, [field]: e.target.value },
       });
-      console.log(this.state);
     };
   }
 

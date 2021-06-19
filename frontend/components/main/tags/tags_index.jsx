@@ -4,7 +4,7 @@ import ReducedNavContainer from "../navbar/reduced_nav_container";
 import { DropdownMenu } from "./tag_dropdown";
 import EmptyTagNoteShow from "./empty_tag_note_show";
 //React-Icons
-import { BsSearch, BsPlusSquareFill } from "react-icons/bs";
+import { BsPlusSquareFill } from "react-icons/bs";
 
 class TagsIndex extends React.Component {
   constructor(props) {
@@ -16,6 +16,9 @@ class TagsIndex extends React.Component {
   }
   render() {
     const { tags, openModal, deleteTag } = this.props;
+    tags.sort(function (a, b) {
+      return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
+    });
     return (
       <div className="tags-index-wrapper">
         <div className="reduced-side-nav">
@@ -27,21 +30,12 @@ class TagsIndex extends React.Component {
               <h3 className="tags-title">Tags</h3>
               <div className="create-tag-btn">
                 <BsPlusSquareFill
-                  className="create-tag-btn"
+                  // className="create-tag-btn"
                   onClick={() => openModal("create-tag")}
-                />
+                />{" "}
+                New Tag
               </div>
             </div>
-            {/* <div className="tags-search-bar-div">
-              <input
-                className="tags-search-bar"
-                type="input"
-                placeholder="Find tags..."
-              />
-              <i className="tags-search-bar-icon">
-                <BsSearch className="tags-search-bar-icon" />
-              </i>
-            </div> */}
           </div>
           <div className="tags-body-wrapper">
             <div className="tags-body">

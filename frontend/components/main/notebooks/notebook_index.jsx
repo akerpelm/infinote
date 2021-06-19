@@ -4,14 +4,21 @@ import ReducedNavContainer from "../navbar/reduced_nav_container";
 //React Icons
 import { RiBookletFill } from "react-icons/ri";
 
-
 class NotebookIndex extends React.Component {
   constructor(props) {
     super(props);
+    this.test = this.test.bind(this);
   }
   componentDidMount() {
     this.props.fetchNotebooks();
   }
+
+  test() {
+    this.props.notebooks.sort(function (a, b) {
+      return b.updatedAt.localeCompare(a.updatedAt);
+    });
+  }
+
   render() {
     const { notes, notebooks, openModal, user, deleteNotebook } = this.props;
     const length =
@@ -19,6 +26,11 @@ class NotebookIndex extends React.Component {
         ? `${notebooks.length} notebook`
         : `${notebooks.length} notebooks`;
 
+    notebooks
+      ? notebooks.sort(function (a, b) {
+          return a.title.toLowerCase().localeCompare(b.title.toLowerCase());
+        })
+      : "";
     return (
       <div className="notebook-index-wrapper">
         <div className="reduced-side-nav">
@@ -43,7 +55,9 @@ class NotebookIndex extends React.Component {
               <tr className="notebook-sort">
                 <th className="sort-feature sort-title">TITLE</th>
                 <th className="sort-feature sort-cb">CREATED BY</th>
-                <th className="sort-feature sort-update">UPDATED</th>
+                <th className="sort-feature sort-update" onClick={this.test}>
+                  UPDATED
+                </th>
                 <th className="sort-feature sort-action">ACTIONS</th>
               </tr>
             </thead>

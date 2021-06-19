@@ -108,23 +108,19 @@
       background-color: #f8f8f8;
 
       .sort-title {
-        cursor: pointer;
         text-align: left;
       }
 
       .sort-cb {
-        cursor: pointer;
         text-align: left;
       }
 
       .sort-update {
-        cursor: pointer;
         text-align: left;
       }
 
       .sort-action {
         text-align: end;
-        cursor: pointer;
       }
     }
 
@@ -197,6 +193,10 @@
       p:hover {
         text-decoration: underline;
         cursor: pointer;
+      }
+      a {
+        display: flex;
+        align-items: center;
       }
     }
   }

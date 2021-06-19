@@ -47,9 +47,19 @@
         flex: 1;
         font-size: 20px;
         padding-right: 12px;
-        .create-tag-btn {
-          padding: 0;
-          color: #666;
+      }
+      .create-tag-btn {
+        padding: 0;
+        color: $green;
+        display: flex;
+        align-items: center;
+        font-size: 15px;
+        font-weight: bolder;
+        svg {
+          padding-right: 5px;
+        }
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

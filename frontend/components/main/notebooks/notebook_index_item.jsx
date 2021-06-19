@@ -25,11 +25,10 @@ export class NotebookIndexItem extends React.Component {
 
     if (this.state.showNotes) {
       return filteredNotes.map((note) => {
-        console.log(note.title);
         return (
           <li key={note.id}>
-            <CgNotes />
             <Link to={`notebooks/${notebook.id}/notes/${note.id}`}>
+              <CgNotes />
               <p>{note.title} </p>
             </Link>
           </li>

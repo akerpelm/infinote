@@ -62,7 +62,7 @@ CASE STUDY: JAPAN
 “Japan is suffering its worst energy crisis since the 2011 Fukushima nuclear disaster, with very tight supply of both electricity and natural gas. Domestic wholesale electricity prices have spiked to a record high”
 “the price of wholesale electricity spike from about 13 cents per kilowatt-hour in December to an unprecedented peak of more than $1 on Jan. 7.”
 ' ,author_id: 1, notebook_id: 1)
-
+ 
 Note.create(title:'Commodities vs. Equity Ratio' , content: '
 Commodities vs. Equity Ratio
 This is ready for a correction; commodities have never been cheaper relative to equities. Currently there are many of the best resource companies available at incredible valuations.
