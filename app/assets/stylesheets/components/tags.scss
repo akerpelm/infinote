@@ -172,7 +172,9 @@
 }
 
 //Tag Note List
-
+.tag-note-list-wrapper {
+  margin-top: 150px;
+}
 .note-list {
   height: 100vh;
   max-width: 670px;
@@ -184,7 +186,8 @@
   flex-direction: column;
   font-family: $serif;
   overflow: scroll;
-  .note-list-header {
+  .note-list-header-tag {
+    z-index: 1;
     max-width: 670px;
     width: 380px;
     min-width: 196px;
@@ -197,8 +200,7 @@
     align-items: flex-start;
     height: 100px;
     box-sizing: border-box;
-    border-bottom: 1px solid #ccc;
-    border-right: 1px solid #e6e6e6;
+    // border-bottom: 1px solid #ccc;
     scroll-behavior: smooth;
     .note-list-header-title {
       width: 100%;
@@ -216,6 +218,43 @@
         width: 100%;
         margin: 5px 0;
         font-size: 16px;
+      }
+    }
+  }
+  .note-list-tag-header {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-top: inherit;
+    height: 150px;
+    width: 380px;
+    background: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #e6e6e6;
+    .note-list-tag-header-title {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border-right: 1px solid #e6e6e6;
+
+      // justify-content: center;
+      button {
+        background-color: #0081c2;
+        color: #fff;
+        border-radius: 40px;
+        max-width: 60%;
+        margin: 6px 20px;
+        padding: 10px;
+        span {
+          background: #02588e;
+          padding: 0px 5px 1px;
+          border-radius: 50%;
+          font-size: 12px;
+          &:hover {
+            color: #ccc;
+          }
+        }
       }
     }
   }

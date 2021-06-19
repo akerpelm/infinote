@@ -30,9 +30,9 @@ class TagShow extends React.Component {
             <ExpandedNavContainer />
           </div>
           <div className="note-list">
-            <div className="note-list-header">
+            <div className="note-list-header-tag">
               <div className="note-list-header-title">
-                <h1>{title}</h1>
+                <h1>Notes</h1>
                 <div className="note-list-header-sub">
                   <div className="note-count">
                     {filteredNotes.length === 1
@@ -42,7 +42,17 @@ class TagShow extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="note-list-wrapper">
+            <div className="note-list-tag-header">
+              <div className="note-list-tag-header-title">
+                <button>
+                  {title}{" "}
+                  <Link to="/notes">
+                    <span>x</span>
+                  </Link>
+                </button>
+              </div>
+            </div>
+            <div className="tag-note-list-wrapper">
               {this.props.filteredNotes.map((note) => {
                 return (
                   <div className="note-list-element" key={note.id}>
