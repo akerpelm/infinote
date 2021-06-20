@@ -151,3 +151,4 @@ render() { //conditional rendering based on the presence of other notebooks
   * Edit Profile - add AWS, allow users to add an avatar and update profile.
   * All Notes - the current functionality is that all notes belong to a notebook (even those without a notebook belong to a pseudo-notebook). The notebook was the first feature created, and at the time, it seemed logical to only show notes based on their notebook. However, the ability to view notes without filtering notes based on their notebook is important and will be implemented.
   * Sort - ability to sort notes, notebooks, or tags by alphabetical order or more recent edit, bot ascending and descending. 
+  * Refactor code to use React Hooks. Currently written using React Class Components.
