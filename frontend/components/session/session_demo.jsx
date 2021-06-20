@@ -17,7 +17,7 @@ class SessionDemo extends Component {
 
   handleSubmit(e) {
     e.preventDefault;
-    this.props.login(this.state).then(() => this.props.history.push("/notes"));
+    this.props.login(this.state).then(() => this.props.history.push("/home"));
   }
 
   render() {
