@@ -22,9 +22,6 @@ Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.
 * Users can navigate the application through the use of a demo user, without the need to register an account.
 * Errors are rendered if a user already exists or if a password is not valid.
 
-![Session](https://user-images.githubusercontent.com/77806372/122687046-614a3780-d1e2-11eb-82b3-17f2c05afcf9.gif)
-
-
 * Backend user authentication includes session token generation in addition to password salting and hasing. The user's password is never stored in the database: 
 ```ruby
 class User < ApplicationRecord
@@ -103,6 +100,7 @@ end
 ![NoteUpdate](https://user-images.githubusercontent.com/77806372/122686661-5a222a00-d1e0-11eb-94bc-cb102ffad6c4.gif)
 * Notes created within a notebook will be housed in that notebook. All other notes will not be added to a notebook.
 * Notes can be moved from one notebook to another, or deleted. 
+* Notes can be grouped my tag, so notes that don't necessarily have any direct correlation can still be grouped.
 
 ```jsx
 handleClick(notebook) { //logic to handle the moving of a note from one notebook to another
@@ -141,6 +139,7 @@ render() { //conditional rendering based on the presence of other notebooks
 * Users may group notes by tag in order to keep tabs on all notes that fall within a specific category.
 * Tags are just another way to group notes. 
 * A note may have multiple tags, and may be added to an existing, or new tag. 
+* Error handling present on tag creation. Duplicate tags may not be created.
 
 ![Tag](https://user-images.githubusercontent.com/77806372/122686789-1bd93a80-d1e1-11eb-9917-86d497ed3616.gif)
 
