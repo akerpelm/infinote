@@ -22,7 +22,7 @@ Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.
 * Users can navigate the application through the use of a demo user, without the need to register an account.
 * Errors are rendered if a user already exists or if a password is not valid.
 
-![Session](https://user-images.githubusercontent.com/77806372/122686997-1af4d880-d1e2-11eb-8102-17a8f3099645.gif)
+![Session](https://user-images.githubusercontent.com/77806372/122687046-614a3780-d1e2-11eb-82b3-17f2c05afcf9.gif)
 
 
 * Backend user authentication includes session token generation in addition to password salting and hasing. The user's password is never stored in the database: 
