@@ -99,8 +99,9 @@ end
 
 ![NoteUpdate](https://user-images.githubusercontent.com/77806372/122686661-5a222a00-d1e0-11eb-94bc-cb102ffad6c4.gif)
 * Notes created within a notebook will be housed in that notebook. All other notes will not be added to a notebook.
-* Notes can be moved from one notebook to another, or deleted. 
 * Notes can be grouped my tag, so notes that don't necessarily have any direct correlation can still be grouped.
+* Notes can be moved from one notebook to another, or deleted. 
+
 
 ```jsx
 handleClick(notebook) { //logic to handle the moving of a note from one notebook to another
