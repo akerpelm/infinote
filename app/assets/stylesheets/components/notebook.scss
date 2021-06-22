@@ -452,7 +452,17 @@
       text-decoration: none;
     }
   }
+  // .test {
+  //   position: absolute;
+  //   top: 0px;
+  //   bottom: 0;
+  //   right: 0;
+  //   left: 0;
+  //   // z-index: 0;
+  //   background: transparent;
+  // }
   .note-dropdown {
+    z-index: 10;
     position: relative;
     .note-dropdown-item-div {
       position: absolute;

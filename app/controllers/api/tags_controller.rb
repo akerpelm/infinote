@@ -26,7 +26,10 @@ class Api::TagsController < ApplicationController
 
     def update 
         @tag = Tag.find(params[:id])
-        if @tag.note_ids.length > params["tag"]["note_ids"].length || @tag.note_ids.length == 0 && params["tag"]["note_ids"].length
+        @note_ids = params["tag"]["note_ids"]
+        if @note_ids.nil? || @note_ids.empty?
+            @tag.note_ids = []
+        elsif @tag.note_ids.length > @note_ids.length 
             @tag.note_ids = params["tag"]["note_ids"]
         else
             params["tag"]["note_ids"].each do |note|

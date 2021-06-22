@@ -45,7 +45,7 @@ class TagShow extends React.Component {
               <div className="note-list-tag-header-title">
                 <button>
                   {title}{" "}
-                  <Link to="/notes">
+                  <Link to="/tags">
                     <span>x</span>
                   </Link>
                 </button>

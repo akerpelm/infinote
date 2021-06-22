@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 //React Icons
 import { FaEllipsisH } from "react-icons/fa";
 
 export const DropdownItem = (props) => {
   const [open, setOpen] = useState(false);
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (event) => {
+      if (!menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
   return (
-    <div className="tag-dropdown" onClick={() => setOpen(!open)}>
-      <FaEllipsisH className="ellipsis-icon" />
+    <div className="tag-dropdown" ref={menuRef}>
+      <FaEllipsisH className="ellipsis-icon" onClick={() => setOpen(!open)} />
       {open && props.children}
     </div>
   );
