@@ -6,7 +6,8 @@
 ## Demo
 Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.com/#/)
 
-![Landing Screenshot](https://user-images.githubusercontent.com/77806372/119143307-767e4b80-ba15-11eb-8d67-7115b2194ae8.JPG)
+![TestGif](https://user-images.githubusercontent.com/77806372/122686604-eda72b00-d1df-11eb-8029-22941bfe9595.gif)
+
 
 ## Major Technologies Used
 * React: frontend JavaScript library to build user interface components.
@@ -20,8 +21,6 @@ Here is a link to the web application: [infiNote](http://infinote-app.herokuapp.
 * Users can create an account to house their notes and notebooks. Users have the ability to sign in if they have already registered an account.
 * Users can navigate the application through the use of a demo user, without the need to register an account.
 * Errors are rendered if a user already exists or if a password is not valid.
-
-![Session Snippet](https://user-images.githubusercontent.com/77806372/119147315-76804a80-ba19-11eb-9e0f-f4db761baa81.JPG)
 
 * Backend user authentication includes session token generation in addition to password salting and hasing. The user's password is never stored in the database: 
 ```ruby
@@ -98,9 +97,11 @@ end
 
 * Editing a note pushes it to the the top of the notebook, sorting notes by most recently updated.  
 
-![Notes Snippet](https://user-images.githubusercontent.com/77806372/119149439-839e3900-ba1b-11eb-80c7-09cee4264668.JPG)
+![NoteUpdate](https://user-images.githubusercontent.com/77806372/122686661-5a222a00-d1e0-11eb-94bc-cb102ffad6c4.gif)
 * Notes created within a notebook will be housed in that notebook. All other notes will not be added to a notebook.
+* Notes can be grouped my tag, so notes that don't necessarily have any direct correlation can still be grouped.
 * Notes can be moved from one notebook to another, or deleted. 
+
 
 ```jsx
 handleClick(notebook) { //logic to handle the moving of a note from one notebook to another
@@ -135,15 +136,20 @@ render() { //conditional rendering based on the presence of other notebooks
         })
       );
 ```
+### Tags:
+* Users may group notes by tag in order to keep tabs on all notes that fall within a specific category.
+* Tags are just another way to group notes. 
+* A note may have multiple tags, and may be added to an existing, or new tag. 
+* Error handling present on tag creation. Duplicate tags may not be created.
+
+![Tag](https://user-images.githubusercontent.com/77806372/122686789-1bd93a80-d1e1-11eb-9917-86d497ed3616.gif)
 
 
 
 ## Future Direction
 * Many features are still a work in progress. The following are some major components I hope to implement shortly:
-  * Tags - ability to group notes by tags, as a further way of filtering notes.
-  * Rich Text Editing - more flexibility with note editing would be beneficial.
   * Search Functionality - ability to search for any feature (note, notebook, or tag) and have any matching results returned as a direct link to that feature's page.
+  * Edit Profile - add AWS, allow users to add an avatar and update profile.
   * All Notes - the current functionality is that all notes belong to a notebook (even those without a notebook belong to a pseudo-notebook). The notebook was the first feature created, and at the time, it seemed logical to only show notes based on their notebook. However, the ability to view notes without filtering notes based on their notebook is important and will be implemented.
-  * User Landing - rather than viewing all notes upon login, I would like to create a user landing page that greets the user. 
-  * Buttons - many buttons have only limited or no functionality as of yet.
   * Sort - ability to sort notes, notebooks, or tags by alphabetical order or more recent edit, bot ascending and descending. 
+  * Refactor code to use React Hooks. Currently written using React Class Components.
