@@ -8,6 +8,7 @@ import {
   AiFillGithub,
   AiFillLinkedin,
 } from "react-icons/ai";
+import { BsPersonBoundingBox } from "react-icons/bs";
 import { FaAngellist } from "react-icons/fa";
 import { CgNotes } from "react-icons/cg";
 import { RiBookletLine } from "react-icons/ri";
@@ -105,6 +106,11 @@ class ReducedSideNav extends React.Component {
             <li>
               <a href="https://www.angel.co/u/alex-kerpelman/" target="_blank">
                 <FaAngellist />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.akerpelmandev.com" target="_blank">
+                <BsPersonBoundingBox />
               </a>
             </li>
             <li onClick={this.handleClick}>

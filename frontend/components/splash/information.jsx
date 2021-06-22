@@ -131,6 +131,11 @@ const Information = () => {
                     AngelList
                   </a>
                 </li>
+                <li>
+                  <a href="https://www.akerpelmandev.com" target="_blank">
+                    Personal Site
+                  </a>
+                </li>
                 {/* <li>
                   <a href="https://www.instagram.com/akerpz/" target="_blank">
                     Personal Site

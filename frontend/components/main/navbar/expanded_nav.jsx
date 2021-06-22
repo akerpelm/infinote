@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 // React Icons
 import { RiLogoutBoxFill } from "react-icons/ri";
 import { FaAngleDown, FaPlus } from "react-icons/fa";
-import { BsSearch } from "react-icons/bs";
+import { BsPersonBoundingBox, BsSearch } from "react-icons/bs";
 import {
   AiFillHome,
   AiFillTag,
@@ -179,6 +179,14 @@ class ExpandedSideNav extends React.Component {
                     <FaAngellist />
                   </i>
                   AngelList
+                </a>
+              </li>
+              <li>
+                <a href="https://www.akerpelmandev.com" target="_blank">
+                  <i className="menu-btn-icon">
+                    <BsPersonBoundingBox />
+                  </i>
+                  Personal Site
                 </a>
               </li>
               <li onClick={this.handleClick}>

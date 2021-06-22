@@ -2,7 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { FaAngellist } from "react-icons/fa";
+import { BsPersonBoundingBox } from "react-icons/bs";
 import SessionDemoLogin from "../session/session_demo_login";
+import { DropdownMenu } from "./splash_dropdown";
 
 const SplashHeader = () => {
   return (
@@ -19,8 +21,10 @@ const SplashHeader = () => {
           <div className="splash-header-demo-user">
             <SessionDemoLogin />
           </div>
-          <ul>
-            <li>
+
+          <ul className="splash-dropdown-li">
+            <DropdownMenu />
+            {/* <li>
               <a
                 href="https://www.linkedin.com/in/alex-kerpelman/"
                 target="_blank"
@@ -47,6 +51,14 @@ const SplashHeader = () => {
                 </i>
               </a>
             </li>
+            <li>
+              <a href="https://www.akerpelmandev.com" target="_blank">
+                <i>
+                  <BsPersonBoundingBox />
+                </i>
+              </a>
+            </li>
+             */}
           </ul>
         </div>
       </div>
