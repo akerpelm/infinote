@@ -1,5 +1,8 @@
+.home-wrapper {
+  display: flex;
+}
+
 .home-info {
-  padding-left: 60px;
   display: flex;
   overflow-x: hidden;
   flex-direction: column;
@@ -10,6 +13,7 @@
   background: #ccc;
   height: 100vh;
   font-family: $serif;
+  width: 100%;
   .home {
     padding-left: 60px;
     flex-direction: column;
@@ -43,20 +47,22 @@
     .home-create {
       display: flex;
       align-items: center;
+      padding: 5px;
       .right-arrow-svg {
         padding-left: 20px;
         color: $green;
         width: 15px;
         height: auto;
       }
+      &:hover {
+        background: #f2f2f2;
+        border-radius: 4px;
+      }
     }
     .home-note-links-title {
       display: flex;
+      justify-content: space-between;
       padding: 5px 5px;
-      &:hover {
-        background-color: #f2f2f2;
-        border-radius: 4px;
-      }
     }
 
     .home-notes-link {
@@ -65,10 +71,20 @@
       padding: 4px 0;
       font-weight: 700;
     }
+    .home-notes-recent {
+      display: flex;
+      align-items: center;
+      color: #ccc;
+      font-size: 16px;
+      padding: 4px 0;
+      font-weight: 700;
+    }
     .home-create-note-link {
       padding-top: 20px;
       font-weight: 400;
       font-size: 20px;
+      display: flex;
+      overflow-y: scroll;
       .home-create-note-body {
         cursor: pointer;
         display: flex;
@@ -77,21 +93,60 @@
         align-items: center;
         width: 20%;
         text-align: center;
-        background-color: #f2f2f2;
         border-radius: 8px;
         height: 252px;
         width: 172px;
+        min-width: 172px;
+        background: #fff;
+        margin-right: 10px;
+        svg {
+          color: $green;
+          height: 100px;
+          width: auto;
+        }
+        &:hover {
+          svg {
+            color: $green-hover;
+          }
+          background-color: #f2f2f2;
+          color: $green-hover;
+        }
       }
-
-      .add-note-svg {
-        color: $green;
-        height: 100px;
-        width: auto;
+      .home-note-body {
+        margin-right: 5px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+        text-align: center;
+        border-radius: 8px;
+        height: 252px;
+        width: 172px;
+        min-width: 172px;
+        background: #fff;
+        margin-right: 10px;
+        p {
+          overflow-x: hidden;
+          text-overflow: ellipsis;
+        }
+        .home-note-body-time {
+          font-size: 13px;
+          padding-top: 5px;
+        }
+        &:hover {
+          svg {
+            color: $green-hover;
+          }
+          background-color: #f2f2f2;
+        }
       }
     }
     .home-body {
       display: grid;
-      margin: 24px 29px 24px 24px;
+      margin: 24px 0px 24px 0px;
+
       min-width: 907px;
       max-width: 2320px;
       grid-template-columns: repeat(3, 1fr);

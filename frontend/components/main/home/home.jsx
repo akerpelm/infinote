@@ -1,27 +1,30 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-import ReducedNavContainer from "../navbar/reduced_nav_container";
+import ExpandedNavContainer from "../navbar/expanded_nav_container";
 //React Icons
 import { AiOutlineRight } from "react-icons/ai";
 import { MdNoteAdd } from "react-icons/md";
 import { ImLoop2 } from "react-icons/im";
 import { GiRunningShoe } from "react-icons/gi";
+import { CgNotes } from "react-icons/cg";
 //Util
 import { getCurrentDate } from "../../../util/date";
-import { createNote } from "../../../actions/note_actions";
+import { createNote, fetchNotes } from "../../../actions/note_actions";
 import convertToSnakeCase from "../../../util/snake_case_util";
+import moment from "moment";
+import { compare } from "../../../util/component/notebook_util";
+moment().format();
 
 class Home extends Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   colors: {
-    //     grey: 'grey',
-    //   }
-    // }
     this.handleCreateNote = this.handleCreateNote.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchNotes;
   }
 
   handleCreateNote(e) {
@@ -45,14 +48,31 @@ class Home extends Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, notes } = this.props;
     const user = currentUser.username
       ? currentUser.username
       : currentUser.email;
+
+    let recentNotes = notes ? notes.sort(compare).slice(0, 5) : "";
+
+    recentNotes = recentNotes.map((note) => {
+      return (
+        <Link
+          to={`/notebooks/${note.notebookId}/notes/${note.id}`}
+          key={note.id}
+        >
+          <div className="home-note-body">
+            <p>{note.title}</p>
+            <p className="home-note-body-time">{moment().to(note.updatedAt)}</p>
+          </div>
+        </Link>
+      );
+    });
+
     return (
       <div className="home-wrapper">
         <div className="reduced-side-nav">
-          <ReducedNavContainer />
+          <ExpandedNavContainer />
         </div>
         <div className="home-info">
           <section className="home">
@@ -64,12 +84,13 @@ class Home extends Component {
               <div className="home-body">
                 <div className="home-body-notes">
                   <div className="home-note-links">
-                    <Link to="/notes" className="home-create">
-                      <div className="home-note-links-title">
+                    <div className="home-note-links-title">
+                      <Link to="/notes" className="home-create">
                         <h3 className="home-notes-link">NOTES</h3>
                         <AiOutlineRight className="right-arrow-svg" />
-                      </div>
-                    </Link>
+                      </Link>
+                      <h3 className="home-notes-recent">Recent</h3>
+                    </div>
                     <div className="home-create-note-link">
                       <div
                         className="home-create-note-body"
@@ -78,6 +99,13 @@ class Home extends Component {
                         <MdNoteAdd className="add-note-svg" />
                         <h4>Create new note</h4>
                       </div>
+                      {/* <Link to="/notes">
+                        <div className="home-create-note-body">
+                          <CgNotes className="add-note-svg" />
+                          <h4>View notes</h4>
+                        </div>
+                      </Link> */}
+                      {recentNotes}
                     </div>
                   </div>
                 </div>
@@ -128,10 +156,12 @@ class Home extends Component {
 
 const mapStateToProps = (state) => ({
   currentUser: state.entities.users[state.session.id],
+  notes: Object.values(state.entities.notes),
 });
 
 const mapDispatchToProps = (dispatch) => ({
   createNote: (note) => dispatch(createNote(note)),
+  fetchNotes: () => dispatch(fetchNotes()),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Home));

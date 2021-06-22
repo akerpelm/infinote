@@ -18,6 +18,7 @@ import { RiBookletLine } from "react-icons/ri";
 //Util
 import convertToSnakeCase from "../../../util/snake_case_util";
 import * as ToggleUtil from "../../../util/component/toggle_util";
+import { DropdownMenu } from "./navbar_dropdown";
 
 class ExpandedSideNav extends React.Component {
   constructor(props) {
@@ -62,7 +63,7 @@ class ExpandedSideNav extends React.Component {
   }
 
   render() {
-    const { currentUser } = this.props;
+    const { currentUser, logout } = this.props;
     let title = currentUser.username || currentUser.email;
     let abbrTitle = title.length > 8 ? title.slice(0, 8) + "..." : title;
     let firstLetter = title[0].toUpperCase();
@@ -79,22 +80,7 @@ class ExpandedSideNav extends React.Component {
             </div>
             <div className="sidenavbar-profile-title">
               {abbrTitle}
-              <div className="expanded-side-nav-action-dropdown">
-                <section className="expanded-side-nav-action-dropdown-btn">
-                  <i className="sidebar-icon">
-                    <FaAngleDown
-                      className="angledown-i"
-                      onClick={ToggleUtil.toggleActive}
-                    />
-                  </i>
-                  <ul className="expanded-side-nav-action-dropdown-ul">
-                    <li className="logout-li" onClick={this.handleClick}>
-                      Log out {title}
-                    </li>
-                    {/* <li className="change-user-li">Update Profile</li> */}
-                  </ul>
-                </section>
-              </div>
+              <DropdownMenu logout={logout} title={title} />
             </div>
           </div>
           {/* <div className="sidenavbar-top-search">
