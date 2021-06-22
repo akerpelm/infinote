@@ -272,7 +272,7 @@
 }
 .nav-dropdown-item-logout {
   position: absolute;
-  padding: 12px 0;
+  padding: 12px 5px;
   left: 0px;
   font-weight: bold;
   z-index: 1;
@@ -282,6 +282,7 @@
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: #fff;
   color: #000;
+  max-width: 300px;
   &:hover {
     background-color: #f2f2f2;
     cursor: pointer;
