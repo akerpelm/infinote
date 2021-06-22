@@ -34,7 +34,7 @@ function Modal({ modal, closeModal }) {
       component = <NoteMove />;
       break;
     case "tag-delete":
-      component = <TagDelete/>
+      component = <TagDelete />;
       break;
     default:
       return null;

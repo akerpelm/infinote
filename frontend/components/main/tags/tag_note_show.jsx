@@ -26,6 +26,7 @@ export class TagNoteShow extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleTag = this.handleTag.bind(this);
     this.createTag = this.createTag.bind(this);
+    this.toggleTag = this.toggleTag.bind(this);
   }
 
   componentDidMount() {
@@ -79,6 +80,18 @@ export class TagNoteShow extends React.Component {
     this.setState({
       tag: { ...this.state.tag, noteIds: [] },
     });
+  }
+
+  toggleTag(e) {
+    this.props.removeTagErrors();
+    document.querySelector(".footer-add-tag-input")
+      ? document
+          .querySelector(".footer-add-tag-input")
+          .classList.toggle("active")
+      : "";
+    document.querySelector(".add-tag-form-btn")
+      ? document.querySelector(".add-tag-form-btn").classList.toggle("active")
+      : "";
   }
 
   renderErrors() {
@@ -172,7 +185,7 @@ export class TagNoteShow extends React.Component {
           <div className="note-body-form-top">
             <div className="add-tags-wrapper">
               <div className="note-show-errors">{this.renderErrors()}</div>
-              <div className="add-tags" onClick={ToggleUtil.toggleTag}>
+              <div className="add-tags" onClick={this.toggleTag}>
                 <p>New tag</p>
                 <AiFillTag />
               </div>
