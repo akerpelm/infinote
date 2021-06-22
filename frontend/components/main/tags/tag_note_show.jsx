@@ -30,7 +30,9 @@ export class TagNoteShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchNotebook(this.props.currentNote.notebookId);
+    this.props.currentNote.notebookId != 0
+      ? this.props.fetchNotebook(this.props.currentNote.notebookId)
+      : "";
   }
 
   componentDidUpdate(prevProps) {

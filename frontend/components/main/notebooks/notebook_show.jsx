@@ -10,7 +10,7 @@ export class NotebookShow extends Component {
   }
   componentDidMount() {
     const { match, fetchNotebook } = this.props;
-    match.path.includes("notebook")
+    match.path.includes("notebook") && match.params.notebookId != 0
       ? fetchNotebook(match.params.notebookId)
       : undefined;
   }
