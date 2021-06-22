@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 //React Icons
-import {RiBookletLine} from 'react-icons/ri'
+import { RiBookletLine } from "react-icons/ri";
 //Util
 import { fetchNotebooks } from "../../../actions/notebook_actions";
 import { updateNote } from "../../../actions/note_actions";
@@ -38,8 +38,12 @@ class NoteMove extends Component {
         notebooks.map((notebook, i) => {
           if (notebook.id !== currentNoteNotebook.id) {
             return (
-              <li className="modal-move-li" key={i} onClick={() => this.handleClick(notebook)}>
-                <RiBookletLine/>
+              <li
+                className="modal-move-li"
+                key={i}
+                onClick={() => this.handleClick(notebook)}
+              >
+                <RiBookletLine />
                 {notebook.title}
               </li>
             );

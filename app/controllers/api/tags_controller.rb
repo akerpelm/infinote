@@ -26,8 +26,18 @@ class Api::TagsController < ApplicationController
 
     def update 
         @tag = Tag.find(params[:id])
-        @tag["note_ids"].concat(params["tag"]["note_ids"])
+        if @tag.note_ids.length > params["tag"]["note_ids"].length || @tag.note_ids.length == 0 && params["tag"]["note_ids"].length
+            @tag.note_ids = params["tag"]["note_ids"]
+        else
+            params["tag"]["note_ids"].each do |note|
+                if !@tag["note_ids"].include?(note)
+                    @tag["note_ids"].concat([note.to_i])
+                end
+            end
+        end
  
+
+        @tag.note_ids = @tag.note_ids.uniq
         if @tag.update(tag_params)
             render :show
         else

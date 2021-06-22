@@ -28,10 +28,10 @@ class TagsIndex extends React.Component {
           <div className="tags-header-container">
             <div className="tags-header">
               <h3 className="tags-title">Tags</h3>
-              <div className="create-tag-btn">
+              <div className="create-tag-btn" onClick={() => openModal("create-tag")}>
                 <BsPlusSquareFill
                   // className="create-tag-btn"
-                  onClick={() => openModal("create-tag")}
+                  
                 />{" "}
                 New Tag
               </div>

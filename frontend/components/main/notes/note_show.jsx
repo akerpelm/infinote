@@ -59,6 +59,7 @@ export class NoteShow extends React.Component {
   }
 
   toggleTag(e) {
+    this.props.removeTagErrors();
     document.querySelector(".footer-add-tag-input").classList.toggle("active");
     document.querySelector(".add-tag-form-btn").classList.toggle("active");
   }
@@ -160,14 +161,6 @@ export class NoteShow extends React.Component {
               <div className="dropdown-li">
                 <DropdownMenu openModal={openModal} />
               </div>
-              {/* <li>
-                <button onClick={() => openModal("move-note")}>
-                  Move note...
-                </button>
-              </li>
-              <li>
-                <button onClick={this.handleDelete}>Delete note</button>
-              </li> */}
             </div>
           </div>
         </div>

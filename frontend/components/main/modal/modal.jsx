@@ -7,6 +7,7 @@ import NotebookEditContainer from "../notebooks/notebook_edit_container";
 import NotebookDelete from "../notebooks/notebook_delete";
 import NoteDelete from "../notes/note_delete";
 import NoteMove from "../notes/note_move";
+import TagDelete from "../tags/tag_delete";
 
 function Modal({ modal, closeModal }) {
   if (!modal) {
@@ -32,7 +33,9 @@ function Modal({ modal, closeModal }) {
     case "move-note":
       component = <NoteMove />;
       break;
-
+    case "tag-delete":
+      component = <TagDelete/>
+      break;
     default:
       return null;
   }

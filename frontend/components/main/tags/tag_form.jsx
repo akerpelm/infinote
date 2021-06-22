@@ -9,6 +9,10 @@ class TagForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.removeTagErrors();
+  }
+
   handleUpdate(field) {
     return (e) =>
       this.setState({

@@ -8,7 +8,12 @@ import {
   updateNote,
 } from "../../../actions/note_actions";
 import { openModal } from "../../../actions/modal_actions";
-import { createTag, fetchTags, updateTag } from "../../../actions/tag_actions";
+import {
+  createTag,
+  fetchTags,
+  updateTag,
+  removeTagErrors,
+} from "../../../actions/tag_actions";
 
 class NoteShowContainer extends React.Component {
   componentDidMount() {

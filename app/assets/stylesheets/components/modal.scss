@@ -62,6 +62,17 @@
     margin: 0 10px;
     padding: 8px 15px 8px 10px;
     min-height: 40px;
+
+    .modal-li-alt {
+      color: red;
+      font-size: 14px;
+      &:hover {
+        cursor: auto;
+        background-color: #fff;
+        font-weight: normal;
+      }
+    }
+
     // display: block;
     // margin-bottom: 8px;
     // padding: 0 25px;
