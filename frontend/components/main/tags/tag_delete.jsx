@@ -80,9 +80,9 @@ class TagDelete extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const noteId = isNaN(parseInt(ownProps.history.location.pathname.slice(19)))
-    ? parseInt(ownProps.history.location.pathname.slice(20))
-    : parseInt(ownProps.history.location.pathname.slice(19));
+  const noteId = parseInt(
+    ownProps.history.location.pathname.split("notes/")[1]
+  );
 
   const filteredTags = Object.values(state.entities.tags).filter((tag) =>
     tag.noteIds.includes(noteId)
@@ -91,9 +91,7 @@ const mapStateToProps = (state, ownProps) => {
   return {
     tags: filteredTags,
     noteId: noteId,
-    //   notebookId: notebookId,
     modalInfo: "Which tag would you like to remove?",
-    //     "Test",
   };
 };
 

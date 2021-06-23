@@ -16,12 +16,26 @@ class NoteDelete extends Component {
   }
 
   handleSubmit(e) {
-    const { action, noteId, history, notebookId, closeModal } = this.props;
+    let { action, noteId, history, notebookId, closeModal } = this.props;
 
+    if (!noteId) {
+      noteId = parseInt(history.location.pathname.split("/notes/")[1]);
+    }
     e.preventDefault();
-    action(noteId)
-      .then(history.push(`/notebooks/${notebookId}`))
-      .then(() => closeModal());
+
+    let tagId = parseInt(
+      history.location.pathname.split("/notes")[0].split("tags/")[1]
+    );
+
+    if (notebookId || notebookId === 0) {
+      action(noteId)
+        .then(history.push(`/notebooks/${notebookId}`))
+        .then(() => closeModal());
+    } else {
+      action(noteId)
+        .then(history.push(`/tags/${tagId}`))
+        .then(() => closeModal());
+    }
   }
 
   render() {

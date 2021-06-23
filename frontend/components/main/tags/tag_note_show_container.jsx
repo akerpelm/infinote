@@ -40,6 +40,7 @@ class TagNoteShowContainer extends React.Component {
       updateTag,
       errors,
       removeTagErrors,
+      openModal,
     } = this.props;
     if (!currentNote) return null;
     return (
@@ -60,6 +61,7 @@ class TagNoteShowContainer extends React.Component {
         updateTag={updateTag}
         errors={errors}
         removeTagErrors={removeTagErrors}
+        openModal={openModal}
       />
     );
   }

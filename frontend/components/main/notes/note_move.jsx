@@ -89,10 +89,14 @@ class NoteMove extends Component {
 const mapStateToProps = (state, ownProps) => {
   let currentNote =
     state.entities.notes[
-      parseInt(ownProps.location.pathname.slice(19))
-    ] instanceof Object
-      ? state.entities.notes[parseInt(ownProps.location.pathname.slice(19))]
-      : state.entities.notes[parseInt(ownProps.location.pathname.slice(20))];
+      parseInt(ownProps.location.pathname.split("notes/")[1])
+    ];
+
+  debugger;
+  //   parseInt(ownProps.location.pathname.slice(19))
+  // ] instanceof Object
+  //   ? state.entities.notes[parseInt(ownProps.location.pathname.slice(19))]
+  //   : state.entities.notes[parseInt(ownProps.location.pathname.slice(20))];
 
   let currentNoteNotebook = state.entities.notebooks[currentNote.notebookId]
     ? state.entities.notebooks[currentNote.notebookId]

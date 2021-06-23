@@ -10,6 +10,7 @@ import ReactQuill, { Quill } from "react-quill";
 //Util
 import convertToSnakeCase from "../../../util/snake_case_util";
 import * as ToggleUtil from "../../../util/component/toggle_util";
+import { DropdownMenu } from "../notes/note_show_dropdown";
 
 export class TagNoteShow extends React.Component {
   constructor(props) {
@@ -109,8 +110,15 @@ export class TagNoteShow extends React.Component {
   }
 
   render() {
-    const { notebook, tags, currentNote, allTags, fetchTags, updateTag } =
-      this.props;
+    const {
+      notebook,
+      tags,
+      currentNote,
+      allTags,
+      fetchTags,
+      updateTag,
+      openModal,
+    } = this.props;
 
     const Size = Quill.import("attributors/style/size");
     Size.whitelist = ["12px", "16px", "18px", "24px"];
@@ -156,6 +164,11 @@ export class TagNoteShow extends React.Component {
               <RiBookletLine />
             </i>
             {notebookTitle}
+          </div>
+          <div className="note-show-actions">
+            <div className="dropdown-li">
+              <DropdownMenu openModal={openModal} />
+            </div>
           </div>
         </div>
         <div className="note-body" onBlur={this.handleUpdate}>
