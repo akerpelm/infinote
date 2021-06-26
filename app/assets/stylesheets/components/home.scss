@@ -85,7 +85,7 @@
       font-weight: 400;
       font-size: 20px;
       display: flex;
-      overflow-y: scroll;
+      overflow-x: scroll;
       .home-create-note-body {
         cursor: pointer;
         display: flex;
@@ -188,10 +188,10 @@
         }
         .scratch-pad-text {
           margin: 10px;
-          width: 100%;
+          width: 90%;
           margin-top: 10px;
           resize: none;
-          height: 90%;
+          height: 80%;
         }
       }
       .home-project-links {

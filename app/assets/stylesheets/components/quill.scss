@@ -52,7 +52,8 @@ u {
   white-space: pre-wrap;
   word-wrap: break-word;
   height: 500px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  height: 100%;
 }
 .ql-editor > * {
   cursor: text;
