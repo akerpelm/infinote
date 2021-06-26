@@ -131,6 +131,11 @@
       }
     }
     .note-body-content {
+      height: 80%;
+      .quill {
+        height: 100%;
+      }
+
       textarea {
         background-color: #f8f8f8;
         width: 100%;

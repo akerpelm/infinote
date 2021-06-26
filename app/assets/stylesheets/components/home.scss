@@ -8,19 +8,20 @@
   flex-direction: column;
   outline-style: none;
   min-height: 200px; // min-height: calc(100% - 594px);
-  min-width: 907px;
-  max-width: 2320px;
+  // min-width: 907px;
+  // max-width: 2320px;
   background: #ccc;
   height: 100vh;
   font-family: $serif;
   width: 100%;
   .home {
-    padding-left: 60px;
+    padding-left: 40px;
+    padding-right: 40px;
     flex-direction: column;
     flex: 1;
     min-height: 280px;
     justify-content: left;
-    overflow: auto;
+    // overflow: auto;
     min-width: 500px;
     .home-header {
       padding-top: 60px;
@@ -150,8 +151,8 @@
       display: grid;
       margin: 24px 0px 24px 0px;
 
-      min-width: 907px;
-      max-width: 2320px;
+      // min-width: 907px;
+      // max-width: 2320px;
       grid-template-columns: repeat(3, 1fr);
       grid-column-gap: 24px;
       grid-row-gap: 50px;
