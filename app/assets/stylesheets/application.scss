@@ -34,11 +34,12 @@
 
 //responsive display
 @media (max-width: 800px) {
-  .main {
-  }
   .note-list {
-    display: none !important;
-    width: 0px;
+    display: block !important;
+    width: 600px;
+  }
+  .note {
+    width: 600px !important;
   }
   .tag-notes-showpage {
     max-width: 600px !important;
@@ -47,21 +48,8 @@
     max-width: 0px !important;
   }
 }
-@media (max-width: 760px) {
-  .tag-notes-showpage {
-  }
-  .empty-note-show-wrapper {
-    max-width: 0px !important;
-  }
-  .sidenavbar {
-    display: none !important;
-  }
-}
 
 @media (max-width: 765px) {
-  .sidenavbar {
-    display: none;
-  }
   .home {
     width: 100%;
     max-width: 600px;
@@ -80,7 +68,21 @@
   .home-body-notes {
     grid-column: span 3;
   }
-  .home-project-links {
-    background-color: pink;
+}
+
+@media (max-width: 700px) {
+  .note-list {
+    display: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidenavbar {
+    display: none !important;
+  }
+
+  .note-list {
+    display: block;
+    width: 600px !important;
   }
 }
