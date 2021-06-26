@@ -31,7 +31,15 @@ export class NoteShow extends React.Component {
     this.toggleTag = this.toggleTag.bind(this);
     this.handleTag = this.handleTag.bind(this);
     this.createTag = this.createTag.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.noteId !== this.props.noteId) {
+      this.setState({ note: this.props.currentNote });
+    }
+  }
+
   handleUpdate(e) {
     e.preventDefault();
     this.props.updateNote(
@@ -42,12 +50,6 @@ export class NoteShow extends React.Component {
         notebookId: this.props.currentNote.notebookId,
       })
     );
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.noteId !== this.props.noteId) {
-      this.setState({ note: this.props.currentNote });
-    }
   }
 
   handleChange(field) {
@@ -81,6 +83,15 @@ export class NoteShow extends React.Component {
     this.setState({
       tag: { ...this.state.tag, noteIds: [] },
     });
+  }
+
+  handleClick(tag) {
+    const { updateTag, noteId } = this.props;
+    const index = tag.noteIds.indexOf(parseInt(noteId));
+    if (index > -1) {
+      tag.noteIds.splice(index, 1);
+    }
+    updateTag(convertToSnakeCase(tag));
   }
 
   handleDelete(e) {
@@ -216,13 +227,9 @@ export class NoteShow extends React.Component {
               <ul className="note-tag-ul">
                 {filteredTags.map((tag) => {
                   return (
-                    <Link
-                      key={tag.id}
-                      to={`/tags/${tag.id}`}
-                      style={{ textDecoration: "none" }}
-                    >
-                      <button key={tag.id}>{tag.name}</button>
-                    </Link>
+                    <button onClick={() => this.handleClick(tag)} key={tag.id}>
+                      {tag.name}
+                    </button>
                   );
                 })}
               </ul>

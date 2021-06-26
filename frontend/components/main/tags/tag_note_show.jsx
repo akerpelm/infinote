@@ -28,6 +28,7 @@ export class TagNoteShow extends React.Component {
     this.handleTag = this.handleTag.bind(this);
     this.createTag = this.createTag.bind(this);
     this.toggleTag = this.toggleTag.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
@@ -83,6 +84,15 @@ export class TagNoteShow extends React.Component {
     this.setState({
       tag: { ...this.state.tag, noteIds: [] },
     });
+  }
+
+  handleClick(tag) {
+    const { updateTag, currentNote } = this.props;
+    const index = tag.noteIds.indexOf(currentNote.id);
+    if (index > -1) {
+      tag.noteIds.splice(index, 1);
+    }
+    updateTag(convertToSnakeCase(tag));
   }
 
   toggleTag(e) {
@@ -225,13 +235,15 @@ export class TagNoteShow extends React.Component {
               <ul className="note-tag-ul">
                 {filteredTags.map((tag) => {
                   return (
-                    <Link
-                      to={`/tags/${tag.id}`}
-                      style={{ textDecoration: "none" }}
-                      key={tag.id}
-                    >
-                      <button key={tag.id}>{tag.name}</button>
-                    </Link>
+                    // <Link
+                    //   to={`/tags/${tag.id}`}
+                    //   style={{ textDecoration: "none" }}
+                    //   key={tag.id}
+                    // >
+                    <button onClick={() => this.handleClick(tag)} key={tag.id}>
+                      {tag.name}
+                    </button>
+                    // </Link>
                   );
                 })}
               </ul>
