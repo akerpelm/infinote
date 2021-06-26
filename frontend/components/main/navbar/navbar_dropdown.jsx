@@ -37,7 +37,7 @@ export const DropdownMenu = (props) => {
             className="nav-dropdown-item-logout"
             onClick={() => props.logout()}
           >
-            Logout {props.title}
+            Log out {props.title}?
           </p>
         </div>
       </DropdownItem>
