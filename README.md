@@ -1,6 +1,7 @@
 # infiNote
 
 ### What is infiNote?
+
 * infiNote is a clone of the popular note taking application, [Evernote](http://evernote.com), mirroring much of the same functionality as the site from which it was inspired. infiNote allows users to seamlessy create notes and notebooks as a means of organizing their thoughts into one, centralized location. Intuitive navigation allows users to view notes within the notebook they are currently working on, or view all notes, regardless of notebook. Notes are updated in real-time, and are automatically sorted by most recently updated.
 
 ## Demo
