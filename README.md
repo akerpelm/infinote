@@ -1,6 +1,7 @@
 # infiNote
 
 ### What is infiNote?
+
 * infiNote is a clone of the popular note taking application, [Evernote](http://evernote.com), mirroring much of the same functionality as the site from which it was inspired. infiNote allows users to seamlessy create notes and notebooks as a means of organizing their thoughts into one, centralized location. Intuitive navigation allows users to view notes within the notebook they are currently working on, or view all notes, regardless of notebook. Notes are updated in real-time, and are automatically sorted by most recently updated.
 
 ## Demo
@@ -149,7 +150,7 @@ render() { //conditional rendering based on the presence of other notebooks
 ## Future Direction
 * Many features are still a work in progress. The following are some major components I hope to implement shortly:
   * Search Functionality - ability to search for any feature (note, notebook, or tag) and have any matching results returned as a direct link to that feature's page.
-  * Edit Profile - add AWS, allow users to add an avatar and update profile.
+  * Edit Profile - add AWS bucket, allow users to add an avatar and update profile.
   * All Notes - the current functionality is that all notes belong to a notebook (even those without a notebook belong to a pseudo-notebook). The notebook was the first feature created, and at the time, it seemed logical to only show notes based on their notebook. However, the ability to view notes without filtering notes based on their notebook is important and will be implemented.
   * Sort - ability to sort notes, notebooks, or tags by alphabetical order or more recent edit, bot ascending and descending. 
   * Refactor code to use React Hooks. Currently written using React Class Components.
