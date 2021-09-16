@@ -32,6 +32,7 @@ export class NoteShow extends React.Component {
     this.handleTag = this.handleTag.bind(this);
     this.createTag = this.createTag.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.copyText = this.copyText.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -110,6 +111,10 @@ export class NoteShow extends React.Component {
     );
   }
 
+  copyText() {
+    alert("Hello");
+  }
+
   render() {
     //Quill Functions
     const Size = Quill.import("attributors/style/size");
@@ -146,6 +151,7 @@ export class NoteShow extends React.Component {
       openModal,
       updateTag,
       fetchTags,
+      copyText,
     } = this.props;
 
     let filteredTags =
@@ -170,7 +176,7 @@ export class NoteShow extends React.Component {
           <div>
             <div className="note-show-actions">
               <div className="dropdown-li">
-                <DropdownMenu openModal={openModal} />
+                <DropdownMenu copyText={copyText} openModal={openModal} />
               </div>
             </div>
           </div>

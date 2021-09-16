@@ -36,6 +36,7 @@ function Modal({ modal, closeModal }) {
     case "tag-delete":
       component = <TagDelete />;
       break;
+    case "copy-text":
     default:
       return null;
   }

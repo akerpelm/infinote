@@ -14,6 +14,7 @@ notebook2 = Notebook.create(title: "My First Notebook", author_id: 1)
 notebook3 = Notebook.create(title: "Housing Options", author_id: 1)
 notebook4 = Notebook.create(title: "Budget", author_id: 1)
 notebook5 = Notebook.create(title: "Predicting the Next Market Crash", author_id: 1)
+notebook6 = Notebook.create(title: "Poem", author_id: 1)
 
 
 main_notebook = Notebook.create(title: "My First Notebook", author_id: 2)
@@ -101,3 +102,16 @@ Note.create(title: "References", content: "
 Author: @awgejocoU308,
 Author Blog: https://josephcollinsul.medium.com/the-uranium-bull-thesis-ce6d49ebd219
 ", author_id: 1, notebook_id: 1)
+
+
+Note.create(title:`Poem of the Day 09/15/2021", content: "I’ve expanded like the swollen door in summer
+            to fit my own dimension. Your loneliness
+
+is a letter I read and put away, a daily reminder
+            in the cry of the magpie that I am
+
+still capable of inflicting pain
+            at this distance.
+
+Like a painting,...
+- ROBIN BECKER.`, author_id: 1, notebook_id: 6)

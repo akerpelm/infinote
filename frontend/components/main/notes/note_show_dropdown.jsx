@@ -27,6 +27,7 @@ export const DropdownItem = (props) => {
 
 export const DropdownMenu = (props) => {
   (DropdownItem) => (props) => {
+    console.log(props);
     return <p>{props.children}</p>;
   };
 
@@ -52,6 +53,14 @@ export const DropdownMenu = (props) => {
             onMouseDown={() => props.openModal("delete-note")}
           >
             Delete note
+          </p>
+          {/* <p
+            className="note-dropdown-item-share"
+            onMouseDown={() => props.openModal("copy-text")}
+
+            // onMouseDown={() => props.openModal("delete-note")}
+          > */}
+            Share note
           </p>
         </div>
       </DropdownItem>
